@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Agenda Sostenible Figuerenca</title>
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/logo.png" type="image/x-icon">
 </head>
 <body>
+
     <header>
         <div class="logo">
             <img onclick="window.location.href='index.php'" class="foto-logo" src="img/logoblanco.png" alt="Logo">
@@ -23,7 +25,11 @@
             <button>Login</button>
         </div>
     </header>
-
+    <?php if(isset($_GET["ok"])){ ?>
+        <div class="alert alert-success" role="alert">
+          ✅ Usuario registrado correctamente  
+        </div>
+        <?php } ?>
     <div class="login-container">
         <div class="login-box">
             <h2>Iniciar Sesión</h2>
