@@ -6,17 +6,19 @@
     <title>Agenda Sostenible Figuerenca</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <!-- Añadir CSS de Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img href="index.php" class="foto-logo" src="img/logoblanco.png" alt="Logo">
+            <img class="foto-logo" src="img/logoblanco.png" alt="Logo">
         </div>
         <nav>
             <ul>
-                <li><a href="#">Consells</a></li>
-                <li><a href="#">Anuncis</a></li>
-                <li><a href="#">Esdeveniments</a></li>
+                <li><a href="consells.php">Consells</a></li>
+                <li><a href="anuncis.php">Anuncis</a></li>
+                <li><a href="esdeveniments.php">Esdeveniments</a></li>
             </ul>
         </nav>
         <div class="login">
@@ -43,36 +45,87 @@
         </div>
     </div>
 
-    <div class="banner-image">
-    </div>
+    <div class="swiper consellsSlider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" data-title="Consells" data-link="consells.php">
+                <img src="img/lago.jpg" alt="Slider Consells">
+            </div>
+            <div class="swiper-slide" data-title="Anuncis" data-link="anuncis.php">
+                <img src="img/lago2.jpg" alt="Slider Anuncis">
+            </div>
+            <div class="swiper-slide" data-title="Events" data-link="events.php">
+                <img src="img/lago3.jpg" alt="Slider Events">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="slider-title">
+            <div class="title-container">
+                <h1>Consells</h1>
+            </div>
+        </div>
+    </div>  
     
     <div class="events-container">
-        <h2>Agenda Ambiental 2024</h2>
-        <div class="month-events">
-            <h3>Abril</h3>
-            <ul class="events-list">
-                <li>
-                    <div class="event-date">22</div>
-                    <div class="event-info">
-                        <h4>Día de la Tierra</h4>
-                        <p>Desde 1970 se celebra el Día Internacional de la Madre Tierra</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="event-date">24</div>
-                    <div class="event-info">
-                        <h4>Día Mundial para la Concienciación del Ruido</h4>
-                    </div>
-                </li>
-                <li>
-                    <div class="event-date">27</div>
-                    <div class="event-info">
-                        <h4>Día Internacional para la Conservación de los Anfibios</h4>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <h2>Próximos Eventos</h2>
+        <ul class="events-list">
+            <li>
+                <div class="event-date">15</div>
+                <div class="event-info">
+                    <h4>Taller de Compostatge</h4>
+                    <p>Aprèn a fer el teu propi compost casolà i contribueix a reduir els residus orgànics. Taller pràctic amb experts en compostatge.</p>
+                </div>
+            </li>
+            <li>
+                <div class="event-date">22</div>
+                <div class="event-info">
+                    <h4>Neteja del Riu Muga</h4>
+                    <p>Jornada de neteja col·lectiva del riu. Junts podem mantenir net el nostre entorn natural. Material de neteja proporcionat.</p>
+                </div>
+            </li>
+            <li>
+                <div class="event-date">27</div>
+                <div class="event-info">
+                    <h4>Mercat d'Intercanvi</h4>
+                    <p>Porta objectes que ja no utilitzis i intercanvia'ls. Promovem el consum responsable i la reutilització.</p>
+                </div>
+            </li>
+            <li>
+                <div class="event-date">29</div>
+                <div class="event-info">
+                    <h4>Taller d'Hort Urbà</h4>
+                    <p>Descobreix com crear i mantenir el teu propi hort urbà. Aprèn tècniques de cultiu ecològic i sostenible.</p>
+                </div>
+            </li>
+            <li>
+                <div class="event-date">03</div>
+                <div class="event-info">
+                    <h4>Fira de Productes Locals</h4>
+                    <p>Mostra i venda de productes ecològics i de proximitat. Coneix els productors locals i dona suport al consum sostenible.</p>
+                </div>
+            </li>
+        </ul>
     </div>
-    
+
+    <!-- Añadir JS de Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.consellsSlider', {
+            loop: true,
+            autoplay: {
+                delay: 3000, // 3 segundos
+                disableOnInteraction: false, // Continúa el autoplay después de la interacción del usuario
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 </body>
 </html>
