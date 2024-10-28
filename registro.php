@@ -31,11 +31,11 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="nombre">Nom</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="apellidos">Cognoms</label>
-                        <input type="text" id="apellidos" name="apellidos" required>
+                        <input type="text" id="surname" name="surname" required>
                     </div>
                 </div>
                 
