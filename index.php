@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="logo">
-            <img class="foto-logo" src="img/logoblanco.png" alt="Logo">
+            <img href="index.php" class="foto-logo" src="img/logoblanco.png" alt="Logo">
         </div>
         <nav>
             <ul>
@@ -20,7 +20,7 @@
             </ul>
         </nav>
         <div class="login">
-            <button>Login</button>
+            <button onclick="window.location.href='login.php'">Login</button>
         </div>
     </header>
     
@@ -47,13 +47,31 @@
     </div>
     
     <div class="events-container">
-        <h2>Próximos Eventos</h2>
-        <ul class="events-list">
-            <li>Evento 1 - Fecha</li>
-            <li>Evento 2 - Fecha</li>
-            <li>Evento 3 - Fecha</li>
-            <li>Evento 4 - Fecha</li>
-        </ul>
+        <h2>Agenda Ambiental 2024</h2>
+        <div class="month-events">
+            <h3>Abril</h3>
+            <ul class="events-list">
+                <li>
+                    <div class="event-date">22</div>
+                    <div class="event-info">
+                        <h4>Día de la Tierra</h4>
+                        <p>Desde 1970 se celebra el Día Internacional de la Madre Tierra</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="event-date">24</div>
+                    <div class="event-info">
+                        <h4>Día Mundial para la Concienciación del Ruido</h4>
+                    </div>
+                </li>
+                <li>
+                    <div class="event-date">27</div>
+                    <div class="event-info">
+                        <h4>Día Internacional para la Conservación de los Anfibios</h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
     
 </body>
