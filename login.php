@@ -30,6 +30,12 @@
           ✅ Usuario registrado correctamente  
         </div>
         <?php } ?>
+
+        <?php if(isset($_GET["no"])){ ?>
+        <div class="alert alert-danger" role="alert">
+        💀 Usuario no registrat correctament
+        </div>
+        <?php } ?>
     <div class="login-container">
         <div class="login-box">
             <h2>Iniciar Sesión</h2>
