@@ -18,7 +18,7 @@
     <button class="btn btn-primary fw-bold" onclick="window.location.href='index.php'">
         <i class="bi bi-arrow-left me-2"></i>Tornar a l'inici
     </button>
-</div>
+</div>  
 
     <!-- Login Container -->
     <div class="container min-vh-100 d-flex align-items-center justify-content-center">
@@ -56,7 +56,7 @@
                             </div>
                             
                             <div class="text-center">
-                                <a href="#" class="text-success fw-bold text-decoration-none d-block mb-2">Has oblidat la contrasenya?</a>
+                                <a href="contrasenya.php" class="text-success fw-bold text-decoration-none d-block mb-2">Has oblidat la contrasenya?</a>
                                 <p class="mb-0">No tens compte? 
                                     <a href="registro.php" class="text-success fw-bold text-decoration-none">Registra't</a>
                                 </p>
@@ -70,6 +70,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <?php include 'cookie_banner.php'; ?>
+    </body>
 </html>
 

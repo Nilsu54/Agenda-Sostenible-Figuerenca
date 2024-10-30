@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
                 <img src="img/logoblanco.png" height="50" alt="Logo">
@@ -34,34 +34,35 @@
                     <li class="nav-item">
                         <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/adminpanel.php">Admin</a>
+                    </li>
                 </ul>
                 <button class="btn btn-light" onclick="window.location.href='login.php'">Login</button>
             </div>
         </div>
     </nav>
-
-    <!-- Search Container -->
-    <div class="search-container">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="d-flex gap-2">
-                <select class="form-select">
-                    <option>Filtro 1</option>
-                    <option>Filtro 2</option>
-                    <option>Filtro 3</option>
-                </select>
-                <select class="form-select">
-                    <option>Categoría 1</option>
-                    <option>Categoría 2</option>
-                    <option>Categoría 3</option>
-                </select>
-            </div>
-            <div class="d-flex gap-2">
-                <input type="text" class="form-control" placeholder="Buscar...">
-                <button class="btn btn-primary">Buscar</button>
-            </div>
+<!-- Search Container -->
+<div class="search-container">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-4"> <!-- Añadido px-4 para más padding horizontal -->
+        <div class="d-flex gap-3"> <!-- Cambiado gap-2 a gap-3 para más espacio entre selects -->
+            <select class="form-select" style="min-width: 200px;"> <!-- Añadido min-width -->
+                <option>Filtro 1</option>
+                <option>Filtro 2</option>
+                <option>Filtro 3</option>
+            </select>
+            <select class="form-select" style="min-width: 200px;"> <!-- Añadido min-width -->
+                <option>Categoría 1</option>
+                <option>Categoría 2</option>
+                <option>Categoría 3</option>
+            </select>
+        </div>
+        <div class="d-flex gap-3"> <!-- Cambiado gap-2 a gap-3 -->
+            <input type="text" class="form-control" placeholder="Buscar..." style="min-width: 250px;"> <!-- Añadido min-width -->
+            <button class="btn btn-primary">Buscar</button>
         </div>
     </div>
-
+</div>
     <!-- Hero Slider -->
     <div class="container-fluid p-0">
         <div class="swiper anuncisSlider">
@@ -103,22 +104,12 @@
                             <div class="text-muted text-uppercase">Anunci</div>
                         </div>
                         <div class="col-md-7 p-4">
-                            <h4 class="mb-3">Venda de Compostadors</h4>
-                            <p class="mb-3 text-muted">Disponibles compostadors domèstics a preu reduït. Perfectes per començar a fer el teu propi compost. Aprofita aquesta oportunitat única.</p>
-                            <div class="d-flex gap-4">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-star-fill text-warning me-2"></i>
-                                    <span>4.0</span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-chat-fill text-primary me-2"></i>
-                                    <span>12</span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-eye-fill text-secondary me-2"></i>
-                                    <span>234</span>
-                                </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="mb-0">Venda de Compostadors</h4>
+                                <span class="badge bg-success">Públic</span> <!-- Estados: bg-warning (esborrany), bg-success (públic), bg-secondary (caducat), bg-danger (esborrat) -->
                             </div>
+                            <span class="badge bg-primary mb-2">Categoria: Jardí</span>
+                            <p class="mb-0 text-muted">Disponibles compostadors domèstics a preu reduït. Perfectes per començar a fer el teu propi compost. Aprofita aquesta oportunitat única.</p>
                         </div>
                         <div class="col-md-3">
                             <img src="img/lago.jpg" class="img-fluid rounded-end h-100 object-fit-cover" alt="Anunci">
@@ -127,8 +118,7 @@
                 </div>
                 <?php endfor; ?>
             </div>
-
-          
+        </div>
     </div>
 
     <!-- Bootstrap JS -->
@@ -152,5 +142,6 @@
             },
         });
     </script>
+<?php include 'cookie_banner.php'; ?>
 </body>
 </html>

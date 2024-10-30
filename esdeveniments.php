@@ -35,33 +35,35 @@
                     <li class="nav-item">
                         <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/adminpanel.php">Admin</a>
+                    </li>
                 </ul>
                 <button class="btn btn-light" onclick="window.location.href='login.php'">Login</button>
             </div>
         </div>
     </nav>
-
-    <!-- Search Container -->
-    <div class="search-container">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="d-flex gap-2">
-                <select class="form-select">
-                    <option>Filtro 1</option>
-                    <option>Filtro 2</option>
-                    <option>Filtro 3</option>
-                </select>
-                <select class="form-select">
-                    <option>Categoría 1</option>
-                    <option>Categoría 2</option>
-                    <option>Categoría 3</option>
-                </select>
-            </div>
-            <div class="d-flex gap-2">
-                <input type="text" class="form-control" placeholder="Buscar...">
-                <button class="btn btn-primary">Buscar</button>
-            </div>
+<!-- Search Container -->
+<div class="search-container">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-4"> <!-- Añadido px-4 para más padding horizontal -->
+        <div class="d-flex gap-3"> <!-- Cambiado gap-2 a gap-3 para más espacio entre selects -->
+            <select class="form-select" style="min-width: 200px;"> <!-- Añadido min-width -->
+                <option>Filtro 1</option>
+                <option>Filtro 2</option>
+                <option>Filtro 3</option>
+            </select>
+            <select class="form-select" style="min-width: 200px;"> <!-- Añadido min-width -->
+                <option>Categoría 1</option>
+                <option>Categoría 2</option>
+                <option>Categoría 3</option>
+            </select>
+        </div>
+        <div class="d-flex gap-3"> <!-- Cambiado gap-2 a gap-3 -->
+            <input type="text" class="form-control" placeholder="Buscar..." style="min-width: 250px;"> <!-- Añadido min-width -->
+            <button class="btn btn-primary">Buscar</button>
         </div>
     </div>
+</div>
 
     <!-- Hero Slider -->
     <div class="container-fluid p-0">
@@ -151,5 +153,6 @@
             },
         });
     </script>
+<?php include 'cookie_banner.php'; ?>
 </body>
 </html>

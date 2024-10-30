@@ -35,6 +35,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/adminpanel.php">Admin</a>
+                    </li>
                 </ul>
                 <button class="btn btn-light" onclick="window.location.href='login.php'">Login</button>
             </div>
@@ -43,21 +46,21 @@
 
     <!-- Search Container -->
     <div class="search-container">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="d-flex gap-2">
-                <select class="form-select">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+            <div class="d-flex gap-3">
+                <select class="form-select" style="min-width: 200px;">
                     <option>Filtro 1</option>
                     <option>Filtro 2</option>
                     <option>Filtro 3</option>
                 </select>
-                <select class="form-select">
+                <select class="form-select" style="min-width: 200px;">
                     <option>Categoría 1</option>
                     <option>Categoría 2</option>
                     <option>Categoría 3</option>
                 </select>
             </div>
-            <div class="d-flex gap-2">
-                <input type="text" class="form-control" placeholder="Buscar...">
+            <div class="d-flex gap-3">
+                <input type="text" class="form-control" placeholder="Buscar..." style="min-width: 250px;">
                 <button class="btn btn-primary">Buscar</button>
             </div>
         </div>
@@ -67,19 +70,19 @@
     <div class="container-fluid p-0">
         <div class="swiper heroSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide position-relative">
+                <div class="swiper-slide position-relative" onclick="window.location.href='esdeveniments.php'" style="cursor: pointer;">
                     <img src="img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Esdeveniments</h1>
                     </div>
                 </div>
-                <div class="swiper-slide position-relative">
+                <div class="swiper-slide position-relative" onclick="window.location.href='consells.php'" style="cursor: pointer;">
                     <img src="img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Consells</h1>
                     </div>
                 </div>
-                <div class="swiper-slide position-relative">
+                <div class="swiper-slide position-relative" onclick="window.location.href='anuncis.php'" style="cursor: pointer;">
                     <img src="img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Anuncis</h1>
@@ -94,37 +97,41 @@
 
     <!-- Events List -->
     <div class="container-fluid">
-        <div class="bg-white shadow p-4">
-            <h2 class="mb-4">Próximos Eventos</h2>
-            <div class="list-group">
-                <?php for($i = 1; $i <= 5; $i++): ?>
-                <div class="list-group-item border-0 mb-3 p-0 card hover-effect" onclick="window.location.href='esdeveniment.php?id=<?php echo $i; ?>'">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-2 text-center py-3">
-                            <div class="display-4 text-primary fw-bold">15</div>
-                            <div class="text-muted text-uppercase">Març</div>
-                        </div>
-                        <div class="col-md-10 p-4">
-                            <h4 class="mb-3">Taller de Compostatge</h4>
-                            <p class="mb-3 text-muted">Aprèn a fer el teu propi compost casolà i contribueix a reduir els residus orgànics. Taller pràctic amb experts en compostatge.</p>
-                            <div class="d-flex gap-4">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-star-fill text-warning me-2"></i>
-                                    <span>4.0</span>
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="bg-white shadow p-4">
+                    <h2 class="mb-4">Próximos Eventos</h2>
+                    <div class="list-group">
+                        <?php for($i = 1; $i <= 5; $i++): ?>
+                        <div class="list-group-item border-0 mb-3 p-0 card hover-effect" onclick="window.location.href='esdeveniment.php?id=<?php echo $i; ?>'">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-md-2 text-center py-3">
+                                    <div class="display-4 text-primary fw-bold">15</div>
+                                    <div class="text-muted text-uppercase">Març</div>
                                 </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-chat-fill text-primary me-2"></i>
-                                    <span>12</span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-eye-fill text-secondary me-2"></i>
-                                    <span>234</span>
+                                <div class="col-md-10 p-4">
+                                    <h4 class="mb-3">Taller de Compostatge</h4>
+                                    <p class="mb-3 text-muted">Aprèn a fer el teu propi compost casolà i contribueix a reduir els residus orgànics. Taller pràctic amb experts en compostatge.</p>
+                                    <div class="d-flex gap-4">
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-star-fill text-warning me-2"></i>
+                                            <span>4.0</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-chat-fill text-primary me-2"></i>
+                                            <span>12</span>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <i class="bi bi-eye-fill text-secondary me-2"></i>
+                                            <span>234</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <?php endfor; ?>
                     </div>
                 </div>
-                <?php endfor; ?>
             </div>
         </div>
     </div>
@@ -150,5 +157,6 @@
             },
         });
     </script>
+    <?php include 'cookie_banner.php'; ?>
 </body>
 </html>

@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/logo.png" type="image/x-icon">
 </head>
-<body>
-    <!-- Navbar -->
+<body> <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
@@ -35,12 +34,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/adminpanel.php">Admin</a>
+                    </li>
                 </ul>
                 <button class="btn btn-light" onclick="window.location.href='login.php'">Login</button>
             </div>
         </div>
     </nav>
-
     <!-- Main Content -->
     <div class="event-container">
         <div class="container">
@@ -255,5 +256,6 @@
             document.getElementById('rating-text').textContent = `Has seleccionat ${rating} estrelles`;
         }
     </script>
+<?php include 'cookie_banner.php'; ?>
 </body>
 </html>

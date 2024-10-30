@@ -33,34 +33,35 @@
                     <li class="nav-item">
                         <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/adminpanel.php">Admin</a>
+                    </li>
                 </ul>
                 <button class="btn btn-light" onclick="window.location.href='login.php'">Login</button>
             </div>
         </div>
     </nav>
-
-    <!-- Search Container -->
-    <div class="search-container">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="d-flex gap-2">
-                <select class="form-select">
-                    <option>Filtro 1</option>
-                    <option>Filtro 2</option>
-                    <option>Filtro 3</option>
-                </select>
-                <select class="form-select">
-                    <option>Categoría 1</option>
-                    <option>Categoría 2</option>
-                    <option>Categoría 3</option>
-                </select>
-            </div>
-            <div class="d-flex gap-2">
-                <input type="text" class="form-control" placeholder="Buscar...">
-                <button class="btn btn-primary">Buscar</button>
-            </div>
+<!-- Search Container -->
+<div class="search-container">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-4"> <!-- Añadido px-4 para más padding horizontal -->
+        <div class="d-flex gap-3"> <!-- Cambiado gap-2 a gap-3 para más espacio entre selects -->
+            <select class="form-select" style="min-width: 200px;"> <!-- Añadido min-width -->
+                <option>Filtro 1</option>
+                <option>Filtro 2</option>
+                <option>Filtro 3</option>
+            </select>
+            <select class="form-select" style="min-width: 200px;"> <!-- Añadido min-width -->
+                <option>Categoría 1</option>
+                <option>Categoría 2</option>
+                <option>Categoría 3</option>
+            </select>
+        </div>
+        <div class="d-flex gap-3"> <!-- Cambiado gap-2 a gap-3 -->
+            <input type="text" class="form-control" placeholder="Buscar..." style="min-width: 250px;"> <!-- Añadido min-width -->
+            <button class="btn btn-primary">Buscar</button>
         </div>
     </div>
-
+</div>
     <!-- Hero Slider -->
     <div class="container-fluid p-0">
         <div class="swiper consellsSlider">
@@ -102,21 +103,26 @@
                             <div class="text-muted text-uppercase">Consell</div>
                         </div>
                         <div class="col-md-7 p-4">
-                            <h4 class="mb-3">Reducció del Consum d'Aigua</h4>
-                            <p class="mb-3 text-muted">Aprèn com reduir el consum d'aigua a casa amb petits canvis en els teus hàbits diaris. Descobreix consells pràctics i efectius per estalviar aquest recurs valuós.</p>
-                            <div class="d-flex gap-4">
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-star-fill text-warning me-2"></i>
-                                    <span>4.0</span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-chat-fill text-primary me-2"></i>
-                                    <span>12</span>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <i class="bi bi-eye-fill text-secondary me-2"></i>
-                                    <span>234</span>
-                                </div>
+                            <h4 class="mb-2">Reducció del Consum d'Aigua</h4>
+                            <p class="mb-3 text-muted">Aprèn com reduir el consum d'aigua a casa amb petits canvis en els teus hàbits diaris.</p>
+                            
+                            <!-- Etiquetes -->
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-2">#EstalviAigua</span>
+                                <span class="badge bg-info me-2">#SostenibilitatDomèstica</span>
+                                <span class="badge bg-success">#RecursosNaturals</span>
+                            </div>
+
+                            <!-- Preview del text en markdown -->
+                            <div class="text-muted small mb-3">
+                                <i class="bi bi-markdown me-2"></i>
+                                Conté guies pas a pas, infografies i consells pràctics...
+                            </div>
+
+                            <!-- Categoria -->
+                            <div class="d-flex align-items-center text-muted small">
+                                <i class="bi bi-folder me-2"></i>
+                                <span>Categoria: Recursos Naturals</span>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -149,5 +155,6 @@
             },
         });
     </script>
+<?php include 'cookie_banner.php'; ?>
 </body>
 </html>
