@@ -13,7 +13,7 @@ try {
     die('Ha fallat la connexió: ' . $e->getMessage());
 }
 
-$id=2;
+
 if (isset($_POST["username"])){
     $name=$_POST["name"];
     $surname=$_POST["surname"];
@@ -23,9 +23,15 @@ if (isset($_POST["username"])){
     $img="img{$id}.jpg";
     // echo "insert into users values (2,'{$username}',{$password},{$email},1,{$img},{$name},{$surname})";
     // die();
-    $sql->query("insert into users (username,password,email,tipo,img,name,surname) values ('{$username}','{$password}','{$email}',1,'{$img}','{$name}','{$surname}')");
-    move_uploaded_file($_FILES["profile_image"]["tmp_name"], $directory. $current["info"]);
+    try{
+           $sql->query("insert into users (username,password,email,tipo,img,name,surname) values ('{$username}','{$password}','{$email}',1,'{$img}','{$name}','{$surname}')");
+           move_uploaded_file($_FILES["profile_image"]["tmp_name"], $directory. $current["info"]);
     
-    header("location:login.php?ok=1");
+           header("location:login.php?ok=1");
+    }catch (\PDOException $e) {
+        header("location:login.php?no=1");
+    }
+    
+    
      
 }

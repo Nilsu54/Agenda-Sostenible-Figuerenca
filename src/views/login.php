@@ -38,7 +38,7 @@
                             <p class="text-muted">Inicia sessió per continuar</p>
                         </div>
                         
-                        <form action="login_process.php" method="POST">
+                        <form action="index.php?r=loginProcess" method="POST">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="username" name="username" placeholder="Usuari" required>
                                 <label for="username"><i class="bi bi-person-fill me-2"></i>Usuari</label>
@@ -58,7 +58,7 @@
                             <div class="text-center">
                                 <a href="contrasenya.php" class="text-success fw-bold text-decoration-none d-block mb-2">Has oblidat la contrasenya?</a>
                                 <p class="mb-0">No tens compte? 
-                                    <a href="registro.php" class="text-success fw-bold text-decoration-none">Registra't</a>
+                                    <a href="index.php?r=registerUser" class="text-success fw-bold text-decoration-none">Registra't</a>
                                 </p>
                             </div>
                         </form>
