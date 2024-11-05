@@ -9,8 +9,8 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
 </head>
 <body class="overflow-hidden" style="background-color: var(--bs-secondary);">
 <!-- Back Button -->
@@ -33,7 +33,7 @@
                 <div class="card shadow border-0 rounded-4 overflow-hidden">
                     <div class="card-body p-5 bg-white" style="transition: none;">
                         <div class="text-center mb-4">
-                            <img src="img/logo.png" alt="Logo" height="60" class="mb-3">
+                            <img src="/public/img/logo.png" alt="Logo" height="60" class="mb-3">
                             <h2 class="fw-bold">Benvingut/da</h2>
                             <p class="text-muted">Inicia sessió per continuar</p>
                         </div>
@@ -56,7 +56,7 @@
                             </div>
                             
                             <div class="text-center">
-                                <a href="contrasenya.php" class="text-success fw-bold text-decoration-none d-block mb-2">Has oblidat la contrasenya?</a>
+                                <a href="../../contrasenya.php" class="text-success fw-bold text-decoration-none d-block mb-2">Has oblidat la contrasenya?</a>
                                 <p class="mb-0">No tens compte? 
                                     <a href="index.php?r=registerUser" class="text-success fw-bold text-decoration-none">Registra't</a>
                                 </p>

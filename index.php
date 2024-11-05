@@ -11,8 +11,8 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar -->
