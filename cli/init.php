@@ -1,9 +1,8 @@
 <?php
-
-include "./config.php";
-$directory="img/users_pfp/";
+include "../src/config.php";
 
 $db = $config["db"]["name"];
+echo "Creant la base de dades : {$db} \n";
 $dsn = "mysql:dbname={$config['db']['name']};host={$config['db']['host']}";
 
 $user = $config["db"]["user"];
@@ -13,4 +12,3 @@ try {
 } catch (\PDOException $e) {
     die('Ha fallat la connexió: ' . $e->getMessage());
 }
-
