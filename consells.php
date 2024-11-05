@@ -92,41 +92,32 @@
     </div>
 
     <!-- Main Content -->
-    <div class="container-fluid">
-        <div class="bg-white shadow p-4">
+    <div class="container">
+        <div class="bg-white shadow p-4 mx-auto" style="max-width: 1200px;">
             <div class="list-group">
                 <?php for($i = 1; $i <= 5; $i++): ?>
-                <div class="list-group-item border-0 mb-4 p-0 card hover-effect">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-2 text-center py-3">
-                            <div class="display-4 text-primary fw-bold">0<?php echo $i; ?></div>
-                            <div class="text-muted text-uppercase">Consell</div>
+                <div class="list-group-item border-0 mb-3 p-0 card hover-effect">
+                    <div class="row g-0 justify-content-center">
+                        <div class="col-md-2 text-center py-2">
+                            <div class="h2 text-primary fw-bold mb-0">0<?php echo $i; ?></div>
+                            <div class="text-muted small text-uppercase">Consell</div>
                         </div>
-                        <div class="col-md-7 p-4">
-                            <h4 class="mb-2">Reducció del Consum d'Aigua</h4>
-                            <p class="mb-3 text-muted">Aprèn com reduir el consum d'aigua a casa amb petits canvis en els teus hàbits diaris.</p>
+                        <div class="col-md-9 p-3">
+                            <h5 class="mb-1">Reducció del Consum d'Aigua</h5>
+                            <p class="mb-2 text-muted small">Aprèn com reduir el consum d'aigua a casa amb petits canvis en els teus hàbits diaris.</p>
                             
                             <!-- Etiquetes -->
-                            <div class="mb-3">
-                                <span class="badge bg-primary me-2">#EstalviAigua</span>
-                                <span class="badge bg-info me-2">#SostenibilitatDomèstica</span>
+                            <div class="mb-2">
+                                <span class="badge bg-primary me-1">#EstalviAigua</span>
+                                <span class="badge bg-info me-1">#SostenibilitatDomèstica</span>
                                 <span class="badge bg-success">#RecursosNaturals</span>
-                            </div>
-
-                            <!-- Preview del text en markdown -->
-                            <div class="text-muted small mb-3">
-                                <i class="bi bi-markdown me-2"></i>
-                                Conté guies pas a pas, infografies i consells pràctics...
                             </div>
 
                             <!-- Categoria -->
                             <div class="d-flex align-items-center text-muted small">
-                                <i class="bi bi-folder me-2"></i>
+                                <i class="bi bi-folder me-1"></i>
                                 <span>Categoria: Recursos Naturals</span>
                             </div>
-                        </div>
-                        <div class="col-md-3">
-                            <img src="img/lago.jpg" class="img-fluid rounded-end h-100 object-fit-cover" alt="Consell">
                         </div>
                     </div>
                 </div>
