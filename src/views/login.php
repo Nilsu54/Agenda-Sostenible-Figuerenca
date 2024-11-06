@@ -58,8 +58,7 @@
                             <div class="text-center">
                                 <a href="../../contrasenya.php" class="text-success fw-bold text-decoration-none d-block mb-2">Has oblidat la contrasenya?</a>
                                 <p class="mb-0">No tens compte? 
-                                    <a href="index.php?r=registerUser" class="text-success fw-bold text-decoration-none">Registra't</a>
-                                </p>
+                                <a href="../views/registerForm.php" class="text-success fw-bold text-decoration-none">Registra't</a>                                </p>
                             </div>
                         </form>
                     </div>

@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
+    <link rel="icon" href="../public/img/logo.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
-                <img src="img/logoblanco.png" height="50" alt="Logo">
+                <img src="../public/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -71,19 +71,19 @@
         <div class="swiper heroSwiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide position-relative" onclick="window.location.href='esdeveniments.php'" style="cursor: pointer;">
-                    <img src="img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                    <img src="../public/img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Esdeveniments</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative" onclick="window.location.href='consells.php'" style="cursor: pointer;">
-                    <img src="img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                    <img src="../public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Consells</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative" onclick="window.location.href='anuncis.php'" style="cursor: pointer;">
-                    <img src="img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                    <img src="../public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Anuncis</h1>
                     </div>
