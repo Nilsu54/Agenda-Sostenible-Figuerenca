@@ -39,7 +39,7 @@
                         <a class="nav-link" href="/admin/adminpanel.php">Admin</a>
                     </li>
                 </ul>
-                <button class="btn btn-light" onclick="window.location.href='login.php'">Login</button>
+                <button class="btn btn-light" onclick="window.location.href='../src/views/login.php'">Login</button>
             </div>
         </div>
     </nav>

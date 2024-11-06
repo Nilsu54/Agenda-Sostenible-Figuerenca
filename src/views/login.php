@@ -15,7 +15,7 @@
 <body class="overflow-hidden" style="background-color: var(--bs-secondary);">
 <!-- Back Button -->
 <div class="position-fixed top-0 start-0 p-4">
-    <button class="btn btn-primary fw-bold" onclick="window.location.href='index.php'">
+    <button class="btn btn-primary fw-bold" onclick="window.location.href='/index.php'">
         <i class="bi bi-arrow-left me-2"></i>Tornar a l'inici
     </button>
 </div>  
@@ -56,7 +56,7 @@
                             </div>
                             
                             <div class="text-center">
-                                <a href="../../contrasenya.php" class="text-success fw-bold text-decoration-none d-block mb-2">Has oblidat la contrasenya?</a>
+                                <a href="/src/views/contrasenya.php" class="text-success fw-bold text-decoration-none d-block mb-2">Has oblidat la contrasenya?</a>
                                 <p class="mb-0">No tens compte? 
                                 <a href="../views/registerForm.php" class="text-success fw-bold text-decoration-none">Registra't</a>                                </p>
                             </div>

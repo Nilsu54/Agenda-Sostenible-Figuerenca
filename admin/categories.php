@@ -8,15 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="icon" href="../public/img/logo.png" type="image/x-icon">
 </head>
 <body>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="../index.php">
-                <img src="../img/logoblanco.png" height="50" alt="Logo">
+                <img src="../public/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -33,20 +33,21 @@
                         <a class="nav-link" href="../esdeveniments.php">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Admin</a>
+                        <a class="nav-link active" href="categories.php">Categories</a>
                     </li>
                 </ul>
-                <button class="btn btn-light" onclick="window.location.href='../login.php'">Login</button>
+                <button class="btn btn-light" onclick="window.location.href='../src/views/login.php'">Login</button>
             </div>
         </div>
     </nav>
+
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
             <div class="col-md-3 col-lg-2 px-0 admin-sidebar">
                 <div class="d-flex flex-column">
                     <div class="p-3 text-white text-center">
-                        <img src="../img/logoblanco.png" height="50" alt="Logo">
+                        <img src="../public/img/logoblanco.png" height="50" alt="Logo">
                         <h5 class="mt-2">Panel d'Administració</h5>
                     </div>
                     <nav class="nav flex-column">
@@ -77,42 +78,37 @@
 
             <!-- Main Content -->
             <div class="col-md-9 col-lg-10 px-md-4">
-                <div class="d-flex justify-content-between pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Gestió de Categories</h1>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#novaCategoriaModal">
-                        <i class="bi bi-plus-circle"></i> Nova Categoria
-                    </button>
-                </div>
+                <h1 class="h2">Gestió de Categories</h1>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#novaCategoriaModal">
+                    Afegir Nova Categoria
+                </button>
 
-                <!-- Taula de Categories -->
+                <!-- Categories Table -->
+                <h3 class="mt-4">Categories Existents</h3>
                 <div class="table-responsive">
-                    <table class="table table-striped admin-table">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>
                                 <th>Nom</th>
                                 <th>Descripció</th>
-                                <th>Elements</th>
-                                <th>Estat</th>
+                                <th>Color</th>
+                                <th>Icona</th>
                                 <th>Accions</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- Aquí se mostraran les categories -->
                             <tr>
-                                <td>1</td>
                                 <td>Reciclatge</td>
                                 <td>Tot sobre reciclatge i gestió de residus</td>
-                                <td>15</td>
-                                <td><span class="badge bg-success">Activa</span></td>
+                                <td><span class="badge" style="background-color: #28a745;">#28a745</span></td>
+                                <td><i class="bi bi-recycle"></i></td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editarCategoriaModal">
-                                        <i class="bi bi-pencil"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
+                                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editarCategoriaModal"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
+                            <!-- Més categories aquí -->
                         </tbody>
                     </table>
                 </div>
@@ -121,12 +117,12 @@
     </div>
 
     <!-- Modal Nova Categoria -->
-    <div class="modal fade admin-modal" id="novaCategoriaModal">
+    <div class="modal fade" id="novaCategoriaModal" tabindex="-1" aria-labelledby="novaCategoriaModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Nova Categoria</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" id="novaCategoriaModalLabel">Nova Categoria</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -162,12 +158,12 @@
     </div>
 
     <!-- Modal Editar Categoria -->
-    <div class="modal fade admin-modal" id="editarCategoriaModal">
+    <div class="modal fade" id="editarCategoriaModal" tabindex="-1" aria-labelledby="editarCategoriaModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Editar Categoria</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" id="editarCategoriaModalLabel">Editar Categoria</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form>

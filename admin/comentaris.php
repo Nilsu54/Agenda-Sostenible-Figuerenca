@@ -8,15 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="icon" href="../public/img/logo.png" type="image/x-icon">
 </head>
 <body>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="../index.php">
-                <img src="../img/logoblanco.png" height="50" alt="Logo">
+                <img src="../public/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -33,20 +33,21 @@
                         <a class="nav-link" href="../esdeveniments.php">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Admin</a>
+                        <a class="nav-link active" href="comentaris.php">Comentaris</a>
                     </li>
                 </ul>
-                <button class="btn btn-light" onclick="window.location.href='../login.php'">Login</button>
+                <button class="btn btn-light" onclick="window.location.href='../src/views/login.php'">Login</button>
             </div>
         </div>
     </nav>
+
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
             <div class="col-md-3 col-lg-2 px-0 admin-sidebar">
                 <div class="d-flex flex-column">
                     <div class="p-3 text-white text-center">
-                        <img src="../img/logoblanco.png" height="50" alt="Logo">
+                        <img src="../public/img/logoblanco.png" height="50" alt="Logo">
                         <h5 class="mt-2">Panel d'Administració</h5>
                     </div>
                     <nav class="nav flex-column">

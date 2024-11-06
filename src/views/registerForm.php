@@ -16,7 +16,7 @@
    
 <!-- Back Button -->
 <div class="position-fixed top-0 start-0 p-4">
-    <button class="btn btn-primary fw-bold" onclick="window.location.href='index.php'">
+    <button class="btn btn-primary fw-bold" onclick="window.location.href='login.php'">
         <i class="bi bi-arrow-left me-2"></i>Tornar a l'inici
     </button>
 </div>
@@ -24,7 +24,7 @@
 <!-- Register Container -->
 <div class="container min-vh-100 d-flex align-items-center justify-content-center">
     <div class="row w-100 justify-content-center p-4" style="background-color: var(--bs-secondary);">
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-8 col-lg-6">
             <div class="card shadow border-0 rounded-4 overflow-hidden">
                 <div class="card-body p-5 bg-white">
                     <div class="text-center mb-4">
@@ -34,14 +34,19 @@
                     </div>
                     
                     <form action="index.php?r=storeUser" method="POST" enctype="multipart/form-data">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Nom" required>
-                            <label for="name"><i class="bi bi-person-fill me-2"></i>Nom</label>
-                        </div>
-                        
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="surname" name="surname" placeholder="Cognoms" required>
-                            <label for="surname"><i class="bi bi-person-fill me-2"></i>Cognoms</label>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Nom" required>
+                                    <label for="name"><i class="bi bi-person-fill me-2"></i>Nom</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="surname" name="surname" placeholder="Cognoms" required>
+                                    <label for="surname"><i class="bi bi-person-fill me-2"></i>Cognoms</label>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-floating mb-3">
@@ -54,14 +59,19 @@
                             <label for="email"><i class="bi bi-envelope-fill me-2"></i>Email</label>
                         </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Contrasenya" required>
-                            <label for="password"><i class="bi bi-lock-fill me-2"></i>Contrasenya</label>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirma la contrasenya" required>
-                            <label for="confirm_password"><i class="bi bi-lock-fill me-2"></i>Confirma la contrasenya</label>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Contrasenya" required>
+                                    <label for="password"><i class="bi bi-lock-fill me-2"></i>Contrasenya</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirma la contrasenya" required>
+                                    <label for="confirm_password"><i class="bi bi-lock-fill me-2"></i>Confirma la contrasenya</label>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="mt-2">

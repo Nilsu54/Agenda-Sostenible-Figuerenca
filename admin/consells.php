@@ -8,15 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <link rel="icon" href="../public/img/logo.png" type="image/x-icon">
 </head>
 <body>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="../index.php">
-                <img src="../img/logoblanco.png" height="50" alt="Logo">
+                <img src="../public/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -24,29 +24,30 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../consells.php">Consells</a>
+                        <a class="nav-link active" href="consells.php">Consells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../anuncis.php">Anuncis</a>
+                        <a class="nav-link" href="anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Admin</a>
+                        <a class="nav-link" href="comentaris.php">Comentaris</a>
                     </li>
                 </ul>
-                <button class="btn btn-light" onclick="window.location.href='../login.php'">Login</button>
+                <button class="btn btn-light" onclick="window.location.href='../src/views/login.php'">Login</button>
             </div>
         </div>
     </nav>
+
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar -->
             <div class="col-md-3 col-lg-2 px-0 admin-sidebar">
                 <div class="d-flex flex-column">
                     <div class="p-3 text-white text-center">
-                        <img src="../img/logoblanco.png" height="50" alt="Logo">
+                        <img src="../public/img/logoblanco.png" height="50" alt="Logo">
                         <h5 class="mt-2">Panel d'Administració</h5>
                     </div>
                     <nav class="nav flex-column">
@@ -75,24 +76,17 @@
                 </div>
             </div>
 
-            <!-- Contingut Principal -->
+            <!-- Main Content -->
             <div class="col-md-9 col-lg-10 px-md-4">
-                <div class="d-flex justify-content-between pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Gestió de Consells</h1>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nouConsellModal">
-                        <i class="bi bi-plus-circle"></i> Nou Consell
-                    </button>
-                </div>
-
-                <!-- Taula de Consells -->
-                <div class="table-responsive">
+                <h1 class="h2">Consells</h1>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nouConsellModal">Nou Consell</button>
+                <div class="table-responsive mt-3">
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Títol</th>
-                                <th>Categoria</th>
-                                <th>Data Publicació</th>
+                                <th>Data</th>
                                 <th>Etiquetes</th>
                                 <th>Estat</th>
                                 <th>Accions</th>
@@ -101,8 +95,7 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Reducció del Consum d'Aigua</td>
-                                <td>Recursos Naturals</td>
+                                <td>Estalvi d'Aigua</td>
                                 <td>15/03/2024</td>
                                 <td>
                                     <span class="badge bg-primary">#EstalviAigua</span>
@@ -114,6 +107,7 @@
                                     <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
+                            <!-- Más consells... -->
                         </tbody>
                     </table>
                 </div>
