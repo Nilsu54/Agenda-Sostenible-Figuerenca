@@ -136,19 +136,18 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Location Section -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="mb-3"><i class="bi bi-geo-alt-fill"></i> Ubicació</h5>
-                        <div class="mb-3">
-                            <small class="text-muted">
-                                Latitud: 42.2668° N | Longitud: 2.9580° E
-                            </small>
-                        </div>
-                        <div id="map" class="rounded-3" style="height: 400px;"></div>
-                    </div>
-                </div>
+<!-- Location Section -->
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="mb-3 text-danger"><i class="bi bi-geo-alt-fill"></i> Ubicación</h5>
+        <div class="mb-3">
+            <small class="text-danger">
+                Latitud: 42.2668° N | Longitud: 2.9580° E
+            </small>
+        </div>
+        <div id="map" class="rounded-3" style="height: 400px;"></div>
+    </div>
+</div>
 
                 <!-- Rating Widget -->
                 <div class="card">
@@ -203,6 +202,7 @@
             iconSize: [30, 30],
             iconAnchor: [15, 30]
         });
+   
 
         L.marker([42.2668, 2.9580], {icon: customIcon}).addTo(map)
             .bindPopup(`

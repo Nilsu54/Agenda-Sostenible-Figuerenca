@@ -52,7 +52,10 @@ body {
     border-radius: 0;
     padding: 0;
 }
-
+.custom-marker i {
+    color: red;  /* Aplica el color rojo al icono */
+    font-size: 40px;  /* Ajusta el tamaño del icono */
+}
 /* Cards */
 .card {
     border: none;
@@ -98,6 +101,23 @@ body {
 .form-control:focus {
     border-color: var(--bs-primary);
     box-shadow: 0 0 0 0.25rem rgba(43,104,46,0.25);
+}
+/* Estilos para la imagen de perfil en el formulario */
+.image-cropper-large {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.image-cropper-large img {
+    width: 100%;
+    height: auto;
 }
 
 /* Estrellas y ratings */

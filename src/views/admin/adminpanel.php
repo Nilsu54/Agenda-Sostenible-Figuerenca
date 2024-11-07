@@ -53,7 +53,7 @@
                         <h5 class="mt-2">Panel d'Administració</h5>
                     </div>
                     <nav class="nav flex-column">
-                        <a class="nav-link active" href="index.php">
+                        <a class="nav-link active" href="">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
                         <a class="nav-link" href="esdeveniments.php">

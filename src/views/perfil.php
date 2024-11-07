@@ -48,11 +48,17 @@
 
     <!-- Profile Container -->
     <div class="container mt-5 pt-5">
-        <h2 class="text-center mb-4">Perfil de Usuario</h2>
+       
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Información Personal</h5>
-                <form id="profileForm">
+                <!-- Mostrar la imagen de perfil actual -->
+                <div class="text-center mb-4">
+                    <div class="image-cropper-large">
+                        <img id="currentProfileImage" src="/public/img/Dan Franklin.jpg" alt="foto de perfil actual">
+                    </div>
+                </div>
+                <h5 class="card-title">Información del Perfil</h5>
+                <form id="profileForm" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="firstName" class="form-label">Nom</label>
                         <input type="text" class="form-control" id="firstName" value="Dan">
@@ -66,12 +72,12 @@
                         <input type="text" class="form-control" id="username" value="danfranklin">
                     </div>
                     <div class="mb-3">
-                        <label for="profileImage" class="form-label">Imatge de perfil</label>
-                        <input type="text" class="form-control" id="profileImage" value="/public/img/Dan Franklin.jpg">
-                    </div>
-                    <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" value="dan@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="newProfileImage" class="form-label">Cambiar imatge de perfil</label>
+                        <input type="file" class="form-control" id="newProfileImage" accept="image/*" onchange="previewImage(event)">
                     </div>
                     <button type="button" class="btn btn-primary" onclick="saveProfile()">Guardar Cambios</button>
                 </form>
@@ -88,6 +94,17 @@
             // Aquí puedes agregar la lógica para guardar los cambios
             alert('Configuración guardada!');
         }
+
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('currentProfileImage').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
     </script>
 </body>
-</html> 
+</html>

@@ -16,7 +16,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
                 <img src="/public/img/logoblanco.png" height="50" alt="Logo">
@@ -36,22 +36,19 @@
                         <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin\adminpanel.php">Admin</a>
+                        <a class="nav-link" href="admin/adminpanel.php">Admin</a>
                     </li>
                 </ul>
-                
                 <div class="d-flex align-items-center">
                     <a href="perfil.php" class="image-cropper">
                         <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                     </a>
                     <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
                 </div>
-            </div>
         </div>
     </nav>
-
     <!-- Search Container -->
-    <div class="search-container mt-5">
+    <div class="search-container">
         <div class="container-fluid d-flex justify-content-between align-items-center px-4">
             <div class="d-flex gap-3">
                 <select class="form-select" style="min-width: 200px;">

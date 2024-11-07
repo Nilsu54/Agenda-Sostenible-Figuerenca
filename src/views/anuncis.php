@@ -62,6 +62,7 @@
                     <option>Categoría 2</option>
                     <option>Categoría 3</option>
                 </select>
+                <button class="btn btn-primary">Crear+ </button>
             </div>
             <div class="d-flex gap-3">
                 <input type="text" class="form-control" placeholder="Buscar..." style="min-width: 250px;">
