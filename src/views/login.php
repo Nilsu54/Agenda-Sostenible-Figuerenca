@@ -15,7 +15,7 @@
 <body class="overflow-hidden" style="background-color: var(--bs-secondary);">
 <!-- Back Button -->
 <div class="position-fixed top-0 start-0 p-4">
-    <button class="btn btn-primary fw-bold" onclick="window.location.href='/index.php'">
+    <button class="btn btn-primary fw-bold" onclick="window.location.href='/src/views/index.php'">
         <i class="bi bi-arrow-left me-2"></i>Tornar a l'inici
     </button>
 </div>  

@@ -36,8 +36,10 @@
                         <a class="nav-link active" href="">Admin</a>
                     </li>
                 </ul>
-                <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
-            </div>
+                <a href="/src/views/perfil.php" class="image-cropper">
+                    <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                </a>
+             </div>
         </div>
     </nav>
 

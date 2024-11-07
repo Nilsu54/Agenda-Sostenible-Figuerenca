@@ -333,3 +333,19 @@ body.overflow-hidden {
     color: #dc3545 !important;
     background-color: transparent !important;
 }
+
+.image-cropper {
+    width: 50px; /* Tamaño del contenedor */
+    height: 50px; /* Tamaño del contenedor */
+    overflow: hidden;
+    border-radius: 50%; /* Mantiene el contenedor redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid lightgreen; /* Borde verde claro */
+}
+
+.profile-pic {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}

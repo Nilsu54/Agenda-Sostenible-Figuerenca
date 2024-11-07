@@ -16,7 +16,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
                 <img src="/public/img/logoblanco.png" height="50" alt="Logo">
@@ -39,13 +39,19 @@
                         <a class="nav-link" href="admin\adminpanel.php">Admin</a>
                     </li>
                 </ul>
-                <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
+                
+                <div class="d-flex align-items-center">
+                    <a href="perfil.php" class="image-cropper">
+                        <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                    </a>
+                    <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Search Container -->
-    <div class="search-container">
+    <div class="search-container mt-5">
         <div class="container-fluid d-flex justify-content-between align-items-center px-4">
             <div class="d-flex gap-3">
                 <select class="form-select" style="min-width: 200px;">
@@ -96,11 +102,11 @@
     </div>
 
     <!-- Events List -->
-    <div class="container-fluid">
+    <div class="container-fluid my-5">
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-8">
-                <div class="bg-white shadow p-4">
-                    <h2 class="mb-4">Próximos Eventos</h2>
+                <div class="bg-light shadow p-4 rounded">
+                    <h2 class="mb-4 text-center">Próximos Eventos</h2>
                     <div class="list-group">
                         <?php for($i = 1; $i <= 5; $i++): ?>
                         <div class="list-group-item border-0 mb-3 p-0 card hover-effect" onclick="window.location.href='esdeveniment.php?id=<?php echo $i; ?>'">
