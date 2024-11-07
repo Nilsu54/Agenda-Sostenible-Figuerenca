@@ -47,7 +47,6 @@
                 </div>
         </div>
     </nav>
-
     <!-- Search Container -->
     <div class="search-container">
         <div class="container-fluid d-flex justify-content-between align-items-center px-4">
