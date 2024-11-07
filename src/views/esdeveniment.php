@@ -35,7 +35,7 @@
                         <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/adminpanel.php">Admin</a>
+                        <a class="nav-link" href="admin/adminpanel.php">Admin</a>
                     </li>
                 </ul>
                 <button class="btn btn-light" onclick="window.location.href='login.php'">Login</button>
