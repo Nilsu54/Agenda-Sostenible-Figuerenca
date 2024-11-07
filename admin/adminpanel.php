@@ -15,7 +15,7 @@
     <!-- Navbar --> 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
-            <a class="navbar-brand" href="../index.php">
+            <a class="navbar-brand" href="../src/views/index.php">
                 <img src="../public/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -24,13 +24,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../consells.php">Consells</a>
+                        <a class="nav-link" href="../src/views/consells.php">Consells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../anuncis.php">Anuncis</a>
+                        <a class="nav-link" href="../src/views/anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link" href="../src/views/esdeveniments.php">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="">Admin</a>

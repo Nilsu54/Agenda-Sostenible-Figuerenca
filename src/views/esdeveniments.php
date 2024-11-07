@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consells - Agenda Sostenible Figuerenca</title>
+    <title>Esdeveniments - Agenda Sostenible Figuerenca</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -33,13 +33,13 @@
                         <a class="nav-link" href="anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link active" href="esdeveniments.php">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/adminpanel.php">Admin</a>
                     </li>
                 </ul>
-                <button class="btn btn-light" onclick="window.location.href='../src/views/login.php'">Login</button>
+                <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
             </div>
         </div>
     </nav>
@@ -68,24 +68,24 @@
 
     <!-- Hero Slider -->
     <div class="container-fluid p-0">
-        <div class="swiper consellsSlider">
+        <div class="swiper esdevenimentsSlider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide position-relative">
                     <img src="/public/img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                        <h1 class="display-4">Consells Ambientals</h1>
+                        <h1 class="display-4">Esdeveniments Destacats</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative">
                     <img src="/public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                        <h1 class="display-4">Reducció de Residus</h1>
+                        <h1 class="display-4">Tallers i Activitats</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative">
                     <img src="/public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                        <h1 class="display-4">Estalvi Energètic</h1>
+                        <h1 class="display-4">Properes Dates</h1>
                     </div>
                 </div>
             </div>
@@ -96,32 +96,36 @@
     </div>
 
     <!-- Main Content -->
-    <div class="container">
-        <div class="bg-white shadow p-4 mx-auto" style="max-width: 1200px;">
+    <div class="container-fluid">
+        <div class="bg-white shadow p-4">
             <div class="list-group">
                 <?php for($i = 1; $i <= 5; $i++): ?>
-                <div class="list-group-item border-0 mb-3 p-0 card hover-effect">
-                    <div class="row g-0 justify-content-center">
-                        <div class="col-md-2 text-center py-2">
-                            <div class="h2 text-primary fw-bold mb-0">0<?php echo $i; ?></div>
-                            <div class="text-muted small text-uppercase">Consell</div>
+                <div class="list-group-item border-0 mb-4 p-0 card hover-effect" onclick="window.location.href='esdeveniment.php?id=<?php echo $i; ?>'">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-md-2 text-center py-3">
+                            <div class="display-4 text-primary fw-bold">15</div>
+                            <div class="text-muted text-uppercase">Març</div>
                         </div>
-                        <div class="col-md-9 p-3">
-                            <h5 class="mb-1">Reducció del Consum d'Aigua</h5>
-                            <p class="mb-2 text-muted small">Aprèn com reduir el consum d'aigua a casa amb petits canvis en els teus hàbits diaris.</p>
-                            
-                            <!-- Etiquetes -->
-                            <div class="mb-2">
-                                <span class="badge bg-primary me-1">#EstalviAigua</span>
-                                <span class="badge bg-info me-1">#SostenibilitatDomèstica</span>
-                                <span class="badge bg-success">#RecursosNaturals</span>
+                        <div class="col-md-7 p-4">
+                            <h4 class="mb-3">Taller de Compostatge</h4>
+                            <p class="mb-3 text-muted">Aprèn a fer el teu propi compost casolà i contribueix a reduir els residus orgànics. Taller pràctic amb experts en compostatge.</p>
+                            <div class="d-flex gap-4">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-star-fill text-warning me-2"></i>
+                                    <span>4.0</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-chat-fill text-primary me-2"></i>
+                                    <span>12</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-eye-fill text-secondary me-2"></i>
+                                    <span>234</span>
+                                </div>
                             </div>
-
-                            <!-- Categoria -->
-                            <div class="d-flex align-items-center text-muted small">
-                                <i class="bi bi-folder me-1"></i>
-                                <span>Categoria: Recursos Naturals</span>
-                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="/public/img/lago.jpg" class="img-fluid rounded-end h-100 object-fit-cover" alt="Esdeveniment">
                         </div>
                     </div>
                 </div>
@@ -130,11 +134,11 @@
         </div>
     </div>
 
-    <!-- Bootstrap & Swiper JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const swiper = new Swiper('.consellsSlider', {
+        const swiper = new Swiper('.esdevenimentsSlider', {
             loop: true,
             autoplay: {
                 delay: 3000,
@@ -150,6 +154,6 @@
             },
         });
     </script>
-    <?php include 'cookie_banner.php'; ?>
+<?php include 'cookie_banner.php'; ?>
 </body>
 </html>

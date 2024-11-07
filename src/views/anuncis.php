@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda Sostenible Figuerenca</title>
+    <title>Anuncis - Agenda Sostenible Figuerenca</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="icon" href="../public/img/logo.png" type="image/x-icon">
+    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
-                <img src="../public/img/logoblanco.png" height="50" alt="Logo">
+                <img src="/public/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -30,7 +30,7 @@
                         <a class="nav-link" href="consells.php">Consells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="anuncis.php">Anuncis</a>
+                        <a class="nav-link active" href="anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
@@ -39,7 +39,7 @@
                         <a class="nav-link" href="/admin/adminpanel.php">Admin</a>
                     </li>
                 </ul>
-                <button class="btn btn-light" onclick="window.location.href='../src/views/login.php'">Login</button>
+                <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
             </div>
         </div>
     </nav>
@@ -68,24 +68,24 @@
 
     <!-- Hero Slider -->
     <div class="container-fluid p-0">
-        <div class="swiper heroSwiper">
+        <div class="swiper anuncisSlider">
             <div class="swiper-wrapper">
-                <div class="swiper-slide position-relative" onclick="window.location.href='esdeveniments.php'" style="cursor: pointer;">
-                    <img src="../public/img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                <div class="swiper-slide position-relative">
+                    <img src="/public/img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                        <h1 class="display-4">Esdeveniments</h1>
+                        <h1 class="display-4">Anuncis Destacats</h1>
                     </div>
                 </div>
-                <div class="swiper-slide position-relative" onclick="window.location.href='consells.php'" style="cursor: pointer;">
-                    <img src="../public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                <div class="swiper-slide position-relative">
+                    <img src="/public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                        <h1 class="display-4">Consells</h1>
+                        <h1 class="display-4">Compra i Venda</h1>
                     </div>
                 </div>
-                <div class="swiper-slide position-relative" onclick="window.location.href='anuncis.php'" style="cursor: pointer;">
-                    <img src="../public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                <div class="swiper-slide position-relative">
+                    <img src="/public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                        <h1 class="display-4">Anuncis</h1>
+                        <h1 class="display-4">Intercanvis</h1>
                     </div>
                 </div>
             </div>
@@ -95,43 +95,31 @@
         </div>
     </div>
 
-    <!-- Events List -->
+    <!-- Main Content -->
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-8">
-                <div class="bg-white shadow p-4">
-                    <h2 class="mb-4">Próximos Eventos</h2>
-                    <div class="list-group">
-                        <?php for($i = 1; $i <= 5; $i++): ?>
-                        <div class="list-group-item border-0 mb-3 p-0 card hover-effect" onclick="window.location.href='esdeveniment.php?id=<?php echo $i; ?>'">
-                            <div class="row g-0 align-items-center">
-                                <div class="col-md-2 text-center py-3">
-                                    <div class="display-4 text-primary fw-bold">15</div>
-                                    <div class="text-muted text-uppercase">Març</div>
-                                </div>
-                                <div class="col-md-10 p-4">
-                                    <h4 class="mb-3">Taller de Compostatge</h4>
-                                    <p class="mb-3 text-muted">Aprèn a fer el teu propi compost casolà i contribueix a reduir els residus orgànics. Taller pràctic amb experts en compostatge.</p>
-                                    <div class="d-flex gap-4">
-                                        <div class="d-flex align-items-center">
-                                            <i class="bi bi-star-fill text-warning me-2"></i>
-                                            <span>4.0</span>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <i class="bi bi-chat-fill text-primary me-2"></i>
-                                            <span>12</span>
-                                        </div>
-                                        <div class="d-flex align-items-center">
-                                            <i class="bi bi-eye-fill text-secondary me-2"></i>
-                                            <span>234</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        <div class="bg-white shadow p-4">
+            <div class="list-group">
+                <?php for($i = 1; $i <= 5; $i++): ?>
+                <div class="list-group-item border-0 mb-4 p-0 card hover-effect">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-md-2 text-center py-3">
+                            <div class="display-4 text-primary fw-bold">0<?php echo $i; ?></div>
+                            <div class="text-muted text-uppercase">Anunci</div>
                         </div>
-                        <?php endfor; ?>
+                        <div class="col-md-7 p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="mb-0">Venda de Compostadors</h4>
+                                <span class="badge bg-success">Públic</span>
+                            </div>
+                            <span class="badge bg-primary mb-2">Categoria: Jardí</span>
+                            <p class="mb-0 text-muted">Disponibles compostadors domèstics a preu reduït. Perfectes per començar a fer el teu propi compost. Aprofita aquesta oportunitat única.</p>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="/public/img/lago.jpg" class="img-fluid rounded-end h-100 object-fit-cover" alt="Anunci">
+                        </div>
                     </div>
                 </div>
+                <?php endfor; ?>
             </div>
         </div>
     </div>
@@ -141,7 +129,7 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const swiper = new Swiper('.heroSwiper', {
+        const swiper = new Swiper('.anuncisSlider', {
             loop: true,
             autoplay: {
                 delay: 3000,
