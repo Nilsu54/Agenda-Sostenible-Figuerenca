@@ -42,10 +42,12 @@ else if($r=="loginProcess"){
     $response=loginAction($request,$response,$container);
 }
 else if($r=="dashboard"){
-    include "../src/controllers/dashboard.php";
-    $response=adminauth($request,$response,$container,"dashboard");
+    include "../src/controllers/dashboardController.php";
+    $response=adminauth($request,$response,$container,"dashboardController");
 }
-
-$response->response();
+else if($r=="adminUsers"){
+    include "../src/controllers/adminUsersController.php";
+    $response=adminauth($request,$response,$container,"adminUsersController");
+}
 
 $response ->response();

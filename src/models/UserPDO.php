@@ -25,13 +25,15 @@ class UserPDO
 
     //listat per al dashboard d'admin
     public function list(){
-        $query="select id, username, email, role, creation_date from users;";
+        $query="select id, name, username, email, role, creation_date from users;";
         $users=[];
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $user){
             $users[$user["id"]]=$user;
         }
         return $users;
     }
+
+
     //funcio que utiliza l'usuari normal per editar el seu perfil i les seves dades
     public function edit($name,$email,$img,$password,$id){
         $pass=password_hash($password,PASSWORD_BCRYPT);
