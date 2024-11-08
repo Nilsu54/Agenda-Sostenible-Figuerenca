@@ -52,7 +52,10 @@ body {
     border-radius: 0;
     padding: 0;
 }
-
+.custom-marker i {
+    color: red;  /* Aplica el color rojo al icono */
+    font-size: 40px;  /* Ajusta el tamaño del icono */
+}
 /* Cards */
 .card {
     border: none;
@@ -98,6 +101,23 @@ body {
 .form-control:focus {
     border-color: var(--bs-primary);
     box-shadow: 0 0 0 0.25rem rgba(43,104,46,0.25);
+}
+/* Estilos para la imagen de perfil en el formulario */
+.image-cropper-large {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.image-cropper-large img {
+    width: 100%;
+    height: auto;
 }
 
 /* Estrellas y ratings */
@@ -219,4 +239,133 @@ body.overflow-hidden {
     overflow: hidden;
     height: 100vh;
     padding: 0;
+}
+
+.cookie-banner {
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .cookie-banner .container-fluid {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Admin Panel Styles */
+.admin-sidebar {
+    min-height: 100vh;
+    background-color: #212529;
+}
+
+.admin-sidebar .nav-link {
+    color: #fff !important;
+    padding: 0.5rem 1rem;
+    border: none;
+    margin: 0;
+    border-radius: 0;
+}
+
+.admin-sidebar .nav-link:hover {
+    background-color: #343a40;
+    color: #fff !important;
+    transform: none;
+}
+
+.admin-sidebar .nav-link.active {
+    background-color: #0d6efd;
+}
+
+/* Admin Content Styles */
+.admin-content {
+    background-color: #f8f9fa;
+}
+
+.admin-card {
+    transition: none;
+}
+
+.admin-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Admin Tables */
+.admin-table {
+    background-color: #fff;
+    border-radius: 0.25rem;
+}
+
+/* Admin Modals */
+.admin-modal .modal-content {
+    border-radius: 0.25rem;
+}
+
+/* Admin Dashboard Cards */
+.admin-stats-card {
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.admin-stats-card:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Botón Pendents */
+.btn-filter-warning {
+    color: #fff !important;
+    background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+}
+
+.btn-filter-warning:hover {
+    color: #ffc107 !important;
+    background-color: transparent !important;
+}
+
+/* Botón Aprovats */
+.btn-filter-success {
+    color: #fff !important;
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+}
+
+.btn-filter-success:hover {
+    color: #198754 !important;
+    background-color: transparent !important;
+}
+
+/* Botón Rebutjats */
+.btn-filter-danger {
+    color: #fff !important;
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+.btn-filter-danger:hover {
+    color: #dc3545 !important;
+    background-color: transparent !important;
+}
+
+.image-cropper {
+    width: 50px; /* Tamaño del contenedor */
+    height: 50px; /* Tamaño del contenedor */
+    overflow: hidden;
+    border-radius: 50%; /* Mantiene el contenedor redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid lightgreen; /* Borde verde claro */
+}
+
+.profile-pic {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
 }

@@ -11,15 +11,15 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
-                <img src="img/logoblanco.png" height="50" alt="Logo">
+                <img src="/public/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -33,31 +33,38 @@
                         <a class="nav-link" href="anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link active" href="esdeveniments.php">Esdeveniments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin/adminpanel.php">Admin</a>
                     </li>
                 </ul>
-                <button class="btn btn-light" onclick="window.location.href='login.php'">Login</button>
-            </div>
+                <div class="d-flex align-items-center">
+                    <a href="perfil.php" class="image-cropper">
+                        <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                    </a>
+                    <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
+                </div>
         </div>
     </nav>
 
     <!-- Search Container -->
     <div class="search-container">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="d-flex gap-2">
-                <select class="form-select">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+            <div class="d-flex gap-3">
+                <select class="form-select" style="min-width: 200px;">
                     <option>Filtro 1</option>
                     <option>Filtro 2</option>
                     <option>Filtro 3</option>
                 </select>
-                <select class="form-select">
+                <select class="form-select" style="min-width: 200px;">
                     <option>Categoría 1</option>
                     <option>Categoría 2</option>
                     <option>Categoría 3</option>
                 </select>
             </div>
-            <div class="d-flex gap-2">
-                <input type="text" class="form-control" placeholder="Buscar...">
+            <div class="d-flex gap-3">
+                <input type="text" class="form-control" placeholder="Buscar..." style="min-width: 250px;">
                 <button class="btn btn-primary">Buscar</button>
             </div>
         </div>
@@ -68,19 +75,19 @@
         <div class="swiper esdevenimentsSlider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide position-relative">
-                    <img src="img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                    <img src="/public/img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Esdeveniments Destacats</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative">
-                    <img src="img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                    <img src="/public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Tallers i Activitats</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative">
-                    <img src="img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                    <img src="/public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Properes Dates</h1>
                     </div>
@@ -122,7 +129,7 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <img src="img/lago.jpg" class="img-fluid rounded-end h-100 object-fit-cover" alt="Esdeveniment">
+                            <img src="/public/img/lago.jpg" class="img-fluid rounded-end h-100 object-fit-cover" alt="Esdeveniment">
                         </div>
                     </div>
                 </div>
@@ -151,5 +158,6 @@
             },
         });
     </script>
+<?php include 'cookie_banner.php'; ?>
 </body>
 </html>
