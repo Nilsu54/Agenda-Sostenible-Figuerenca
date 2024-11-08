@@ -231,8 +231,14 @@ body {
     transform: none !important;
 }
 
+.hover-effect {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
 .hover-effect:hover {
-    transform: none !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 body.overflow-hidden {
@@ -410,4 +416,13 @@ body.overflow-hidden {
     width: auto;
     min-width: 150px;
     padding: 0.5rem 1rem;
+}
+
+.hover-effect {
+    transition: transform 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }

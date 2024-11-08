@@ -52,6 +52,7 @@
         </div>
     </nav>
 
+
     <!-- Search Container -->
     <div class="search-container" role="search" aria-label="Búsqueda y filtros">
         <div class="container-fluid px-3 px-lg-4">
@@ -103,10 +104,61 @@
         </div>
     </div>
 
+    <!-- Botón Crear Anunci -->
+    <div class="container-fluid px-3 px-lg-4 mt-4">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearAnunciModal">
+            <i class="bi bi-plus-circle me-2"></i>Crear Anunci
+        </button>
+    </div>
+
+    <!-- Modal Crear Anunci -->
+    <div class="modal fade" id="crearAnunciModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Crear Nou Anunci</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tancar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="anunciForm">
+                        <div class="mb-3">
+                            <label for="titol" class="form-label">Títol</label>
+                            <input type="text" class="form-control" id="titol" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcio" class="form-label">Descripció</label>
+                            <textarea class="form-control" id="descripcio" rows="5" required></textarea>
+                            <small class="text-muted">Pots utilitzar markdown per formatar el text</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="imatge" class="form-label">Imatge</label>
+                            <input type="file" class="form-control" id="imatge" accept="image/*">
+                            <small class="text-muted">Es generarà automàticament una miniatura de la imatge.</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label">Categoria</label>
+                            <select class="form-select" id="categoria" required>
+                                <option value="">Selecciona una categoria</option>
+                                <option value="jardí">Jardí</option>
+                                <option value="llar">Llar</option>
+                                <option value="transport">Transport</option>
+                                <option value="alimentació">Alimentació</option>
+                                <option value="altres">Altres</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
+                    <button type="submit" form="anunciForm" class="btn btn-primary">Crear Anunci</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Main Content -->
     <main id="main-content">
         <div class="container-fluid my-4 my-md-5">
-            <div class="bg-white shadow p-3 p-md-4 rounded">
+            <div class="bg-primary text-white shadow p-3 p-md-4 rounded">
                 <h2 class="mb-3 mb-md-4 text-center">Anuncios Disponibles</h2>
                 <div class="list-group" role="list">
                     <?php for($i = 1; $i <= 5; $i++): ?>
@@ -124,10 +176,10 @@
                                     <span class="badge bg-success">Públic</span>
                                 </div>
                                 <span class="badge bg-primary mb-2">Categoria: Jardí</span>
-                                <p class="mb-0 text-muted d-none d-md-block">Disponibles compostadors domèstics a preu reduït...</p>
+                                <p class="mb-0 text-white d-none d-md-block">Disponibles compostadors domèstics a preu reduït...</p>
                             </div>
                             <div class="col-12 col-md-3">
-                                <img src="/public/img/lago.jpg" class="img-fluid rounded-end h-100 object-fit-cover" 
+                                <img src="/public/img/lago.jpg" class="img-fluid rounded-4 h-100 object-fit-cover" 
                                      alt="Imatge de compostador" width="300" height="200">
                             </div>
                         </div>

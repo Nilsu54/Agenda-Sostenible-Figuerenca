@@ -107,7 +107,7 @@
     <!-- Main Content -->
     <main id="main-content">
         <div class="container-fluid my-4 my-md-5">
-            <div class="bg-white shadow p-3 p-md-4 rounded">
+            <div class="bg-primary text-white shadow p-3 p-md-4 rounded">
                 <h2 class="mb-3 mb-md-4 text-center">Esdeveniments Disponibles</h2>
                 <div class="list-group" role="list">
                     <?php for($i = 1; $i <= 5; $i++): ?>
@@ -142,7 +142,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-3">
-                                <img src="/public/img/lago.jpg" class="img-fluid rounded-end h-100 object-fit-cover" 
+                                <img src="/public/img/lago.jpg" class="img-fluid rounded-4 h-100 object-fit-cover" 
                                      alt="Imatge del taller" width="300" height="200">
                             </div>
                         </div>

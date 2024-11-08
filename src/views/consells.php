@@ -12,8 +12,8 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/logo.png" type="image/x-icon">
 </head>
 <body>
     <!-- Skip to main content -->
@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Navegación principal">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="/src/views/index.php" aria-label="Inicio">
-                <img src="/public/img/logoblanco.png" height="50" alt="Logo ASF" width="auto">
+                <img src="/img/logoblanco.png" height="50" alt="Logo ASF" width="auto">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
                 <span class="navbar-toggler-icon"></span>
@@ -107,43 +107,28 @@
     <!-- Main Content -->
     <main id="main-content">
         <div class="container-fluid my-4 my-md-5">
-            <div class="bg-white shadow p-3 p-md-4 rounded">
+            <div class="bg-primary text-white shadow p-3 p-md-4 rounded">
                 <h2 class="mb-3 mb-md-4 text-center">Consells Disponibles</h2>
                 <div class="list-group" role="list">
                     <?php for($i = 1; $i <= 5; $i++): ?>
                     <div class="list-group-item border-0 mb-3 p-0 card hover-effect" role="listitem" tabindex="0" 
                          onclick="window.location.href='consell.php?id=<?php echo $i; ?>'" 
                          onkeypress="if(event.key==='Enter') window.location.href='consell.php?id=<?php echo $i; ?>'">
-                        <div class="row g-0">
-                            <div class="col-12 col-md-4">
-                                <img src="/public/img/lago.jpg" class="img-fluid h-100 object-fit-cover rounded-top rounded-md-start" 
-                                     alt="Imatge del consell" width="400" height="300">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-4 col-md-2 text-center py-3">
+                                <div class="h3 h2-md text-primary fw-bold mb-0">0<?php echo $i; ?></div>
+                                <div class="small text-muted text-uppercase">Consell</div>
                             </div>
-                            <div class="col-12 col-md-8 p-3 p-md-4">
-                                <div class="d-flex justify-content-between align-items-center mb-2">
-                                    <h3 class="h5 h4-md mb-0">Reducció del Consum d'Aigua</h3>
-                                    <span class="badge bg-success">Destacat</span>
+                            <div class="col-8 col-md-7 p-3 p-md-4">
+                                <h3 class="h5 h4-md mb-2">Estalvi d'Aigua</h3>
+                                <div class="d-flex flex-wrap gap-2 mb-2">
+                                    <span class="badge bg-primary">Categoria: Aigua</span>
                                 </div>
-                                <p class="mb-2 text-muted">Aprèn com reduir el consum d'aigua a casa amb petits canvis en els teus hàbits diaris.</p>
-                                <div class="mb-2">
-                                    <span class="badge bg-primary me-1">#EstalviAigua</span>
-                                    <span class="badge bg-info me-1">#SostenibilitatDomèstica</span>
-                                    <span class="badge bg-success">#RecursosNaturals</span>
-                                </div>
-                                <div class="d-flex flex-wrap gap-2 gap-md-4 mt-2">
-                                    <div class="d-flex align-items-center">
-                                        <i class="bi bi-star-fill text-warning me-2"></i>
-                                        <span class="small">4.5</span>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <i class="bi bi-chat-fill text-primary me-2"></i>
-                                        <span class="small">8</span>
-                                    </div>
-                                    <div class="d-flex align-items-center">
-                                        <i class="bi bi-eye-fill text-secondary me-2"></i>
-                                        <span class="small">156</span>
-                                    </div>
-                                </div>
+                                <p class="mb-0 text-secondary d-none d-md-block">Descobreix com estalviar aigua a casa amb aquests consells pràctics i senzills. Petits canvis que fan una gran diferència pel medi ambient.</p>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <img src="/public/img/lago.jpg" class="img-fluid rounded-4 h-100 object-fit-cover" 
+                                     alt="Imatge del consell" width="300" height="200">
                             </div>
                         </div>
                     </div>

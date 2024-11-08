@@ -12,8 +12,8 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/logo.png" type="image/x-icon">
 </head>
 <body>
     <!-- Skip to main content -->
@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Navegación principal">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="/src/views/index.php" aria-label="Inicio">
-                <img src="/public/img/logoblanco.png" height="50" alt="Logo ASF" width="auto">
+                <img src="/img/logoblanco.png" height="50" alt="Logo ASF" width="auto">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
                 <span class="navbar-toggler-icon"></span>
@@ -85,19 +85,19 @@
             <div class="swiper heroSwiper" role="region" aria-label="Carrusel de secciones">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide position-relative" onclick="window.location.href='esdeveniments.php'" style="cursor: pointer;">
-                        <img src="/public/img/lago.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Slider">
+                        <img src="/img/lago.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Slider">
                         <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                             <h1 class="h2 h1-md display-4-lg mb-2">Esdeveniments</h1>
                         </div>
                     </div>
                     <div class="swiper-slide position-relative" onclick="window.location.href='consells.php'" style="cursor: pointer;">
-                        <img src="/public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Slider">
+                        <img src="/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Slider">
                         <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                             <h1 class="h2 h1-md display-4-lg mb-2">Consells</h1>
                         </div>
                     </div>
                     <div class="swiper-slide position-relative" onclick="window.location.href='anuncis.php'" style="cursor: pointer;">
-                        <img src="/public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Slider">
+                        <img src="/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Slider">
                         <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                             <h1 class="h2 h1-md display-4-lg mb-2">Anuncis</h1>
                         </div>
@@ -113,7 +113,7 @@
         <section class="container-fluid my-4 my-md-5 px-3 px-lg-4" aria-labelledby="upcoming-events">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-10 col-lg-8">
-                    <div class="bg-light shadow p-3 p-md-4 rounded">
+                    <div class="bg-primary text-white shadow p-3 p-md-4 rounded">
                         <h2 id="upcoming-events" class="mb-3 mb-md-4 text-center">Próximos Eventos</h2>
                         <div class="list-group" role="list">
                             <?php for($i = 1; $i <= 5; $i++): ?>
