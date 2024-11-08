@@ -99,17 +99,16 @@
     </div>
 
     <!-- Main Content -->
-    <div class="container">
-        <div class="bg-white shadow p-4 mx-auto" style="max-width: 1200px;">
+    <div class="container px-3 px-md-4">
+        <div class="bg-white shadow p-3 p-md-4 mx-auto" style="max-width: 1200px;">
             <div class="list-group">
                 <?php for($i = 1; $i <= 5; $i++): ?>
                 <div class="list-group-item border-0 mb-3 p-0 card hover-effect">
-                    <div class="row g-0 justify-content-center">
-                        <div class="col-md-2 text-center py-2">
-                            <div class="h2 text-primary fw-bold mb-0">0<?php echo $i; ?></div>
-                            <div class="text-muted small text-uppercase">Consell</div>
+                    <div class="row g-0">
+                        <div class="col-12 col-md-4">
+                            <img src="/public/img/lago.jpg" class="img-fluid h-100 object-fit-cover rounded-top rounded-md-start" alt="Consell">
                         </div>
-                        <div class="col-md-9 p-3">
+                        <div class="col-12 col-md-8 p-3 p-md-4">
                             <h5 class="mb-1">Reducció del Consum d'Aigua</h5>
                             <p class="mb-2 text-muted small">Aprèn com reduir el consum d'aigua a casa amb petits canvis en els teus hàbits diaris.</p>
                             

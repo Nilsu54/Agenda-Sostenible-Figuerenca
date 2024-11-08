@@ -5,7 +5,6 @@ include "../src/controllers/indexController.php";
 include "../src/Emeset/Container.php";
 include "../src/Emeset/Request.php";
 include "../src/Emeset/Response.php";
-include "../public/styles.css";
 
 $request = new \Emeset\Request();
 $response = new \Emeset\Response();
@@ -25,3 +24,4 @@ else if($r=="storeUser"){
     $response=storeUserController($request,$response,$container);
 }
 
+$response ->response();

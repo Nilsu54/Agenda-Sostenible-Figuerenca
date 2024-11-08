@@ -50,23 +50,20 @@
 
     <!-- Search Container -->
     <div class="search-container">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-4">
-            <div class="d-flex gap-3">
-                <select class="form-select" style="min-width: 200px;">
-                    <option>Filtro 1</option>
-                    <option>Filtro 2</option>
-                    <option>Filtro 3</option>
-                </select>
-                <select class="form-select" style="min-width: 200px;">
-                    <option>Categoría 1</option>
-                    <option>Categoría 2</option>
-                    <option>Categoría 3</option>
-                </select>
-                <button class="btn btn-primary">Crear+ </button>
-            </div>
-            <div class="d-flex gap-3">
-                <input type="text" class="form-control" placeholder="Buscar..." style="min-width: 250px;">
-                <button class="btn btn-primary">Buscar</button>
+        <div class="container-fluid px-3 px-md-4">
+            <div class="d-flex flex-column flex-md-row gap-3 justify-content-between align-items-stretch align-items-md-center">
+                <div class="d-flex flex-column flex-md-row gap-3">
+                    <select class="form-select">
+                        <option>Filtro 1</option>
+                    </select>
+                    <select class="form-select">
+                        <option>Categoría 1</option>
+                    </select>
+                </div>
+                <div class="d-flex gap-2">
+                    <input type="text" class="form-control" placeholder="Buscar...">
+                    <button class="btn btn-primary">Buscar</button>
+                </div>
             </div>
         </div>
     </div>

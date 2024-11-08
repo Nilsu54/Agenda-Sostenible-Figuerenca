@@ -100,20 +100,20 @@
     </div>
 
     <!-- Main Content -->
-    <div class="container-fluid">
-        <div class="bg-white shadow p-4">
+    <div class="container-fluid px-3 px-md-4">
+        <div class="bg-white shadow p-3 p-md-4">
             <div class="list-group">
                 <?php for($i = 1; $i <= 5; $i++): ?>
-                <div class="list-group-item border-0 mb-4 p-0 card hover-effect" onclick="window.location.href='esdeveniment.php?id=<?php echo $i; ?>'">
+                <div class="list-group-item border-0 mb-4 p-0 card hover-effect">
                     <div class="row g-0 align-items-center">
-                        <div class="col-md-2 text-center py-3">
-                            <div class="display-4 text-primary fw-bold">15</div>
-                            <div class="text-muted text-uppercase">Març</div>
+                        <div class="col-4 col-md-2 text-center py-3">
+                            <div class="display-6 display-md-4 text-primary fw-bold">15</div>
+                            <div class="text-muted text-uppercase small">Març</div>
                         </div>
-                        <div class="col-md-7 p-4">
-                            <h4 class="mb-3">Taller de Compostatge</h4>
-                            <p class="mb-3 text-muted">Aprèn a fer el teu propi compost casolà i contribueix a reduir els residus orgànics. Taller pràctic amb experts en compostatge.</p>
-                            <div class="d-flex gap-4">
+                        <div class="col-8 col-md-7 p-3 p-md-4">
+                            <h5 class="h4 mb-2 mb-md-3">Taller de Compostatge</h5>
+                            <p class="mb-2 mb-md-3 text-muted d-none d-md-block">Aprèn a fer el teu propi compost casolà...</p>
+                            <div class="d-flex gap-2 gap-md-4 flex-wrap">
                                 <div class="d-flex align-items-center">
                                     <i class="bi bi-star-fill text-warning me-2"></i>
                                     <span>4.0</span>
