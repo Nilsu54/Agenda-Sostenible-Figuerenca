@@ -1,16 +1,5 @@
 <?php
-/**
- * 
- * $name=$_POST["name"];
-    $surname=$_POST["surname"];
-    $username=$_POST["username"];
-    $email=$_POST["email"];
-    $password=password_hash($_POST["password"],PASSWORD_BCRYPT);    
-    $img="img{$id}.jpg";
- * 
- * 
- * 
- */
+
 function storeUserController($request,$response,$container){
     $users =$container->UserPDO();
     $name=$request->get(INPUT_POST,"name");

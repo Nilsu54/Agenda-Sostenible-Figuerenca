@@ -23,4 +23,9 @@ if ($r==""){
 else if($r=="storeUser"){
     $response=storeUserController($request,$response,$container);
 }
+else if($r=="login"){
+    $response=loginController($request,$response,$container);
+}
+
+$response->response();
 

@@ -42,15 +42,16 @@ class UserPDO
     //funcio que utilitza l'admin per editar la informació dels usuaris, pot canviar el rol de l'usuari per si es volgues afegir un altre admin
     public function editAdmin($name,$password,$role,$email,$id){
         $pass=password_hash($password,PASSWORD_BCRYPT);  
-        $query="update users set name={$name},password={$pass},role={$role},email={$email} where id={$id}; ";
+        $query="update users set name='{$name}',password='{$pass}',role='{$role}',email='{$email}' where id={$id}; ";
         $stm=$this->sql->prepare($query);
         $stm->execute();
     }
 
-    public function getById($id){
-        $query = "select id, username from users where id = :id;";
+    public function login($username,$password){
+        $query = "select id, username,password from users where username like '{$username}";
+        
         $stm = $this->sql->prepare($query);
-        $stm->execute([":id" => $id]);
+        $stm->execute();
         $result = $stm->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
