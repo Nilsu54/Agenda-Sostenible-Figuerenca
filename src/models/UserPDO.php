@@ -25,7 +25,7 @@ class UserPDO
 
     //listat per al dashboard d'admin
     public function list(){
-        $query="select id, username, email, role, date from users;";
+        $query="select id, username, email, role, creation_date from users;";
         $users=[];
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $user){
             $users[$user["id"]]=$user;
@@ -47,9 +47,8 @@ class UserPDO
         $stm->execute();
     }
 
-    public function login($username,$password){
-        $query = "select id, username,password from users where username like '{$username}";
-        
+    public function getUser($username){
+        $query = "select id, username, password, role from users where username = '{$username}'";
         $stm = $this->sql->prepare($query);
         $stm->execute();
         $result = $stm->fetch(PDO::FETCH_ASSOC);

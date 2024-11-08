@@ -1,7 +1,7 @@
 <?php
 
 function storeUserController($request,$response,$container){
-    $users =$container->UserPDO();
+    $users =$container->Users();
     $name=$request->get(INPUT_POST,"name");
     $surname=$request->get(INPUT_POST,"surname");
     $username=$request->get(INPUT_POST,"username");
@@ -9,9 +9,8 @@ function storeUserController($request,$response,$container){
     $password=password_hash(($request->get(INPUT_POST,"password")),PASSWORD_BCRYPT);
     //$img=$request->get($_FILES[""])
     $img="";
+    print_r("username");
     $users->add($username,$password,$email,$img,$name,$surname);
     $response->redirect("location:index.php?r=login&ok=1");
     return $response;
-   
-
 }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -11,15 +12,15 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
-                <img src="/public/img/logoblanco.png" height="50" alt="Logo">
+                <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -35,23 +36,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
                     </li>
+                    <?php if($_SESSION["user"]["role"]=="admin"){?>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin/adminpanel.php">Admin</a>
+                        <a class="nav-link" href="index.php?r=dashboard">Admin</a>
                     </li>
+                    <?php } ?>
                 </ul>
                 <div class="d-flex align-items-center">
                     <a href="perfil.php" class="image-cropper">
                         <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                     </a>
-<<<<<<< HEAD
-<<<<<<< HEAD
+                    <?php if(!isset($_SESSION["user"])){?>
+                        
                     <button class="btn btn-light" onclick="window.location.href='index.php?r=login'">Login</button>
-=======
-                    <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
->>>>>>> eb21c731d84772d2a01891bf41f393d95e55f950
-=======
-                    <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
->>>>>>> eb21c731d84772d2a01891bf41f393d95e55f950
+                    <?php  } ?>
+
                 </div>
         </div>
     </nav>
@@ -170,12 +169,7 @@
     </script>
     <?php include 'cookie_banner.php'; ?>
 </body>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 </html>
-=======
-</html>
->>>>>>> eb21c731d84772d2a01891bf41f393d95e55f950
-=======
-</html>
->>>>>>> eb21c731d84772d2a01891bf41f393d95e55f950
+
+

@@ -27,6 +27,11 @@
                 <i class="bi bi-check-circle-fill me-2"></i>Usuario registrado correctamente
             </div>
         <?php } ?>
+        <?php if(isset($_GET["logged"])){ ?>
+            <div class="alert alert-success position-fixed top-0 start-50 translate-middle-x mt-5" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i>Error al iniciar sessió
+            </div>
+        <?php } ?>
         
         <div class="row w-100 justify-content-center p-4" style="background-color: var(--bs-secondary);">
             <div class="col-md-6 col-lg-4">
@@ -39,6 +44,7 @@
                         </div>
                         
                         <form action="index.php?r=loginProcess" method="POST">
+                            <input type="hidden" name="r" value="loginProcess">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="username" name="username" placeholder="Usuari" required>
                                 <label for="username"><i class="bi bi-person-fill me-2"></i>Usuari</label>
@@ -58,7 +64,7 @@
                             <div class="text-center">
                                 <a href="/src/views/contrasenya.php" class="text-success fw-bold text-decoration-none d-block mb-2">Has oblidat la contrasenya?</a>
                                 <p class="mb-0">No tens compte? 
-                                <a href="../views/registerForm.php" class="text-success fw-bold text-decoration-none">Registra't</a>                                </p>
+                                <a href="index.php?r=registerUser" class="text-success fw-bold text-decoration-none">Registra't</a>                                </p>
                             </div>
                         </form>
                     </div>
