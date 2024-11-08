@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anuncis sostenibles a Figueres - Compra, venda i intercanvi de productes ecològics">
     <title>Anuncis - Agenda Sostenible Figuerenca</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,11 +16,14 @@
     <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
 </head>
 <body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="visually-hidden-focusable">Saltar al contenido principal</a>
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Navegación principal">
         <div class="container-fluid px-4">
-            <a class="navbar-brand" href="index.php">
-                <img src="/public/img/logoblanco.png" height="50" alt="Logo">
+            <a class="navbar-brand" href="/src/views/index.php" aria-label="Inicio">
+                <img src="/public/img/logoblanco.png" height="50" alt="Logo ASF" width="auto">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -49,102 +53,117 @@
     </nav>
 
     <!-- Search Container -->
-    <div class="search-container">
-        <div class="container-fluid px-3 px-md-4">
+    <div class="search-container" role="search" aria-label="Búsqueda y filtros">
+        <div class="container-fluid px-3 px-lg-4">
             <div class="d-flex flex-column flex-md-row gap-3 justify-content-between align-items-stretch align-items-md-center">
-                <div class="d-flex flex-column flex-md-row gap-3">
-                    <select class="form-select">
-                        <option>Filtro 1</option>
+                <div class="d-flex flex-column flex-md-row gap-3 w-100 w-md-auto">
+                    <select class="form-select" aria-label="Seleccionar filtro">
+                        <option value="">Selecciona un filtro</option>
+                        <option value="1">Filtro 1</option>
                     </select>
-                    <select class="form-select">
-                        <option>Categoría 1</option>
+                    <select class="form-select" aria-label="Seleccionar categoría">
+                        <option value="">Selecciona una categoría</option>
+                        <option value="1">Categoría 1</option>
                     </select>
                 </div>
-                <div class="d-flex gap-2">
-                    <input type="text" class="form-control" placeholder="Buscar...">
-                    <button class="btn btn-primary">Buscar</button>
+                <div class="d-flex gap-2 w-100 w-md-auto">
+                    <input type="text" class="form-control" placeholder="Buscar..." aria-label="Campo de búsqueda">
+                    <button class="btn btn-primary" aria-label="Realizar búsqueda">Buscar</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Hero Slider -->
+    <!-- Hero Section -->
     <div class="container-fluid p-0">
         <div class="swiper anuncisSlider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide position-relative">
-                    <img src="/public/img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
-                    <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                        <h1 class="display-4">Anuncis Destacats</h1>
+                    <img src="/public/img/lago.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Anuncis Destacats">
+                    <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+                        <h1 class="h2 h1-md display-4-lg mb-2">Anuncis Destacats</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative">
-                    <img src="/public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
-                    <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                        <h1 class="display-4">Compra i Venda</h1>
+                    <img src="/public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Compra i Venda">
+                    <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+                        <h1 class="h2 h1-md display-4-lg mb-2">Compra i Venda</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative">
-                    <img src="/public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
-                    <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-                        <h1 class="display-4">Intercanvis</h1>
+                    <img src="/public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Intercanvis">
+                    <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+                        <h1 class="h2 h1-md display-4-lg mb-2">Intercanvis</h1>
                     </div>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev d-none d-md-flex"></div>
+            <div class="swiper-button-next d-none d-md-flex"></div>
         </div>
     </div>
 
     <!-- Main Content -->
-    <div class="container-fluid">
-        <div class="bg-white shadow p-4">
-            <div class="list-group">
-                <?php for($i = 1; $i <= 5; $i++): ?>
-                <div class="list-group-item border-0 mb-4 p-0 card hover-effect">
-                    <div class="row g-0 align-items-center">
-                        <div class="col-md-2 text-center py-3">
-                            <div class="display-4 text-primary fw-bold">0<?php echo $i; ?></div>
-                            <div class="text-muted text-uppercase">Anunci</div>
-                        </div>
-                        <div class="col-md-7 p-4">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <h4 class="mb-0">Venda de Compostadors</h4>
-                                <span class="badge bg-success">Públic</span>
+    <main id="main-content">
+        <div class="container-fluid my-4 my-md-5">
+            <div class="bg-white shadow p-3 p-md-4 rounded">
+                <h2 class="mb-3 mb-md-4 text-center">Anuncios Disponibles</h2>
+                <div class="list-group" role="list">
+                    <?php for($i = 1; $i <= 5; $i++): ?>
+                    <div class="list-group-item border-0 mb-3 p-0 card hover-effect" role="listitem" tabindex="0" 
+                         onclick="window.location.href='anunci.php?id=<?php echo $i; ?>'" 
+                         onkeypress="if(event.key==='Enter') window.location.href='anunci.php?id=<?php echo $i; ?>'">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-4 col-md-2 text-center py-3">
+                                <div class="h3 h2-md text-primary fw-bold mb-0">0<?php echo $i; ?></div>
+                                <div class="small text-muted text-uppercase">Anunci</div>
                             </div>
-                            <span class="badge bg-primary mb-2">Categoria: Jardí</span>
-                            <p class="mb-0 text-muted">Disponibles compostadors domèstics a preu reduït. Perfectes per començar a fer el teu propi compost. Aprofita aquesta oportunitat única.</p>
-                        </div>
-                        <div class="col-md-3">
-                            <img src="/public/img/lago.jpg" class="img-fluid rounded-end h-100 object-fit-cover" alt="Anunci">
+                            <div class="col-8 col-md-7 p-3 p-md-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h3 class="h5 h4-md mb-0">Venda de Compostadors</h3>
+                                    <span class="badge bg-success">Públic</span>
+                                </div>
+                                <span class="badge bg-primary mb-2">Categoria: Jardí</span>
+                                <p class="mb-0 text-muted d-none d-md-block">Disponibles compostadors domèstics a preu reduït...</p>
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <img src="/public/img/lago.jpg" class="img-fluid rounded-end h-100 object-fit-cover" 
+                                     alt="Imatge de compostador" width="300" height="200">
+                            </div>
                         </div>
                     </div>
+                    <?php endfor; ?>
                 </div>
-                <?php endfor; ?>
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.anuncisSlider', {
             loop: true,
             autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
+                delay: 5000,
+                disableOnInteraction: true,
             },
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
+                bulletAriaLabel: 'Ir a la diapositiva {{index}}'
             },
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
+            a11y: {
+                prevSlideMessage: 'Diapositiva anterior',
+                nextSlideMessage: 'Siguiente diapositiva',
+                firstSlideMessage: 'Primera diapositiva',
+                lastSlideMessage: 'Última diapositiva',
+                paginationBulletMessage: 'Ir a la diapositiva {{index}}'
+            }
         });
     </script>
     <?php include 'cookie_banner.php'; ?>
