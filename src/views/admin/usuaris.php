@@ -127,7 +127,7 @@
                                 <th>Email</th>
                                 <th>Rol</th>
                                 <th>Data de Creació</th>
-                                <th>Estat</th>
+                               
                                 <th>Accions</th>
                             </tr>
                         </thead>
@@ -138,7 +138,7 @@
                                 <td>joan@example.com</td>
                                 <td><span class="badge bg-success">Administrador</span></td>
                                 <td>15/03/2024</td>
-                                <td><span class="badge bg-success">Actiu</span></td>
+                               
                                 <td>
                                     <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editarUsuariModal">
                                         <i class="bi bi-pencil"></i>
@@ -225,14 +225,6 @@
                             <select class="form-select" required>
                                 <option value="user">Usuari</option>
                                 <option value="admin" selected>Administrador</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Estat</label>
-                            <select class="form-select" required>
-                                <option value="active" selected>Actiu</option>
-                                <option value="inactive">Inactiu</option>
-                                <option value="blocked">Bloquejat</option>
                             </select>
                         </div>
                     </form>
