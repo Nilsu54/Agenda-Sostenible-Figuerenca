@@ -44,7 +44,11 @@
                         <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                     </a>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <button class="btn btn-light" onclick="window.location.href='index.php?r=login'">Login</button>
+=======
+                    <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
+>>>>>>> eb21c731d84772d2a01891bf41f393d95e55f950
 =======
                     <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
 >>>>>>> eb21c731d84772d2a01891bf41f393d95e55f950
@@ -167,7 +171,11 @@
     <?php include 'cookie_banner.php'; ?>
 </body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> eb21c731d84772d2a01891bf41f393d95e55f950
 =======
 </html>
 >>>>>>> eb21c731d84772d2a01891bf41f393d95e55f950

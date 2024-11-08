@@ -14,6 +14,11 @@ class ProjectContainer extends \Emeset\Container {
 
     
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+?>
+>>>>>>> eb21c731d84772d2a01891bf41f393d95e55f950
 =======
 
 ?>
