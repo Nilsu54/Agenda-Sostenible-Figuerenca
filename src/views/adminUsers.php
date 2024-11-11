@@ -66,7 +66,7 @@
                         <a class="nav-link" href="comentaris.php">
                             <i class="bi bi-chat-dots me-2"></i>Comentaris
                         </a>
-                        <a class="nav-link active" href="usuaris.php">
+                        <a class="nav-link active" href="index.php?r=adminUsers">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
                         <a class="nav-link" href="consells.php">
@@ -132,12 +132,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($users as $user){ ?> 
                             <tr>
-                                <td>1</td>
-                                <td>Joan Garcia</td>
-                                <td>joan@example.com</td>
-                                <td><span class="badge bg-success">Administrador</span></td>
-                                <td>15/03/2024</td>
+                                <td><?=$user["id"] ?></td>
+                                <td><?=$user["name"]?></td>
+                                <td><?=$user["email"]?></td>
+                                <td><span class="badge bg-success"><?=$user["role"]?></span></td>
+                                <td><?=$user["creation_date"]?></td>
                                
                                 <td>
                                     <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editarUsuariModal">
@@ -151,7 +152,7 @@
                                     </button>
                                 </td>
                             </tr>
-                            <!-- Més files... -->
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

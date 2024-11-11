@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comentaris - Administració ASF</title>
+    <title>Panel d'Administració - ASF</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -39,7 +39,7 @@
                 <a href="/src/views/perfil.php" class="image-cropper">
                     <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                 </a>
-            </div>
+             </div>
         </div>
     </nav>
 
@@ -53,16 +53,16 @@
                         <h5 class="mt-2">Panel d'Administració</h5>
                     </div>
                     <nav class="nav flex-column">
-                        <a class="nav-link" href="adminpanel.php">
+                        <a class="nav-link active" href="">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
                         <a class="nav-link" href="esdeveniments.php">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
-                        <a class="nav-link active" href="comentaris.php">
+                        <a class="nav-link" href="comentaris.php">
                             <i class="bi bi-chat-dots me-2"></i>Comentaris
                         </a>
-                        <a class="nav-link" href="usuaris.php">
+                        <a class="nav-link" href="index.php?r=adminUsers">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
                         <a class="nav-link" href="consells.php">
@@ -80,26 +80,61 @@
 
             <!-- Main Content -->
             <div class="col-md-9 col-lg-10 px-md-4">
-                <div class="d-flex justify-content-between pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Gestió de Comentaris</h1>
-                    <div class="btn-group">
-                        <button class="btn btn-outline-secondary active">Tots</button>
-                        <button class="btn btn-outline-warning btn-filter-warning">Pendents</button>
-                        <button class="btn btn-outline-success btn-filter-success">Aprovats</button>
-                        <button class="btn btn-outline-danger btn-filter-danger">Rebutjats</button>
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Taula de Comentaris -->
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card text-white bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Esdeveniments</h5>
+                                <p class="card-text display-6">150</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-success">
+                            <div class="card-body">
+                                <h5 class="card-title">Usuaris</h5>
+                                <p class="card-text display-6">1.2k</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-warning">
+                            <div class="card-body">
+                                <h5 class="card-title">Comentaris</h5>
+                                <p class="card-text display-6">324</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-white bg-info">
+                            <div class="card-body">
+                                <h5 class="card-title">Anuncis</h5>
+                                <p class="card-text display-6">89</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Events Table -->
+                <h3>Esdeveniments més vistos</h3>
                 <div class="table-responsive">
-                    <table class="table table-striped admin-table">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Usuari</th>
-                                <th>Contingut</th>
-                                <th>Element</th>
+                                <th>Títol</th>
                                 <th>Data</th>
+                                <th>Visualitzacions</th>
                                 <th>Estat</th>
                                 <th>Accions</th>
                             </tr>
@@ -107,62 +142,35 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Usuari123</td>
-                                <td>Gran esdeveniment! Molt recomanable...</td>
                                 <td>Taller de Compostatge</td>
                                 <td>15/03/2024</td>
-                                <td><span class="badge bg-warning">Pendent</span></td>
+                                <td>1,234</td>
+                                <td><span class="badge bg-success">Actiu</span></td>
                                 <td>
-                                    <button class="btn btn-sm btn-success" title="Aprovar">
-                                        <i class="bi bi-check-lg"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-warning" title="Editar" data-bs-toggle="modal" data-bs-target="#editarComentariModal">
-                                        <i class="bi bi-pencil"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger" title="Eliminar">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
+                                    <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
+                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
-                            <!-- Más comentarios... -->
+                            <!-- More rows... -->
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Modal Editar Comentari -->
-    <div class="modal fade admin-modal" id="editarComentariModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Editar Comentari</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Contingut</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                <!-- Recent Comments -->
+                <h3>Comentaris pendents de moderació</h3>
+                <div class="list-group mb-4">
+                    <div class="list-group-item">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Usuari123</h5>
+                            <small>Fa 3 dies</small>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Estat</label>
-                            <select class="form-select">
-                                <option value="pending">Pendent</option>
-                                <option value="approved">Aprovat</option>
-                                <option value="rejected">Rebutjat</option>
-                            </select>
+                        <p class="mb-1">Gran esdeveniment! Molt recomanable per aprendre sobre sostenibilitat.</p>
+                        <div class="btn-group">
+                            <button class="btn btn-sm btn-success">Aprovar</button>
+                            <button class="btn btn-sm btn-warning">Editar</button>
+                            <button class="btn btn-sm btn-danger">Eliminar</button>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Motiu de moderació (opcional)</label>
-                            <textarea class="form-control" rows="2" placeholder="Explica el motiu de la moderació..."></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="button" class="btn btn-primary">Guardar Canvis</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -171,4 +179,4 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+</html>
