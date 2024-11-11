@@ -66,7 +66,12 @@ if ($r == "") {
     include "../src/controllers/logoutController.php";
     $response = logoutController($request, $response, $container);
 }
-
-// Envía la respuesta final al cliente.
-$response->response();
-?>
+else if($r=="profile"){
+    include "../src/controllers/profileController.php";
+    $response=auth($request,$response,$container,"profileController");
+}
+else if($r=="updateProfile"){
+    include "../src/controllers/updateProfileController.php";
+    $response=auth($request,$response,$container,"updateProfileController");
+}
+$response ->response();

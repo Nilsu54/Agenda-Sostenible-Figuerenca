@@ -49,8 +49,8 @@
                     <?php if(!isset($_SESSION["user"])){?>
                     <button class="btn btn-light" onclick="window.location.href='index.php?r=login'">Login</button>
                     <?php  }else if (isset($_SESSION["user"])){ ?>
-                        <a href="perfil.php" class="image-cropper">
-                        <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                        <a href="index.php?r=profile" class="image-cropper">
+                        <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
                     </a>
                     <button class="btn btn-light" onclick="window.location.href='index.php?r=logout'">Logout</button>
                     <?php }?>

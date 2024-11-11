@@ -52,41 +52,29 @@ class UserPDO
         return $users;
     }
 
-    // Método para que un usuario edite sus propios datos (perfil).
-    public function edit($name, $email, $img, $password, $id)
-    {
-        // Encripta la nueva contraseña.
-        $pass = password_hash($password, PASSWORD_BCRYPT);
-        
-        // Consulta SQL para actualizar los datos del usuario.
-        $query = "update users set name={$name}, password={$pass}, img={$img}, email={$email} where id={$id};";
-        
-        // Prepara y ejecuta la consulta.
-        $stm = $this->sql->prepare($query);
+
+    //funcio que utiliza l'usuari normal per editar el seu perfil i les seves dades
+    public function edit($name,$email,$id,$username,$surname){
+        $query="update users set username='{$username}',name='{$name}',email='{$email}',surname='{$surname}' where id={$id};";
+        $stm=$this->sql->prepare($query);
+        $stm->execute();
+    }
+    public function editimg($img,$id){
+        $query="update users set img={$img} where id={$id};";
+        $stm=$this->sql->prepare($query);
         $stm->execute();
     }
 
-    // Método para que un administrador edite los datos de otros usuarios, incluyendo cambiar el rol.
-    public function editAdmin($name, $password, $role, $email, $id)
-    {
-        // Encripta la nueva contraseña.
-        $pass = password_hash($password, PASSWORD_BCRYPT);  
-        
-        // Consulta SQL para actualizar los datos de un usuario y cambiar su rol (por ejemplo, para convertirlo en admin).
-        $query = "update users set name='{$name}', password='{$pass}', role='{$role}', email='{$email}' where id={$id};";
-        
-        // Prepara y ejecuta la consulta.
-        $stm = $this->sql->prepare($query);
+    //funcio que utilitza l'admin per editar la informació dels usuaris, pot canviar el rol de l'usuari per si es volgues afegir un altre admin
+    public function editAdmin($name,$password,$role,$email,$id){
+        $pass=password_hash($password,PASSWORD_BCRYPT);  
+        $query="update users set name='{$name}',password='{$pass}',role='{$role}',email='{$email}' where id={$id}; ";
+        $stm=$this->sql->prepare($query);
         $stm->execute();
     }
 
-    // Método para obtener un usuario a partir de su nombre de usuario (para el login).
-    public function getUser($username)
-    {
-        // Consulta SQL para obtener los datos de un usuario por su nombre de usuario.
-        $query = "select id, username, password, role from users where username = '{$username}'";
-        
-        // Prepara y ejecuta la consulta.
+    public function getUser($username){
+        $query = "select id, username, password, role, img, name, surname, email from users where username = '{$username}'";
         $stm = $this->sql->prepare($query);
         $stm->execute();
         
