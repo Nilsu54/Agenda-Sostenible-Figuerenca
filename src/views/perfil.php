@@ -9,15 +9,15 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/logo.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
-                <img src="/public/img/logoblanco.png" height="50" alt="Logo">
+                <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -39,7 +39,7 @@
                 </ul>
                 <div class="d-flex align-items-center">
                     <div class="image-cropper">
-                        <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                        <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
             <div class="col-12 col-md-4">
                 <div class="profile-image-container bg-white rounded shadow p-4">
                     <div class="image-cropper-large mx-auto">
-                        <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" id="currentProfileImage" class="profile-pic">
+                        <img src="/img/Dan Franklin.jpg" alt="foto de perfil" id="currentProfileImage" class="profile-pic">
                     </div>
                     <div class="profile-image-actions">
                         <label for="newProfileImage" class="btn btn-outline-primary btn-sm btn-change-photo">
@@ -100,6 +100,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/public/js/perfil.js"></script>
+    <script src="/js/perfil.js"></script>
 </body>
 </html>

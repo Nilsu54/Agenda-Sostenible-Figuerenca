@@ -91,13 +91,13 @@
                     </div>
                 </div>
                 <div class="swiper-slide position-relative" onclick="window.location.href='index.php?r=tips'" style="cursor: pointer;">
-                    <img src="/public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                    <img src="/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Consells</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative" onclick="window.location.href='index.php?r=adverts'" style="cursor: pointer;">
-                    <img src="/public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                    <img src="/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Anuncis</h1>
                     </div>

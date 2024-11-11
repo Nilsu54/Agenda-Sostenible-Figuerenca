@@ -28,7 +28,7 @@
             <div class="card shadow border-0 rounded-4 overflow-hidden">
                 <div class="card-body p-5 bg-white">
                     <div class="text-center mb-4">
-                        <img src="/public/img/logo.png" alt="Logo" height="60" class="mb-3">
+                        <img src="/img/logo.png" alt="Logo" height="60" class="mb-3">
                         <h2 class="fw-bold">Registre</h2>
                         <p class="text-muted">Crea el teu compte</p>
                     </div>

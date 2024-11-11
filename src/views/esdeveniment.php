@@ -11,14 +11,14 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/logo.png" type="image/x-icon">
 </head>
 <body> <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
-                <img src="/public/img/logoblanco.png" height="50" alt="Logo">
+                <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -62,16 +62,16 @@
 
                 <!-- Event Gallery -->
                 <div class="mb-4">
-                    <img src="/public/img/lago.jpg" class="img-fluid rounded-4 w-100 mb-3 object-fit-cover" style="height: 400px;" alt="Imatge Principal">
+                    <img src="/img/lago.jpg" class="img-fluid rounded-4 w-100 mb-3 object-fit-cover" style="height: 400px;" alt="Imatge Principal">
                     <div class="row g-3">
                         <div class="col-4">
-                            <img src="/public/img/lago2.jpg" class="img-fluid rounded-3 object-fit-cover w-100" style="height: 100px;" alt="Imatge 2">
+                            <img src="/img/lago2.jpg" class="img-fluid rounded-3 object-fit-cover w-100" style="height: 100px;" alt="Imatge 2">
                         </div>
                         <div class="col-4">
-                            <img src="/public/img/lago3.jpg" class="img-fluid rounded-3 object-fit-cover w-100" style="height: 100px;" alt="Imatge 3">
+                            <img src="/img/lago3.jpg" class="img-fluid rounded-3 object-fit-cover w-100" style="height: 100px;" alt="Imatge 3">
                         </div>
                         <div class="col-4">
-                            <img src="/public/img/lago.jpg" class="img-fluid rounded-3 object-fit-cover w-100" style="height: 100px;" alt="Imatge 4">
+                            <img src="/img/lago.jpg" class="img-fluid rounded-3 object-fit-cover w-100" style="height: 100px;" alt="Imatge 4">
                         </div>
                     </div>
                 </div>

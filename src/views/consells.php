@@ -45,7 +45,7 @@
                 </ul>
                 <div class="d-flex align-items-center">
                     <a href="perfil.php" class="image-cropper">
-                        <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                        <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                     </a>
                     <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
                 </div>
@@ -80,19 +80,19 @@
         <div class="swiper consellsSlider" role="region" aria-label="Carrusel de secciones">
             <div class="swiper-wrapper">
                 <div class="swiper-slide position-relative">
-                    <img src="/public/img/lago.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Consells Destacats">
+                    <img src="/img/lago.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Consells Destacats">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="h2 h1-md display-4-lg mb-2">Consells Destacats</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative">
-                    <img src="/public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Estalvi Energètic">
+                    <img src="/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Estalvi Energètic">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="h2 h1-md display-4-lg mb-2">Estalvi Energètic</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative">
-                    <img src="/public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Reciclatge">
+                    <img src="/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Reciclatge">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="h2 h1-md display-4-lg mb-2">Reciclatge</h1>
                     </div>
@@ -127,7 +127,7 @@
                                 <p class="mb-0 text-secondary d-none d-md-block">Descobreix com estalviar aigua a casa amb aquests consells pràctics i senzills. Petits canvis que fan una gran diferència pel medi ambient.</p>
                             </div>
                             <div class="col-12 col-md-3">
-                                <img src="/public/img/lago.jpg" class="img-fluid rounded-4 h-100 object-fit-cover" 
+                                <img src="/img/lago.jpg" class="img-fluid rounded-4 h-100 object-fit-cover" 
                                      alt="Imatge del consell" width="300" height="200">
                             </div>
                         </div>

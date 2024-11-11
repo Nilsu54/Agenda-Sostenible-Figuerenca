@@ -12,8 +12,8 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="¡/img/logo.png" type="image/x-icon">
 </head>
 <body>
     <!-- Skip to main content -->
@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Navegación principal">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="/src/views/index.php" aria-label="Inicio">
-                <img src="/public/img/logoblanco.png" height="50" alt="Logo ASF" width="auto">
+                <img src="/img/logoblanco.png" height="50" alt="Logo ASF" width="auto">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
                 <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
                 </ul>
                 <div class="d-flex align-items-center">
                     <a href="perfil.php" class="image-cropper">
-                        <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                        <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                     </a>
                     <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
                 </div>
@@ -80,19 +80,19 @@
         <div class="swiper esdevenimentsSlider" role="region" aria-label="Carrusel de secciones">
             <div class="swiper-wrapper">
                 <div class="swiper-slide position-relative">
-                    <img src="/public/img/lago.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Esdeveniments Destacats">
+                    <img src="/img/lago.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Esdeveniments Destacats">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="h2 h1-md display-4-lg mb-2">Esdeveniments Destacats</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative">
-                    <img src="/public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Tallers i Activitats">
+                    <img src="/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Tallers i Activitats">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="h2 h1-md display-4-lg mb-2">Tallers i Activitats</h1>
                     </div>
                 </div>
                 <div class="swiper-slide position-relative">
-                    <img src="/public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Properes Dates">
+                    <img src="/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 40vh; min-height: 300px;" alt="Properes Dates">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-3 p-md-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="h2 h1-md display-4-lg mb-2">Properes Dates</h1>
                     </div>
@@ -142,7 +142,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-3">
-                                <img src="/public/img/lago.jpg" class="img-fluid rounded-4 h-100 object-fit-cover" 
+                                <img src="/img/lago.jpg" class="img-fluid rounded-4 h-100 object-fit-cover" 
                                      alt="Imatge del taller" width="300" height="200">
                             </div>
                         </div>
