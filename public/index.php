@@ -49,5 +49,9 @@ else if($r=="adminUsers"){
     include "../src/controllers/adminUsersController.php";
     $response=adminauth($request,$response,$container,"adminUsersController");
 }
+else if($r=="logout"){
+    include "../src/controllers/logoutController.php";
+    $response=logoutController($request,$response,$container);
+}
 
 $response ->response();

@@ -9,14 +9,14 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/logo.png" type="image/x-icon">
 </head>
 <body class="overflow-hidden" style="background-color: var(--bs-secondary);">
    
 <!-- Back Button -->
 <div class="position-fixed top-0 start-0 p-4">
-    <button class="btn btn-primary fw-bold" onclick="window.location.href='login.php'">
+    <button class="btn btn-primary fw-bold" onclick="window.location.href='index.php?r=login'">
         <i class="bi bi-arrow-left me-2"></i>Tornar a l'inici
     </button>
 </div>
@@ -33,7 +33,8 @@
                         <p class="text-muted">Crea el teu compte</p>
                     </div>
                     
-                    <form action="index.php?r=storeUser" method="POST" enctype="multipart/form-data">
+                    <form action="index.php" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="r" value="storeUser">
                         <div class="row mb-3">
                             <div class="col">
                                 <div class="form-floating">

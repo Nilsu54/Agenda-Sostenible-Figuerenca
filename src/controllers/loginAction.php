@@ -11,6 +11,7 @@ function loginAction($request,$response,$container){
     if($currentUser["role"]=="admin"){
         $response->setSession("user",$currentUser);
         $response->setSession("isLogged",true);
+        $response->setSession("isAdmin",true);
         $response->redirect("location:index.php");
     }
     else if($currentUser && $passwordequal){

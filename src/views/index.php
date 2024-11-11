@@ -36,20 +36,24 @@
                     <li class="nav-item">
                         <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
                     </li>
-                    
+                    <!-- $_SESSION["user"]["role"]=="admin" -->
+                    <?php if (isset($_SESSION["user"]) && isset($_SESSION["isAdmin"])){?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=dashboard">Admin</a>
                     </li>
-                    
+                    <?php } ?>
                 </ul>
                 <div class="d-flex align-items-center">
-                    <a href="perfil.php" class="image-cropper">
+                    
+
+                    <?php if(!isset($_SESSION["user"])){?>
+                    <button class="btn btn-light" onclick="window.location.href='index.php?r=login'">Login</button>
+                    <?php  }else if (isset($_SESSION["user"])){ ?>
+                        <a href="perfil.php" class="image-cropper">
                         <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                     </a>
-                    <?php if(!isset($_SESSION["user"])){?>
-                        
-                    <button class="btn btn-light" onclick="window.location.href='index.php?r=login'">Login</button>
-                    <?php  } ?>
+                    <button class="btn btn-light" onclick="window.location.href='index.php?r=logout'">Logout</button>
+                    <?php }?>
 
                 </div>
         </div>
@@ -80,19 +84,19 @@
     <div class="container-fluid p-0">
         <div class="swiper heroSwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide position-relative" onclick="window.location.href='esdeveniments.php'" style="cursor: pointer;">
-                    <img src="/public/img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
+                <div class="swiper-slide position-relative" onclick="window.location.href='index.php?r=events'" style="cursor: pointer;">
+                    <img src="/img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Esdeveniments</h1>
                     </div>
                 </div>
-                <div class="swiper-slide position-relative" onclick="window.location.href='consells.php'" style="cursor: pointer;">
+                <div class="swiper-slide position-relative" onclick="window.location.href='index.php?r=tips'" style="cursor: pointer;">
                     <img src="/public/img/lago2.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Consells</h1>
                     </div>
                 </div>
-                <div class="swiper-slide position-relative" onclick="window.location.href='anuncis.php'" style="cursor: pointer;">
+                <div class="swiper-slide position-relative" onclick="window.location.href='index.php?r=adverts'" style="cursor: pointer;">
                     <img src="/public/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Anuncis</h1>
