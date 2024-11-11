@@ -65,7 +65,7 @@
                         <a class="nav-link" href="usuaris.php">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
-                        <a class="nav-link active" href="consells.php">
+                        <a class="nav-link active" href="index.php?r=tips">
                             <i class="bi bi-lightbulb me-2"></i>Consells
                         </a>
                         <a class="nav-link" href="anuncis.php">

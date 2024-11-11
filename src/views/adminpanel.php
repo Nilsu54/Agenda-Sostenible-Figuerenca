@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/src/views/consells.php">Consells</a>
+                        <a class="nav-link" href="index.php?r=tips">Consells</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/src/views/anuncis.php">Anuncis</a>
@@ -65,7 +65,7 @@
                         <a class="nav-link" href="index.php?r=adminUsers">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
-                        <a class="nav-link" href="consells.php">
+                        <a class="nav-link" href="index.php?r=tips">
                             <i class="bi bi-lightbulb me-2"></i>Consells
                         </a>
                         <a class="nav-link" href="anuncis.php">

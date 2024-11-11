@@ -74,4 +74,8 @@ else if($r=="updateProfile"){
     include "../src/controllers/updateProfileController.php";
     $response=auth($request,$response,$container,"updateProfileController");
 }
+else if($r=="tips"){
+    include "../src/controllers/tipsController.php";
+    $response=tipsController($request,$response,$container);
+}
 $response ->response();
