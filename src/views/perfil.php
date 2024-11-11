@@ -34,12 +34,12 @@
                         <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin/adminpanel.php">Admin</a>
+                        <a class="nav-link" href="index.php?r=dashboard">Admin</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
                     <div class="image-cropper">
-                        <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                        <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
                     </div>
                 </div>
             </div>
@@ -52,13 +52,13 @@
             <div class="col-12 col-md-4">
                 <div class="profile-image-container bg-white rounded shadow p-4">
                     <div class="image-cropper-large mx-auto">
-                        <img src="/img/Dan Franklin.jpg" alt="foto de perfil" id="currentProfileImage" class="profile-pic">
+                        <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" id="currentProfileImage" class="profile-pic">
                     </div>
                     <div class="profile-image-actions">
                         <label for="newProfileImage" class="btn btn-outline-primary btn-sm btn-change-photo">
                             <i class="bi bi-camera"></i> Cambiar foto
                         </label>
-                        <input type="file" class="d-none" id="newProfileImage" accept="image/*">
+                        <input type="file" class="d-none" id="newProfileImage" name="newProfileImage" accept="image/*">
                     </div>
                 </div>
             </div>
@@ -69,22 +69,23 @@
                         <h5 class="card-title mb-4">Información Personal</h5>
                         <form id="profileForm">
                             <div class="row g-3">
+                                <input type="hidden" id="iduser" name="iduser" value=<?=$_SESSION["user"]["id"]?>>
                                 <div class="col-12 col-sm-6">
                                     <label for="firstName" class="form-label">Nom</label>
-                                    <input type="text" class="form-control" id="firstName" value="Dan">
+                                    <input type="text" class="form-control" id="firstName" name="firstName"value=<?=$_SESSION["user"]["name"]?>>
                                 </div>
                                 <div class="col-12 col-sm-6">
                                     <label for="lastName" class="form-label">Cognoms</label>
-                                    <input type="text" class="form-control" id="lastName" value="Franklin">
+                                    <input type="text" class="form-control" id="lastName" value=<?=$_SESSION["user"]["surname"]?>>
                                 </div>
                             </div>
                             <div class="mb-3 mt-3">
                                 <label for="username" class="form-label">Nom d'usuari</label>
-                                <input type="text" class="form-control" id="username" value="danfranklin">
+                                <input type="text" class="form-control" id="username" name="username" value=<?=$_SESSION["user"]["username"]?>>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" value="dan@example.com">
+                                <input type="email" class="form-control" id="email" name="email" value=<?=$_SESSION["user"]["email"]?>>
                             </div>
                             <button type="submit" class="btn btn-success w-100">
                                 <i class="bi bi-save"></i> Guardar Cambios

@@ -35,12 +35,17 @@ class UserPDO
 
 
     //funcio que utiliza l'usuari normal per editar el seu perfil i les seves dades
-    public function edit($name,$email,$img,$password,$id){
-        $pass=password_hash($password,PASSWORD_BCRYPT);
-        $query="update users set name={$name},password={$pass},img={$img},email={$email} where id={$id};";
+    public function edit($name,$email,$id,$username,$surname){
+        $query="update users set username='{$username}',name='{$name}',email='{$email}',surname='{$surname}' where id={$id};";
         $stm=$this->sql->prepare($query);
         $stm->execute();
     }
+    public function editimg($img,$id){
+        $query="update users set img={$img} where id={$id};";
+        $stm=$this->sql->prepare($query);
+        $stm->execute();
+    }
+
     //funcio que utilitza l'admin per editar la informació dels usuaris, pot canviar el rol de l'usuari per si es volgues afegir un altre admin
     public function editAdmin($name,$password,$role,$email,$id){
         $pass=password_hash($password,PASSWORD_BCRYPT);  
@@ -50,7 +55,7 @@ class UserPDO
     }
 
     public function getUser($username){
-        $query = "select id, username, password, role, img from users where username = '{$username}'";
+        $query = "select id, username, password, role, img, name, surname, email from users where username = '{$username}'";
         $stm = $this->sql->prepare($query);
         $stm->execute();
         $result = $stm->fetch(PDO::FETCH_ASSOC);
