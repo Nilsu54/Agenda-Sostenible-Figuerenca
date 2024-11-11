@@ -37,7 +37,7 @@
                     </li>
                 </ul>
                 <a href="/src/views/perfil.php" class="image-cropper">
-                    <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                    <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                 </a>
              </div>
         </div>
@@ -49,7 +49,7 @@
             <div class="col-md-3 col-lg-2 px-0 admin-sidebar">
                 <div class="d-flex flex-column">
                     <div class="p-3 text-white text-center">
-                        <img src="/public/img/logoblanco.png" height="50" alt="Logo">
+                        <img src="/img/logoblanco.png" height="50" alt="Logo">
                         <h5 class="mt-2">Panel d'Administració</h5>
                     </div>
                     <nav class="nav flex-column">
