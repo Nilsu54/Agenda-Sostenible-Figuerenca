@@ -50,7 +50,7 @@ class UserPDO
     }
 
     public function getUser($username){
-        $query = "select id, username, password, role from users where username = '{$username}'";
+        $query = "select id, username, password, role, img from users where username = '{$username}'";
         $stm = $this->sql->prepare($query);
         $stm->execute();
         $result = $stm->fetch(PDO::FETCH_ASSOC);
