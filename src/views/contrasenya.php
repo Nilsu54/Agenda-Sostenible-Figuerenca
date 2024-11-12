@@ -19,7 +19,7 @@
             <i href="index.php?r=login" class="bi bi-arrow-left me-2"></i>Tornar al login
         </button>
     </div>
-
+  
     <!-- Message Container -->
     <div class="container min-vh-100 d-flex align-items-center justify-content-center">
         <div class="row w-100 justify-content-center p-4" style="background-color: var(--bs-secondary);">
