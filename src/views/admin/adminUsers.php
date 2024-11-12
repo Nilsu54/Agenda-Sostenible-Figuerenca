@@ -30,7 +30,7 @@
                         <a class="nav-link" href="/src/views/anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/src/views/esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="">Admin</a>
@@ -60,7 +60,7 @@
                         <a class="nav-link" href="adminpanel.php">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
-                        <a class="nav-link" href="esdeveniments.php">
+                        <a class="nav-link" href="index.php?r=events">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
                         <a class="nav-link" href="comentaris.php">

@@ -61,4 +61,16 @@ else if($r=="updateProfile"){
     include "../src/controllers/updateProfileController.php";
     $response=auth($request,$response,$container,"updateProfileController");
 }
+else if($r=="events"){
+    include "../src/controllers/eventsController.php";
+    $response=eventsController($request,$response,$container);
+}
+else if($r=="adverts"){
+    include "../src/controllers/advertsController.php";
+    $response=advertsController($request,$response,$container);
+}
+else if($r=="adminEvents"){
+    include "../src/controllers/adminEventsController.php";
+    $response=adminauth($request,$response,$container,"adminEventsController");
+}
 $response ->response();

@@ -30,14 +30,14 @@
                         <a class="nav-link" href="/src/views/anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/src/views/esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="">Admin</a>
                     </li>
                 </ul>
                 <a href="/src/views/perfil.php" class="image-cropper">
-                    <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                    <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
                 </a>
             </div>
         </div>
@@ -60,7 +60,7 @@
                         <a class="nav-link" href="adminpanel.php">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
-                        <a class="nav-link" href="esdeveniments.php">
+                        <a class="nav-link" href="index.php?r=events">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
                         <a class="nav-link" href="comentaris.php">

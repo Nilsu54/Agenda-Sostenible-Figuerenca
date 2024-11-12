@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consells - Administració ASF</title>
+    <title>Esdeveniments - Administració ASF</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -56,7 +56,7 @@
                         <a class="nav-link" href="adminpanel.php">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
-                        <a class="nav-link" href="index.php?r=events">
+                        <a class="nav-link active" href="index.php?r=events">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
                         <a class="nav-link" href="comentaris.php">
@@ -65,7 +65,7 @@
                         <a class="nav-link" href="usuaris.php">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
-                        <a class="nav-link active" href="consells.php">
+                        <a class="nav-link" href="consells.php">
                             <i class="bi bi-lightbulb me-2"></i>Consells
                         </a>
                         <a class="nav-link" href="anuncis.php">
@@ -80,8 +80,8 @@
 
             <!-- Main Content -->
             <div class="col-md-9 col-lg-10 px-md-4">
-                <h1 class="h2">Consells</h1>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nouConsellModal">Nou Consell</button>
+                <h1 class="h2">Esdeveniments</h1>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nouEsdevenimentModal">Nou Esdeveniment</button>
                 <div class="table-responsive mt-3">
                     <table class="table table-striped">
                         <thead>
@@ -89,7 +89,8 @@
                                 <th>ID</th>
                                 <th>Títol</th>
                                 <th>Data</th>
-                                <th>Etiquetes</th>
+                                <th>Categoria</th>
+                                <th>Visualitzacions</th>
                                 <th>Estat</th>
                                 <th>Accions</th>
                             </tr>
@@ -97,19 +98,17 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Estalvi d'Aigua</td>
+                                <td>Taller de Compostatge</td>
                                 <td>15/03/2024</td>
-                                <td>
-                                    <span class="badge bg-primary">#EstalviAigua</span>
-                                    <span class="badge bg-info">#Sostenibilitat</span>
-                                </td>
-                                <td><span class="badge bg-success">Publicat</span></td>
+                                <td>Reciclatge</td>
+                                <td>1,234</td>
+                                <td><span class="badge bg-success">Actiu</span></td>
                                 <td>
                                     <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
                                     <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
-                            <!-- Más consells... -->
+                            <!-- Más filas... -->
                         </tbody>
                     </table>
                 </div>
@@ -117,56 +116,56 @@
         </div>
     </div>
 
-    <!-- Modal Nou Consell -->
-    <div class="modal fade" id="nouConsellModal">
-        <div class="modal-dialog modal-lg">
+    <!-- Nou Esdeveniment Modal -->
+    <div class="modal fade" id="nouEsdevenimentModal">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Nou Consell</h5>
+                    <h5 class="modal-title">Nou Esdeveniment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
                             <label class="form-label">Títol</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" id="eventTitle" name="eventTitle" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Descripció Breu</label>
-                            <input type="text" class="form-control" required>
+                            <label class="form-label">Data</label>
+                            <input type="date" id="eventDate" name="eventDate" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Contingut (Markdown)</label>
-                            <textarea class="form-control" rows="10" required></textarea>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label">Categoria</label>
-                                    <select class="form-select" required>
-                                        <option value="">Selecciona una categoria</option>
-                                        <option>Recursos Naturals</option>
-                                        <option>Energia</option>
-                                        <option>Reciclatge</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label">Etiquetes</label>
-                                    <input type="text" class="form-control" placeholder="Separades per comes">
-                                </div>
-                            </div>
+                            <label class="form-label">Hora</label>
+                            <input type="time" id="eventHour" name="eventHour" class="form-control" requiered>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Imatge</label>
-                            <input type="file" class="form-control" accept="image/*">
+                            <label class="form-label">Duració de l'esdeventiment</label>
+                            <input type="time" id="eventDuration" name="eventDuration" class="form-control" requiered>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Imatges</label>
+                            <input type="image" id="eventImages" name="eventImages" class="form-control" accept="image/*" multiple requiered>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Descripció</label>
+                            <textarea class="form-control" id ="eventDesc" name="evenDesc" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Categoria</label>
+                            <select class="form-select" id="eventType" name="eventType" required>
+                                <option>Selecciona una categoria</option>
+                                <option value="interior">Interior</option>
+                                <option value="outside">Aire lliure</option>
+                                <option value="talk">Xerrada</option>
+                                <option value="days">Jornada</option>
+                            </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="button" class="btn btn-primary">Publicar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
                 </div>
             </div>
         </div>

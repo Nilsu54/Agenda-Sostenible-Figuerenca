@@ -32,10 +32,10 @@
                         <a class="nav-link" href="anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin/adminpanel.php">Admin</a>
+                        <a class="nav-link" href="index.php?r=dashboard">Admin</a>
                     </li>
                 </ul>
                 <button class="btn btn-light" onclick="window.location.href='login.php'">Login</button>

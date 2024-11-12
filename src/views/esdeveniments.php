@@ -37,15 +37,15 @@
                         <a class="nav-link" href="anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link active" href="index.php?r=events">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin/adminpanel.php">Admin</a>
+                        <a class="nav-link" href="index.php?r=dashboard">Admin</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
                     <a href="perfil.php" class="image-cropper">
-                        <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                        <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
                     </a>
                     <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
                 </div>

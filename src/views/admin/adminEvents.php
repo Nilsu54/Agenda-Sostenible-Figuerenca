@@ -30,14 +30,14 @@
                         <a class="nav-link" href="/src/views/anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/src/views/esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="">Admin</a>
                     </li>
                 </ul>
                 <a href="/src/views/perfil.php" class="image-cropper">
-                    <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                    <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
                 </a>
             </div>
         </div>
@@ -56,7 +56,7 @@
                         <a class="nav-link" href="adminpanel.php">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
-                        <a class="nav-link active" href="esdeveniments.php">
+                        <a class="nav-link active" href="index.php?r=events">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
                         <a class="nav-link" href="comentaris.php">
@@ -128,21 +128,21 @@
                     <form>
                         <div class="mb-3">
                             <label class="form-label">Títol</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" id="eventTitle" name="eventTitle" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Data</label>
-                            <input type="date" class="form-control" required>
+                            <input type="date" id="eventDate" name="eventDate" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Descripció</label>
-                            <textarea class="form-control" rows="3" required></textarea>
+                            <textarea class="form-control" id ="eventDesc" name="evenDesc" rows="3" required></textarea>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Categoria</label>
-                            <select class="form-select" required>
+                            <select class="form-select" id="eventType" name="eventType" required>
                                 <option>Selecciona una categoria</option>
-                                <option>Reciclatge</option>
+                                <option value="recycle">Reciclatge</option>
                                 <option>Energia</option>
                                 <option>Aigua</option>
                             </select>
