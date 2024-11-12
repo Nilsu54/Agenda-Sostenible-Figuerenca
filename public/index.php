@@ -56,13 +56,13 @@ if ($r == "") {
     include "../src/controllers/dashboardController.php";
     $response = adminauth($request, $response, $container, "dashboardController");
 
-} else if ($r == "adminUsers") {
+} else if ($r == "adminusers") {
     // Ruta para la administración de usuarios, protegida con autenticación de administrador.
     include "../src/controllers/adminUsersController.php";
     $response = adminauth($request, $response, $container, "adminUsersController");
 
 } else if ($r == "logout") {
-    // Ruta para cerrar sesión.
+    // Ruta para cerrar sesión
     include "../src/controllers/logoutController.php";
     $response = logoutController($request, $response, $container);
 }
@@ -93,5 +93,17 @@ else if($r=="adminevents"){
 else if($r=="adminnews"){
     include "../src/controllers/adminnewsController.php";
     $response=adminnewsController($request,$response,$container);
+}
+else if($r=="admintips"){
+    include "../src/controllers/admintipsController.php";
+    $response=admintipsController($request,$response,$container);
+}
+else if($r=="admincategory"){
+    include "../src/controllers/admincategoryController.php";
+    $response=admincategoryController($request,$response,$container);
+}
+else if($r=="admincoments"){
+    include "../src/controllers/admincomentsController.php";
+    $response=admincomentsController($request,$response,$container);
 }
 $response ->response();

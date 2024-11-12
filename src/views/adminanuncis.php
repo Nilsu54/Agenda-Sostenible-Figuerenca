@@ -59,10 +59,10 @@
                         <a class="nav-link" href="index.php?r=adminevents">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
-                        <a class="nav-link" href="comentaris.php">
+                        <a class="nav-link" href="index.php?r=admincoments">
                             <i class="bi bi-chat-dots me-2"></i>Comentaris
                         </a>
-                        <a class="nav-link" href="usuaris.php">
+                        <a class="nav-link" href="index.php?r=adminusers">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
                         <a class="nav-link" href="index.php?r=admintips">
@@ -71,7 +71,7 @@
                         <a class="nav-link active" href="index.php?r=adminnews">
                             <i class="bi bi-megaphone me-2"></i>Anuncis
                         </a>
-                        <a class="nav-link" href="categories.php">
+                        <a class="nav-link" href="index.php?r=admincategory">
                             <i class="bi bi-folder me-2"></i>Categories
                         </a>
                     </nav>
