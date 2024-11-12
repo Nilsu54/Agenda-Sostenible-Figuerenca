@@ -22,7 +22,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Navegación principal">
         <div class="container-fluid px-4">
-            <a class="navbar-brand" href="/src/views/index.php" aria-label="Inicio">
+            <a class="navbar-brand" href="index.php" aria-label="Inicio">
                 <img src="/img/logoblanco.png" height="50" alt="Logo ASF" width="auto">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
@@ -34,13 +34,13 @@
                         <a class="nav-link active" href="index.php?r=tips">Consells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="anuncis.php">Anuncis</a>
+                        <a class="nav-link" href="index.php?r=news">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin/adminpanel.php">Admin</a>
+                        <a class="nav-link" href="index.php?r=dashboard">Admin</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">

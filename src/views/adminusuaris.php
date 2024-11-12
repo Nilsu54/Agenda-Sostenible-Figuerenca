@@ -8,15 +8,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="/public/css/styles.css">
-    <link rel="icon" href="/public/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/logo.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar --> 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
-            <a class="navbar-brand" href="/src/views/index.php">
-                <img src="/public/img/logoblanco.png" height="50" alt="Logo">
+            <a class="navbar-brand" href="index.php">
+                <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -27,17 +27,17 @@
                         <a class="nav-link" href="/src/views/consells.php">Consells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/src/views/anuncis.php">Anuncis</a>
+                        <a class="nav-link" href="index.php?r=news">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/src/views/esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="">Admin</a>
                     </li>
                 </ul>
-                <a href="/src/views/perfil.php" class="image-cropper">
-                    <img src="/public/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                <a href="index.php?r=profile" class="image-cropper">
+                    <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                 </a>
             </div>
         </div>
@@ -53,14 +53,14 @@
             <div class="col-md-3 col-lg-2 px-0 admin-sidebar">
                 <div class="d-flex flex-column">
                     <div class="p-3 text-white text-center">
-                        <img src="/public/img/logoblanco.png" height="50" alt="Logo">
+                        <img src="/img/logoblanco.png" height="50" alt="Logo">
                         <h5 class="mt-2">Panel d'Administració</h5>
                     </div>
                     <nav class="nav flex-column">
-                        <a class="nav-link" href="adminpanel.php">
+                        <a class="nav-link" href="index.php?r=dashboard">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
-                        <a class="nav-link" href="esdeveniments.php">
+                        <a class="nav-link" href="index.php?r=events">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
                         <a class="nav-link" href="comentaris.php">
@@ -72,7 +72,7 @@
                         <a class="nav-link" href="index.php?r=tips">
                             <i class="bi bi-lightbulb me-2"></i>Consells
                         </a>
-                        <a class="nav-link" href="anuncis.php">
+                        <a class="nav-link" href="index.php?r=news">
                             <i class="bi bi-megaphone me-2"></i>Anuncis
                         </a>
                         <a class="nav-link" href="categories.php">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esdeveniments - Administració ASF</title>
+    <title>Consells - Administració ASF</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -15,7 +15,7 @@
     <!-- Navbar --> 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
-            <a class="navbar-brand" href="/src/views/index.php">
+            <a class="navbar-brand" href="index.php">
                 <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -27,16 +27,16 @@
                         <a class="nav-link" href="/src/views/consells.php">Consells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/src/views/anuncis.php">Anuncis</a>
+                        <a class="nav-link" href="index.php?r=news">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/src/views/esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="">Admin</a>
                     </li>
                 </ul>
-                <a href="/src/views/perfil.php" class="image-cropper">
+                <a href="index.php?r=profile" class="image-cropper">
                     <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                 </a>
             </div>
@@ -53,10 +53,10 @@
                         <h5 class="mt-2">Panel d'Administració</h5>
                     </div>
                     <nav class="nav flex-column">
-                        <a class="nav-link" href="adminpanel.php">
+                        <a class="nav-link" href="index.php?r=dashboard">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
-                        <a class="nav-link active" href="esdeveniments.php">
+                        <a class="nav-link" href="index.php?r=adminevents">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
                         <a class="nav-link" href="comentaris.php">
@@ -65,10 +65,10 @@
                         <a class="nav-link" href="usuaris.php">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
-                        <a class="nav-link" href="index.php?r=tips">
+                        <a class="nav-link active" href="index.php?r=admintips">
                             <i class="bi bi-lightbulb me-2"></i>Consells
                         </a>
-                        <a class="nav-link" href="anuncis.php">
+                        <a class="nav-link" href="index.php?r=adminnews">
                             <i class="bi bi-megaphone me-2"></i>Anuncis
                         </a>
                         <a class="nav-link" href="categories.php">
@@ -80,8 +80,8 @@
 
             <!-- Main Content -->
             <div class="col-md-9 col-lg-10 px-md-4">
-                <h1 class="h2">Esdeveniments</h1>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nouEsdevenimentModal">Nou Esdeveniment</button>
+                <h1 class="h2">Consells</h1>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nouConsellModal">Nou Consell</button>
                 <div class="table-responsive mt-3">
                     <table class="table table-striped">
                         <thead>
@@ -89,8 +89,7 @@
                                 <th>ID</th>
                                 <th>Títol</th>
                                 <th>Data</th>
-                                <th>Categoria</th>
-                                <th>Visualitzacions</th>
+                                <th>Etiquetes</th>
                                 <th>Estat</th>
                                 <th>Accions</th>
                             </tr>
@@ -98,17 +97,19 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Taller de Compostatge</td>
+                                <td>Estalvi d'Aigua</td>
                                 <td>15/03/2024</td>
-                                <td>Reciclatge</td>
-                                <td>1,234</td>
-                                <td><span class="badge bg-success">Actiu</span></td>
+                                <td>
+                                    <span class="badge bg-primary">#EstalviAigua</span>
+                                    <span class="badge bg-info">#Sostenibilitat</span>
+                                </td>
+                                <td><span class="badge bg-success">Publicat</span></td>
                                 <td>
                                     <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
                                     <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
-                            <!-- Más filas... -->
+                            <!-- Más consells... -->
                         </tbody>
                     </table>
                 </div>
@@ -116,12 +117,12 @@
         </div>
     </div>
 
-    <!-- Nou Esdeveniment Modal -->
-    <div class="modal fade" id="nouEsdevenimentModal">
-        <div class="modal-dialog">
+    <!-- Modal Nou Consell -->
+    <div class="modal fade" id="nouConsellModal">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Nou Esdeveniment</h5>
+                    <h5 class="modal-title">Nou Consell</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -131,27 +132,41 @@
                             <input type="text" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Data</label>
-                            <input type="date" class="form-control" required>
+                            <label class="form-label">Descripció Breu</label>
+                            <input type="text" class="form-control" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Descripció</label>
-                            <textarea class="form-control" rows="3" required></textarea>
+                            <label class="form-label">Contingut (Markdown)</label>
+                            <textarea class="form-control" rows="10" required></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Categoria</label>
+                                    <select class="form-select" required>
+                                        <option value="">Selecciona una categoria</option>
+                                        <option>Recursos Naturals</option>
+                                        <option>Energia</option>
+                                        <option>Reciclatge</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Etiquetes</label>
+                                    <input type="text" class="form-control" placeholder="Separades per comes">
+                                </div>
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Categoria</label>
-                            <select class="form-select" required>
-                                <option>Selecciona una categoria</option>
-                                <option>Reciclatge</option>
-                                <option>Energia</option>
-                                <option>Aigua</option>
-                            </select>
+                            <label class="form-label">Imatge</label>
+                            <input type="file" class="form-control" accept="image/*">
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-primary">Publicar</button>
                 </div>
             </div>
         </div>

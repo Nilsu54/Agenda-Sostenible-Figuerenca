@@ -31,10 +31,10 @@
                         <a class="nav-link" href="index.php?r=tips">Consells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="anuncis.php">Anuncis</a>
+                        <a class="nav-link" href="index.php?r=news">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="esdeveniments.php">Esdeveniments</a>
+                        <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
                     <!-- $_SESSION["user"]["role"]=="admin" -->
                     <?php if (isset($_SESSION["user"]) && isset($_SESSION["isAdmin"])){?>
