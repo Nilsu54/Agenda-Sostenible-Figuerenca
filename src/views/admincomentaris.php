@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consells - Administració ASF</title>
+    <title>Comentaris - Administració ASF</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -30,14 +30,14 @@
                         <a class="nav-link" href="/src/views/anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
+                        <a class="nav-link" href="/src/views/esdeveniments.php">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="">Admin</a>
                     </li>
                 </ul>
                 <a href="/src/views/perfil.php" class="image-cropper">
-                    <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
+                    <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                 </a>
             </div>
         </div>
@@ -56,16 +56,16 @@
                         <a class="nav-link" href="adminpanel.php">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
-                        <a class="nav-link" href="index.php?r=events">
+                        <a class="nav-link" href="esdeveniments.php">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
-                        <a class="nav-link" href="comentaris.php">
+                        <a class="nav-link active" href="comentaris.php">
                             <i class="bi bi-chat-dots me-2"></i>Comentaris
                         </a>
                         <a class="nav-link" href="usuaris.php">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
-                        <a class="nav-link active" href="index.php?r=tips">
+                        <a class="nav-link" href="index.php?r=tips">
                             <i class="bi bi-lightbulb me-2"></i>Consells
                         </a>
                         <a class="nav-link" href="anuncis.php">
@@ -80,16 +80,26 @@
 
             <!-- Main Content -->
             <div class="col-md-9 col-lg-10 px-md-4">
-                <h1 class="h2">Consells</h1>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nouConsellModal">Nou Consell</button>
-                <div class="table-responsive mt-3">
-                    <table class="table table-striped">
+                <div class="d-flex justify-content-between pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Gestió de Comentaris</h1>
+                    <div class="btn-group">
+                        <button class="btn btn-outline-secondary active">Tots</button>
+                        <button class="btn btn-outline-warning btn-filter-warning">Pendents</button>
+                        <button class="btn btn-outline-success btn-filter-success">Aprovats</button>
+                        <button class="btn btn-outline-danger btn-filter-danger">Rebutjats</button>
+                    </div>
+                </div>
+
+                <!-- Taula de Comentaris -->
+                <div class="table-responsive">
+                    <table class="table table-striped admin-table">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Títol</th>
+                                <th>Usuari</th>
+                                <th>Contingut</th>
+                                <th>Element</th>
                                 <th>Data</th>
-                                <th>Etiquetes</th>
                                 <th>Estat</th>
                                 <th>Accions</th>
                             </tr>
@@ -97,19 +107,24 @@
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Estalvi d'Aigua</td>
+                                <td>Usuari123</td>
+                                <td>Gran esdeveniment! Molt recomanable...</td>
+                                <td>Taller de Compostatge</td>
                                 <td>15/03/2024</td>
+                                <td><span class="badge bg-warning">Pendent</span></td>
                                 <td>
-                                    <span class="badge bg-primary">#EstalviAigua</span>
-                                    <span class="badge bg-info">#Sostenibilitat</span>
-                                </td>
-                                <td><span class="badge bg-success">Publicat</span></td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                                    <button class="btn btn-sm btn-success" title="Aprovar">
+                                        <i class="bi bi-check-lg"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-warning" title="Editar" data-bs-toggle="modal" data-bs-target="#editarComentariModal">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" title="Eliminar">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
                                 </td>
                             </tr>
-                            <!-- Más consells... -->
+                            <!-- Más comentarios... -->
                         </tbody>
                     </table>
                 </div>
@@ -117,56 +132,37 @@
         </div>
     </div>
 
-    <!-- Modal Nou Consell -->
-    <div class="modal fade" id="nouConsellModal">
-        <div class="modal-dialog modal-lg">
+    <!-- Modal Editar Comentari -->
+    <div class="modal fade admin-modal" id="editarComentariModal">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Nou Consell</h5>
+                    <h5 class="modal-title">Editar Comentari</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label class="form-label">Títol</label>
-                            <input type="text" class="form-control" required>
+                            <label class="form-label">Contingut</label>
+                            <textarea class="form-control" rows="3"></textarea>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Descripció Breu</label>
-                            <input type="text" class="form-control" required>
+                            <label class="form-label">Estat</label>
+                            <select class="form-select">
+                                <option value="pending">Pendent</option>
+                                <option value="approved">Aprovat</option>
+                                <option value="rejected">Rebutjat</option>
+                            </select>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Contingut (Markdown)</label>
-                            <textarea class="form-control" rows="10" required></textarea>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label">Categoria</label>
-                                    <select class="form-select" required>
-                                        <option value="">Selecciona una categoria</option>
-                                        <option>Recursos Naturals</option>
-                                        <option>Energia</option>
-                                        <option>Reciclatge</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label">Etiquetes</label>
-                                    <input type="text" class="form-control" placeholder="Separades per comes">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Imatge</label>
-                            <input type="file" class="form-control" accept="image/*">
+                            <label class="form-label">Motiu de moderació (opcional)</label>
+                            <textarea class="form-control" rows="2" placeholder="Explica el motiu de la moderació..."></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="button" class="btn btn-primary">Publicar</button>
+                    <button type="button" class="btn btn-primary">Guardar Canvis</button>
                 </div>
             </div>
         </div>
@@ -175,4 +171,4 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html> 

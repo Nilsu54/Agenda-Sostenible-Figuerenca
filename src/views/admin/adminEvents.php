@@ -15,7 +15,7 @@
     <!-- Navbar --> 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
-            <a class="navbar-brand" href="/src/views/index.php">
+            <a class="navbar-brand" href="index.php">
                 <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -27,7 +27,7 @@
                         <a class="nav-link" href="/src/views/consells.php">Consells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/src/views/anuncis.php">Anuncis</a>
+                        <a class="nav-link" href="index.php?r=news">Anuncis</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
@@ -36,8 +36,13 @@
                         <a class="nav-link active" href="">Admin</a>
                     </li>
                 </ul>
+<<<<<<<< HEAD:src/views/admin/adminEvents.php
                 <a href="/src/views/perfil.php" class="image-cropper">
                     <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
+========
+                <a href="index.php?r=profile" class="image-cropper">
+                    <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+>>>>>>>> d76709f3953634a555895b4590a49d12a1bcfc1f:src/views/adminesdeveniments.php
                 </a>
             </div>
         </div>
@@ -53,7 +58,7 @@
                         <h5 class="mt-2">Panel d'Administració</h5>
                     </div>
                     <nav class="nav flex-column">
-                        <a class="nav-link" href="adminpanel.php">
+                        <a class="nav-link" href="index.php?r=dashboard">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
                         <a class="nav-link active" href="index.php?r=events">
@@ -68,7 +73,7 @@
                         <a class="nav-link" href="index.php?r=tips">
                             <i class="bi bi-lightbulb me-2"></i>Consells
                         </a>
-                        <a class="nav-link" href="anuncis.php">
+                        <a class="nav-link" href="index.php?r=adminnews">
                             <i class="bi bi-megaphone me-2"></i>Anuncis
                         </a>
                         <a class="nav-link" href="categories.php">

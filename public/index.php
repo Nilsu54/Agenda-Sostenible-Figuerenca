@@ -78,14 +78,27 @@ else if($r=="tips"){
     include "../src/controllers/tipsController.php";
     $response=tipsController($request,$response,$container);
 }
+else if($r=="news"){
+    include "../src/controllers/newsController.php";
+    $response=newsController($request,$response,$container);
+}
 else if($r=="events"){
     include "../src/controllers/eventsController.php";
     $response=eventsController($request,$response,$container);
 }
-else if($r=="adverts"){
-    include "../src/controllers/advertsController.php";
-    $response=advertsController($request,$response,$container);
+else if($r=="adminevents"){
+    include "../src/controllers/admineventsController.php";
+    $response=admineventsController($request,$response,$container);
 }
+else if($r=="adminnews"){
+    include "../src/controllers/adminnewsController.php";
+    $response=adminnewsController($request,$response,$container);
+}
+else if($r=="events"){
+    include "../src/controllers/eventsController.php";
+    $response=eventsController($request,$response,$container);
+}
+
 else if($r=="adminEvents"){
     include "../src/controllers/adminEventsController.php";
     $response=adminauth($request,$response,$container,"adminEventsController");

@@ -27,7 +27,7 @@
                         <a class="nav-link" href="index.php?r=tips">Consells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="anuncis.php">Anuncis</a>
+                        <a class="nav-link" href="index.php?r=news">Anuncis</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=events">Esdeveniments</a>

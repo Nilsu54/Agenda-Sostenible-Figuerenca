@@ -88,7 +88,7 @@
                         
                         <div class="text-center mt-3">
                             <p class="mb-0">Ja tens compte? 
-                                <a href="login.php" class="text-success fw-bold text-decoration-none">Inicia sessió</a>
+                                <a href="index.php?r=login" class="text-success fw-bold text-decoration-none">Inicia sessió</a>
                             </p>
                         </div>
                     </form>
