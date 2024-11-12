@@ -1,35 +1,54 @@
 <?php
 
+// Clase UserPDO para manejar las operaciones de los usuarios en la base de datos usando PDO.
 class UserPDO
 {
+    // Propiedad privada para almacenar la conexión PDO.
     private PDO $sql;
 
+    // Constructor que recibe la conexión PDO para interactuar con la base de datos.
     public function __construct(PDO $sql)
     {
         $this->sql = $sql;
     }
 
-    //afegir nou usuari
-
-    public function add($username,$password,$email,$img,$name,$surname){
-        $query= "insert into users (username,password,email,role,img,name,surname) values ('{$username}','{$password}','{$email}',1,'{$img}','{$name}','{$surname}')";
-        $stm= $this->sql->prepare($query);
-        $stm->execute();
-    }
-    //esborrar usuari
-    public function delete($id){
-        $query="delete from users where id={$id};";
+    // Método para agregar un nuevo usuario a la base de datos.
+    public function add($username, $password, $email, $img, $name, $surname)
+    {
+        // Consulta SQL para insertar un nuevo usuario en la tabla 'users'.
+        $query = "insert into users (username, password, email, role, img, name, surname) 
+                  values ('{$username}', '{$password}', '{$email}', 1, '{$img}', '{$name}', '{$surname}')";
+        
+        // Prepara y ejecuta la consulta.
         $stm = $this->sql->prepare($query);
         $stm->execute();
     }
 
-    //listat per al dashboard d'admin
-    public function list(){
-        $query="select id, name, username, email, role, creation_date from users;";
-        $users=[];
-        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $user){
-            $users[$user["id"]]=$user;
+    // Método para eliminar un usuario de la base de datos por su ID.
+    public function delete($id)
+    {
+        // Consulta SQL para eliminar un usuario según el ID.
+        $query = "delete from users where id={$id};";
+        
+        // Prepara y ejecuta la consulta.
+        $stm = $this->sql->prepare($query);
+        $stm->execute();
+    }
+
+    // Método para obtener una lista de usuarios, utilizada en el panel de administración.
+    public function list()
+    {
+        // Consulta SQL para obtener los usuarios con información básica.
+        $query = "select id, name, username, email, role, creation_date from users;";
+        $users = [];
+        
+        // Ejecuta la consulta y recorre los resultados.
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $user) {
+            // Guarda los usuarios en un array asociativo donde la clave es el ID del usuario.
+            $users[$user["id"]] = $user;
         }
+        
+        // Devuelve la lista de usuarios.
         return $users;
     }
 
@@ -58,9 +77,11 @@ class UserPDO
         $query = "select id, username, password, role, img, name, surname, email from users where username = '{$username}'";
         $stm = $this->sql->prepare($query);
         $stm->execute();
+        
+        // Recupera el resultado como un array asociativo.
         $result = $stm->fetch(PDO::FETCH_ASSOC);
+        
+        // Devuelve el resultado.
         return $result;
     }
-
-    
 }
