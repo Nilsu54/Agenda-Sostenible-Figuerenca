@@ -106,4 +106,8 @@ else if($r=="admincoments"){
     include "../src/controllers/admincomentsController.php";
     $response=admincomentsController($request,$response,$container);
 }
+else if($r=="contrasenya"){
+    include "../src/controllers/contrasenyaController.php";
+    $response=contrasenyaController($request,$response,$container);
+}
 $response ->response();

@@ -15,11 +15,11 @@
 <body class="overflow-hidden" style="background-color: var(--bs-secondary);">
     <!-- Back Button -->
     <div class="position-fixed top-0 start-0 p-4">
-        <button class="btn btn-primary fw-bold" onclick="window.location.href='login.php'">
-            <i class="bi bi-arrow-left me-2"></i>Tornar al login
+        <button class="btn btn-primary fw-bold" onclick="window.location.href='index.php?r=login'">
+            <i href="index.php?r=login" class="bi bi-arrow-left me-2"></i>Tornar al login
         </button>
     </div>
-
+  
     <!-- Message Container -->
     <div class="container min-vh-100 d-flex align-items-center justify-content-center">
         <div class="row w-100 justify-content-center p-4" style="background-color: var(--bs-secondary);">
@@ -33,7 +33,7 @@
                         </div>
                         
                         <div class="text-center">
-                            <a href="login.php" class="btn btn-primary">
+                            <a href="index.php?r=login" class="btn btn-primary">
                                 Torna-ho a intentar <i class="bi bi-arrow-repeat ms-2"></i>
                             </a>
                         </div>
