@@ -1,47 +1,47 @@
-// Espera a que el DOM esté completamente cargado antes de ejecutar el código
+// Wait for the DOM to be fully loaded before executing the code
 $(document).ready(function() {
-    // Maneja la previsualización de la imagen de perfil
+    // Handle profile image preview
     $("#newProfileImage").change(function() {
-        const file = this.files[0]; // Obtiene el archivo seleccionado
+        const file = this.files[0]; // Get the selected file
         if (file) {
-            const reader = new FileReader(); // Crea un nuevo lector de archivos
+            const reader = new FileReader(); // Create a new file reader
             
-            // Cuando el archivo se carga correctamente
+            // When the file is successfully loaded
             reader.onload = function(e) {
-                // Actualiza la imagen de previsualización con el nuevo archivo
+                // Update the preview image with the new file
                 $("#currentProfileImage").attr('src', e.target.result);
             }
-            // Lee el archivo como URL de datos
+            // Read the file as a data URL
             reader.readAsDataURL(file);
         }
     });
 
-    // Maneja el envío del formulario de perfil
+    // Handle profile form submission
     $("#profileForm").submit(function(e) {
-        e.preventDefault(); // Previene el envío tradicional del formulario
+        e.preventDefault(); // Prevent traditional form submission
         
-        // Crea un objeto FormData con los datos del formulario
+        // Create a FormData object with the form data
         const formData = new FormData(this);
         
-        // Realiza una petición AJAX para actualizar el perfil
+        // Perform an AJAX request to update the profile
         $.ajax({
             url: '/api/update-profile.php',
             type: 'POST',
             data: formData,
-            processData: false, // No procesar los datos
-            contentType: false, // No establecer tipo de contenido
+            processData: false, // Do not process the data
+            contentType: false, // Do not set content type
             success: function(response) {
-                // Maneja la respuesta exitosa
+                // Handle a successful response
                 if (response.success) {
-                    alert('Perfil actualizado correctamente');
+                    alert('Profile updated successfully');
                 } else {
                     alert('Error: ' + response.message);
                 }
             },
             error: function() {
-                // Maneja errores en la petición
-                alert('Error al actualizar el perfil');
+                // Handle errors in the request
+                alert('Error updating profile');
             }
         });
     });
-}); 
+});

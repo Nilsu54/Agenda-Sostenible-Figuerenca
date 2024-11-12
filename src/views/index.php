@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -22,7 +21,7 @@
             <a class="navbar-brand" href="index.php">
                 <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -36,15 +35,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
-                    <!-- $_SESSION["user"]["role"]=="admin" -->
-                    <?php if (isset($_SESSION["user"]) && $_SESSION["user"]["role"]=="admin"){?>                    <li class="nav-item">
+                    <?php if (isset($_SESSION["user"]) && $_SESSION["user"]["role"]=="admin"){?>                    
+                    <li class="nav-item">
                         <a class="nav-link" href="index.php?r=dashboard">Admin</a>
                     </li>
                     <?php } ?>
                 </ul>
                 <div class="d-flex align-items-center">
-                    
-
                     <?php if(!isset($_SESSION["user"])){?>
                     <button class="btn btn-light" onclick="window.location.href='index.php?r=login'">Login</button>
                     <?php  }else if (isset($_SESSION["user"])){ ?>
@@ -53,35 +50,36 @@
                     </a>
                     <button class="btn btn-light" onclick="window.location.href='index.php?r=logout'">Logout</button>
                     <?php }?>
-
                 </div>
+            </div>
         </div>
     </nav>
+
     <!-- Search Container -->
-    <div class="search-container">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-4">
-            <div class="d-flex gap-3">
-                <select class="form-select" style="min-width: 200px;">
-                    <option>Filtro 1</option>
-                    <option>Filtro 2</option>
-                    <option>Filtro 3</option>
-                </select>
-                <select class="form-select" style="min-width: 200px;">
-                    <option>Categoría 1</option>
-                    <option>Categoría 2</option>
-                    <option>Categoría 3</option>
-                </select>
-            </div>
-            <div class="d-flex gap-3">
-                <input type="text" class="form-control" placeholder="Buscar..." style="min-width: 250px;">
-                <button class="btn btn-primary">Buscar</button>
+    <div class="search-container" role="search" aria-label="Búsqueda y filtros">
+        <div class="container-fluid px-3 px-lg-4">
+            <div class="d-flex flex-column flex-md-row gap-3 justify-content-between align-items-stretch align-items-md-center">
+                <div class="d-flex flex-column flex-md-row gap-3 w-100 w-md-auto">
+                    <select class="form-select" aria-label="Seleccionar filtro">
+                        <option value="">Selecciona un filtro</option>
+                        <option value="1">Filtro 1</option>
+                    </select>
+                    <select class="form-select" aria-label="Seleccionar categoría">
+                        <option value="">Selecciona una categoría</option>
+                        <option value="1">Categoría 1</option>
+                    </select>
+                </div>
+                <div class="d-flex gap-2 w-100 w-md-auto">
+                    <input type="text" class="form-control" placeholder="Buscar..." aria-label="Campo de búsqueda">
+                    <button class="btn btn-primary" aria-label="Realizar búsqueda">Buscar</button>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Hero Slider -->
     <div class="container-fluid p-0">
-        <div class="swiper heroSwiper">
+        <div class="swiper heroSwiper" role="region" aria-label="Carrusel de secciones">
             <div class="swiper-wrapper">
                 <div class="swiper-slide position-relative" onclick="window.location.href='index.php?r=events'" style="cursor: pointer;">
                     <img src="/img/lago.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
@@ -95,7 +93,7 @@
                         <h1 class="display-4">Consells</h1>
                     </div>
                 </div>
-                <div class="swiper-slide position-relative" onclick="window.location.href='index.php?r=adverts'" style="cursor: pointer;">
+                <div class="swiper-slide position-relative" onclick="window.location.href='index.php?r=news'" style="cursor: pointer;">
                     <img src="/img/lago3.jpg" class="w-100 object-fit-cover" style="height: 60vh;" alt="Slider">
                     <div class="position-absolute bottom-0 start-0 w-100 text-white p-4" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
                         <h1 class="display-4">Anuncis</h1>
@@ -112,7 +110,7 @@
     <div class="container-fluid my-5">
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-8">
-                <div class="bg-light shadow p-4 rounded">
+                <div class="bg-primary text-white shadow p-3 p-md-4 rounded">
                     <h2 class="mb-4 text-center">Próximos Eventos</h2>
                     <div class="list-group">
                         <?php for($i = 1; $i <= 5; $i++): ?>
