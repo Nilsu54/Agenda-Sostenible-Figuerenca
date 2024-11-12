@@ -62,7 +62,7 @@
                         <a class="nav-link" href="index.php?r=admincoments">
                             <i class="bi bi-chat-dots me-2"></i>Comentaris
                         </a>
-                        <a class="nav-link" href="index.php?r=adminUsers">
+                        <a class="nav-link" href="index.php?r=adminusers">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
                         <a class="nav-link" href="index.php?r=admintips">

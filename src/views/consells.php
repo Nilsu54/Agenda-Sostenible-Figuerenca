@@ -39,15 +39,23 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
+                      <!-- $_SESSION["user"]["role"]=="admin" -->
+                      <?php if (isset($_SESSION["user"]) && $_SESSION["user"]["role"]=="admin"){?>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=dashboard">Admin</a>
                     </li>
+                    <?php } ?>
                 </ul>
-                <div class="d-flex align-items-center">
-                    <a href="perfil.php" class="image-cropper">
-                        <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                
+                <?php if(!isset($_SESSION["user"])){?>
+                    <button class="btn btn-light" onclick="window.location.href='index.php?r=login'">Login</button>
+                    <?php  }else if (isset($_SESSION["user"])){ ?>
+                        <a href="index.php?r=profile" class="image-cropper">
+                        <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
                     </a>
-                    <button class="btn btn-light" onclick="window.location.href='/src/views/login.php'">Login</button>
+                    <button class="btn btn-light" onclick="window.location.href='index.php?r=logout'">Logout</button>
+                    <?php }?>
+
                 </div>
             </div>
         </div>
