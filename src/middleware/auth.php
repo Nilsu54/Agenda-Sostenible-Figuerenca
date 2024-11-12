@@ -1,25 +1,25 @@
 <?php
 
-// Middleware para verificar que el usuario esté autenticado antes de acceder a la siguiente acción.
+// Middleware to verify that the user is authenticated before accessing the next action.
 function auth($request, $response, $container, $next) {
     
-    // Verifica si existe una sesión activa con un usuario autenticado.
+    // Check if there is an active session with an authenticated user.
     if ($request->has("SESSION", "user")) {
         
-        // Si el usuario está autenticado, obtiene los datos del usuario desde la sesión.
+        // If the user is authenticated, get user data from the session.
         $user = $request->get("SESSION", "user", FILTER_REQUIRE_ARRAY);
         
-        // Establece los datos del usuario en la respuesta para que puedan ser utilizados en el siguiente controlador.
+        // Set user data in the response so it can be used in the next controller.
         $response->set("user", $user);
         
-        // Llama al siguiente controlador (acción) en la cadena de ejecución del middleware.
+        // Call the next controller (action) in the middleware execution chain.
         $response = $next($request, $response, $container);
     } else {
         
-        // Si el usuario no está autenticado, redirige a la página de login.
+        // If the user is not authenticated, redirect to the login page.
         $response->redirect("location: index.php?r=login");
     }
     
-    // Devuelve la respuesta final después de pasar por el middleware.
+    // Return the final response after passing through the middleware.
     return $response;
 }

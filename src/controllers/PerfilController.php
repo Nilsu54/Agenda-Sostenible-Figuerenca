@@ -2,34 +2,34 @@
 class PerfilController {
     private $db;
 
-    // Constructor que recibe una instancia de la base de datos y la almacena en la propiedad $db.
+    // Constructor that receives a database instance and stores it in the $db property.
     public function __construct($db) {
         $this->db = $db;
     }
 
-    // Función para actualizar los datos del perfil de un usuario.
+    // Function to update a user's profile data.
     public function updateProfile($userId, $data) {
         try {
-            // Validar que los campos esenciales (nombre, apellido, correo electrónico) no estén vacíos.
+            // Validate that essential fields (first name, last name, email) are not empty.
             if (empty($data['firstName']) || empty($data['lastName']) || empty($data['email'])) {
-                throw new Exception("Todos los campos son obligatorios");
+                throw new Exception("All fields are required");
             }
 
-            // Procesar la imagen de perfil si se ha subido una nueva.
+            // Process the profile image if a new one has been uploaded.
             if (isset($_FILES['profileImage']) && $_FILES['profileImage']['error'] === 0) {
                 $imagePath = $this->processProfileImage($_FILES['profileImage']);
-                // Actualizar la ruta de la imagen de perfil en la base de datos.
+                // Update the profile image path in the database.
                 $this->updateProfileImage($userId, $imagePath);
             }
 
-            // Actualizar los datos del perfil en la base de datos.
+            // Update profile data in the database.
             $stmt = $this->db->prepare("
                 UPDATE users 
                 SET first_name = ?, last_name = ?, email = ?, username = ? 
                 WHERE id = ?
             ");
 
-            // Ejecutar la actualización con los datos proporcionados.
+            // Execute the update with the provided data.
             $stmt->execute([
                 $data['firstName'],
                 $data['lastName'],
@@ -38,44 +38,44 @@ class PerfilController {
                 $userId
             ]);
 
-            // Retornar un mensaje de éxito.
-            return ['success' => true, 'message' => 'Perfil actualizado correctamente'];
+            // Return a success message.
+            return ['success' => true, 'message' => 'Profile updated successfully'];
         } catch (Exception $e) {
-            // En caso de error, retornar el mensaje de la excepción.
+            // In case of error, return the exception message.
             return ['success' => false, 'message' => $e->getMessage()];
         }
     }
 
-    // Función privada para procesar la imagen de perfil subida.
+    // Private function to process the uploaded profile image.
     private function processProfileImage($file) {
-        $targetDir = "public/img/profiles/"; // Directorio de destino para las imágenes de perfil.
-        $fileName = uniqid() . '_' . basename($file['name']); // Crear un nombre único para la imagen.
-        $targetPath = $targetDir . $fileName; // Ruta completa donde se guardará la imagen.
+        $targetDir = "public/img/profiles/"; // Target directory for profile images.
+        $fileName = uniqid() . '_' . basename($file['name']); // Create a unique name for the image.
+        $targetPath = $targetDir . $fileName; // Full path where the image will be saved.
 
-        // Validar que el tipo de archivo sea una imagen permitida.
+        // Validate that the file type is an allowed image type.
         $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
         if (!in_array($file['type'], $allowedTypes)) {
-            throw new Exception("Tipo de archivo no permitido"); // Lanzar excepción si el tipo no es válido.
+            throw new Exception("File type not allowed"); // Throw exception if the type is invalid.
         }
 
-        // Intentar mover el archivo desde el directorio temporal a la ubicación deseada.
+        // Attempt to move the file from the temporary directory to the desired location.
         if (!move_uploaded_file($file['tmp_name'], $targetPath)) {
-            throw new Exception("Error al subir la imagen"); // Lanzar excepción si no se puede mover el archivo.
+            throw new Exception("Error uploading image"); // Throw exception if file cannot be moved.
         }
 
-        // Retornar la ruta de la imagen procesada.
+        // Return the processed image path.
         return $targetPath;
     }
 
-    // Función privada para actualizar la imagen de perfil en la base de datos.
+    // Private function to update the profile image path in the database.
     private function updateProfileImage($userId, $imagePath) {
-        // Preparar la consulta SQL para actualizar la ruta de la imagen de perfil en la base de datos.
+        // Prepare the SQL query to update the profile image path in the database.
         $stmt = $this->db->prepare("
             UPDATE users 
             SET profile_image = ? 
             WHERE id = ?
         ");
-        // Ejecutar la consulta de actualización.
+        // Execute the update query.
         $stmt->execute([$imagePath, $userId]);
     }
 }

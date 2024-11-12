@@ -1,25 +1,25 @@
 <?php
 
-// Middleware para verificar que el usuario tenga rol de administrador antes de acceder a la siguiente acción.
+// Middleware to verify that the user has an admin role before accessing the next action.
 function adminauth($request, $response, $container, $next) {
     
-    // Verifica si existe una sesión de usuario y si el rol del usuario es "admin".
+    // Check if there is a user session and if the user's role is "admin".
     if ($request->has("SESSION", "user") && $_SESSION["user"]["role"] == "admin") {
         
-        // Si el usuario es un administrador, obtiene los datos del usuario desde la sesión.
+        // If the user is an admin, get user data from the session.
         $user = $request->get("SESSION", "user", FILTER_REQUIRE_ARRAY);
         
-        // Establece los datos del usuario en la respuesta para poder utilizarlos en el siguiente controlador.
+        // Set user data in the response to be available for the next controller.
         $response->set("user", $user);
         
-        // Llama al siguiente controlador (acción) en la cadena de ejecución del middleware.
+        // Call the next controller (action) in the middleware execution chain.
         $response = $next($request, $response, $container);
     } else {
         
-        // Si el usuario no es un administrador, redirige a la página principal (index.php).
+        // If the user is not an admin, redirect to the homepage (index.php).
         $response->redirect("location: index.php");
     }
     
-    // Devuelve la respuesta final después de pasar por el middleware.
+    // Return the final response after passing through the middleware.
     return $response;
 }

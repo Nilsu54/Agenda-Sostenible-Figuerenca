@@ -1,21 +1,21 @@
 <?php 
 
-// Controlador para gestionar el cierre de sesión del usuario.
+// Controller to handle user logout.
 function logoutController($request, $response, $container) {
     
-    // Verifica si existe una sesión activa de usuario.
+    // Check if a user session is active.
     if (isset($_SESSION["user"])) {
         
-        // Si existe, elimina la sesión del usuario.
+        // If it exists, delete the user session.
         $response->unsetSession("user");
         
-        // Redirige al usuario a la página de inicio después de cerrar sesión.
+        // Redirect the user to the homepage after logging out.
         $response->redirect("location:index.php");
     }
     
-    // Si no hay sesión activa, redirige igualmente al inicio.
+    // If no active session, still redirect to the homepage.
     $response->redirect("location:index.php");
     
-    // Devuelve la respuesta final.
+    // Return the final response.
     return $response;
 }

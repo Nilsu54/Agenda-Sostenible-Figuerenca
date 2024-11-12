@@ -1,32 +1,32 @@
 <?php
 
-// Controlador para almacenar un nuevo usuario en la base de datos.
+// Controller to store a new user in the database.
 function storeUserController($request, $response, $container) {
     
-    // Obtiene el modelo de usuarios desde el contenedor de dependencias.
+    // Get the user model from the dependency container.
     $users = $container->Users();
 
-    // Recupera los datos del formulario de registro enviados por POST.
+    // Retrieve registration form data sent via POST.
     $name = $request->get(INPUT_POST, "name");
     $surname = $request->get(INPUT_POST, "surname");
     $username = $request->get(INPUT_POST, "username");
     $email = $request->get(INPUT_POST, "email");
     
-    // Encripta la contraseña utilizando el algoritmo BCRYPT.
+    // Encrypt the password using the BCRYPT algorithm.
     $password = password_hash($request->get(INPUT_POST, "password"), PASSWORD_BCRYPT);
 
-    // Variable para la imagen (en este caso no se está utilizando, pero se podría extender para soportar carga de imágenes).
+    // Variable for the image (not used here, but could be extended to support image uploads).
     $img = "";
 
-    // Para depuración: Imprime el valor de la variable "username" (probablemente esto debería ser eliminado en producción).
+    // For debugging: Print the value of the "username" variable (this should probably be removed in production).
     print_r("username");
 
-    // Llama al método para agregar un nuevo usuario en la base de datos con los datos recibidos.
+    // Call the method to add a new user to the database with the received data.
     $users->add($username, $password, $email, $img, $name, $surname);
 
-    // Redirige al usuario a la página de login con un parámetro "ok" para indicar que el registro fue exitoso.
+    // Redirect the user to the login page with an "ok" parameter to indicate successful registration.
     $response->redirect("location:index.php?r=login&ok=1");
 
-    // Devuelve la respuesta final.
+    // Return the final response.
     return $response;
 }

@@ -1,87 +1,93 @@
 <?php
 
-// Clase UserPDO para manejar las operaciones de los usuarios en la base de datos usando PDO.
+// UserPDO class to handle user operations in the database using PDO.
 class UserPDO
 {
-    // Propiedad privada para almacenar la conexión PDO.
+    // Private property to store the PDO connection.
     private PDO $sql;
 
-    // Constructor que recibe la conexión PDO para interactuar con la base de datos.
+    // Constructor that receives the PDO connection to interact with the database.
     public function __construct(PDO $sql)
     {
         $this->sql = $sql;
     }
 
-    // Método para agregar un nuevo usuario a la base de datos.
+    // Method to add a new user to the database.
     public function add($username, $password, $email, $img, $name, $surname)
     {
-        // Consulta SQL para insertar un nuevo usuario en la tabla 'users'.
+        // SQL query to insert a new user into the 'users' table.
         $query = "insert into users (username, password, email, role, img, name, surname) 
                   values ('{$username}', '{$password}', '{$email}', 1, '{$img}', '{$name}', '{$surname}')";
         
-        // Prepara y ejecuta la consulta.
+        // Prepare and execute the query.
         $stm = $this->sql->prepare($query);
         $stm->execute();
     }
 
-    // Método para eliminar un usuario de la base de datos por su ID.
+    // Method to delete a user from the database by their ID.
     public function delete($id)
     {
-        // Consulta SQL para eliminar un usuario según el ID.
+        // SQL query to delete a user based on their ID.
         $query = "delete from users where id={$id};";
         
-        // Prepara y ejecuta la consulta.
+        // Prepare and execute the query.
         $stm = $this->sql->prepare($query);
         $stm->execute();
     }
 
-    // Método para obtener una lista de usuarios, utilizada en el panel de administración.
+    // Method to get a list of users, used in the admin panel.
     public function list()
     {
-        // Consulta SQL para obtener los usuarios con información básica.
+        // SQL query to fetch users with basic information.
         $query = "select id, name, username, email, role, creation_date from users;";
         $users = [];
         
-        // Ejecuta la consulta y recorre los resultados.
+        // Execute the query and iterate through the results.
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $user) {
-            // Guarda los usuarios en un array asociativo donde la clave es el ID del usuario.
+            // Save users in an associative array where the key is the user's ID.
             $users[$user["id"]] = $user;
         }
         
-        // Devuelve la lista de usuarios.
+        // Return the list of users.
         return $users;
     }
 
-
-    //funcio que utiliza l'usuari normal per editar el seu perfil i les seves dades
-    public function edit($name,$email,$id,$username,$surname){
-        $query="update users set username='{$username}',name='{$name}',email='{$email}',surname='{$surname}' where id={$id};";
-        $stm=$this->sql->prepare($query);
-        $stm->execute();
-    }
-    public function editimg($img,$id){
-        $query="update users set img={$img} where id={$id};";
-        $stm=$this->sql->prepare($query);
+    // Method for regular users to edit their profile information.
+    public function edit($name, $email, $id, $username, $surname)
+    {
+        $query = "update users set username='{$username}', name='{$name}', email='{$email}', surname='{$surname}' where id={$id};";
+        $stm = $this->sql->prepare($query);
         $stm->execute();
     }
 
-    //funcio que utilitza l'admin per editar la informació dels usuaris, pot canviar el rol de l'usuari per si es volgues afegir un altre admin
-    public function editAdmin($name,$password,$role,$email,$id){
-        $pass=password_hash($password,PASSWORD_BCRYPT);  
-        $query="update users set name='{$name}',password='{$pass}',role='{$role}',email='{$email}' where id={$id}; ";
-        $stm=$this->sql->prepare($query);
+    // Method to update a user's profile image.
+    public function editimg($img, $id)
+    {
+        $query = "update users set img='{$img}' where id={$id};";
+        $stm = $this->sql->prepare($query);
         $stm->execute();
     }
 
-    public function getUser($username){
+    // Method for the admin to edit user information, allowing role change for adding new admins if needed.
+    public function editAdmin($name, $password, $role, $email, $id)
+    {
+        $pass = password_hash($password, PASSWORD_BCRYPT);  
+        $query = "update users set name='{$name}', password='{$pass}', role='{$role}', email='{$email}' where id={$id};";
+        $stm = $this->sql->prepare($query);
+        $stm->execute();
+    }
+
+    // Method to retrieve a user's information based on their username.
+    public function getUser($username)
+    {
         $query = "select id, username, password, role, img, name, surname, email from users where username = '{$username}'";
         $stm = $this->sql->prepare($query);
         $stm->execute();
         
-        // Recupera el resultado como un array asociativo.
+        // Fetch the result as an associative array.
         $result = $stm->fetch(PDO::FETCH_ASSOC);
         
-        // Devuelve el resultado.
+        // Return the result.
         return $result;
     }
 }

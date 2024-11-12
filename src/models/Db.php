@@ -1,31 +1,31 @@
 <?php
 
-// Clase Db para manejar la conexión a la base de datos utilizando PDO.
+// Db class to manage the database connection using PDO.
 class Db {
 
-    // Propiedad privada para almacenar la conexión PDO.
+    // Private property to store the PDO connection.
     private PDO $sql;
 
-    // Constructor que establece la conexión a la base de datos utilizando los parámetros de configuración.
+    // Constructor that establishes the database connection using the configuration parameters.
     public function __construct($config)
     {
-        // Construye el DSN (Data Source Name) para la conexión a MySQL utilizando la configuración.
+        // Build the DSN (Data Source Name) for the MySQL connection using the configuration.
         $dsn = "mysql:dbname={$config['db']['name']};host={$config['db']['host']}";
         
-        // Obtiene el usuario y la contraseña desde la configuración.
+        // Get the username and password from the configuration.
         $user = $config["db"]["user"];
         $password = $config["db"]["pass"];
         
         try {
-            // Intenta establecer la conexión con la base de datos usando PDO.
+            // Attempt to establish the connection to the database using PDO.
             $this->sql = new PDO($dsn, $user, $password);
         } catch (\PDOException $e) {
-            // Si ocurre un error, captura la excepción y muestra un mensaje de error.
-            die('Ha fallat la connexió: ' . $e->getMessage());
+            // If an error occurs, catch the exception and display an error message.
+            die('Connection failed: ' . $e->getMessage());
         }
     }
 
-    // Método para obtener la conexión PDO.
+    // Method to get the PDO connection.
     public function get(): PDO {
         return $this->sql;
     }
