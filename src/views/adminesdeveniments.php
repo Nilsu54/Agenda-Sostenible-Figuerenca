@@ -125,33 +125,56 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
+                    <form id="nouEsdevenimentForm">
+                    <div class="mb-3">
                             <label class="form-label">Títol</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" id="eventTitle" name="eventTitle" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Data</label>
-                            <input type="date" class="form-control" required>
+                            <input type="date" id="eventDate" name="eventDate" class="form-control" required>
                         </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Hora</label>
+                            <input type="time" id="eventHour" name="eventHour" class="form-control" requiered>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Duració de l'esdeventiment</label>
+                            <input type="time" id="eventDuration" name="eventDuration" class="form-control" requiered>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Imatges</label>
+                            <input type="file" id="eventImages" name="eventImages" class="form-control" accept="image/*" multiple requiered>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Coordenades</label>
+                            <input type="number" id="eventLat" name="eventLat" class="form-control" requiered placeholder="Latitud"></br>
+                            <input type="number" id="eventLong" name="eventLong" class="form-control" requiered>
+                        </div>
+
                         <div class="mb-3">
                             <label class="form-label">Descripció</label>
-                            <textarea class="form-control" rows="3" required></textarea>
+                            <textarea class="form-control" id ="eventDesc" name="evenDesc" rows="3" required></textarea>
                         </div>
+                        
                         <div class="mb-3">
                             <label class="form-label">Categoria</label>
-                            <select class="form-select" required>
+                            <select class="form-select" id="eventType" name="eventType" required>
                                 <option>Selecciona una categoria</option>
-                                <option>Reciclatge</option>
-                                <option>Energia</option>
-                                <option>Aigua</option>
+                                <option value="interior">Interior</option>
+                                <option value="outside">Aire lliure</option>
+                                <option value="talk">Xerrada</option>
+                                <option value="days">Jornada</option>
                             </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="button" class="btn btn-primary">Guardar</button>
+                    <input type="submit" id ="saveEvent"class="btn btn-primary">
                 </div>
             </div>
         </div>
@@ -159,5 +182,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/perfil.js"></script>
 </body>
 </html>

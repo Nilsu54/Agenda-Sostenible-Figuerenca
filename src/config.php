@@ -2,9 +2,9 @@
 
 $config = [
     "db" => [
-        "name" => "dbweb",
+        "name" => "projecte2",
         "user" => "root",
-        "pass" => "12345",
-        "host" => "mysql",
+        "pass" => "root",
+        "host" => "127.0.0.1",
     ]
 ];

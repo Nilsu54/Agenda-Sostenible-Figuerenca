@@ -8,12 +8,21 @@ class Events
     {
         $this->sql = $sql;
     }
-    public function add($title,$latitude,$longitude,$description,$type,$starting_date,$duration,$starging_hour,$rating,$visualization){
-        $query= "insert into events (title,latitude,longtiude,event_description,event_type,staring_date,duration,starting_hour,rating,num_visualization)values ('{$title}',{$latitude},{$longitude},'{$description}', '{$starting_date}','{$duration}','{$starging_hour}',$rating,$visualization)";
-        $stm= $this->sql->prepare($query);
+    public function add($title,$latitude){
+        $query= "insert into events (title,latitude) values ('{$title}','{$latitude}');";
+        // print_r($query);
+        // die();
+        $stm = $this->sql->prepare($query);
         $stm->execute();
         
     }
+
+    // public function add($title,){
+    //     $query= "insert into events (title)values ('{$title}')";
+    //     $stm = $this->sql->prepare($query);
+    //     $stm->execute();
+        
+    // }
 
      //listat per al dashboard d'admin
      public function list(){

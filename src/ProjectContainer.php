@@ -6,9 +6,11 @@ class ProjectContainer extends \Emeset\Container {
         $this->sql = new Db($config);
         $this->config = $config;
     }
+
     public function Users(){
         return new UserPDO($this->sql->get());
     }
+    
     public function Events(){
         return new Events($this->sql->get());
     }

@@ -135,10 +135,34 @@
                             <label class="form-label">Títol</label>
                             <input type="text" id="eventTitle" name="eventTitle" class="form-control" required>
                         </div>
+
                         <div class="mb-3">
                             <label class="form-label">Data</label>
                             <input type="date" id="eventDate" name="eventDate" class="form-control" required>
                         </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Coordenades</label>
+                            <input type="text" id="eventLat" name="eventLat" class="form-control" required>
+                            <input type="text" id="eventLong" name="eventLong" class="form-control" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Duració</label>
+                            <input type="time" id="eventDuration" name="eventDuration" class="form-control" required>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label class="form-label">Hora</label>
+                            <input type="time" id="eventTime" name="eventTime" class="form-control" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Duració</label>
+                            <input type="time" id="eventDuration" name="eventDuration" class="form-control" required>
+                        </div>
+
                         <div class="mb-3">
                             <label class="form-label">Descripció</label>
                             <textarea class="form-control" id ="eventDesc" name="evenDesc" rows="3" required></textarea>
