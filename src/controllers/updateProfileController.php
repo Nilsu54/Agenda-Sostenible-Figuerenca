@@ -9,6 +9,8 @@ function updateProfileController($request, $response,$container){
     $id=$request->get(INPUT_POST,"iduser");
     $users->edit($name,$email,$id,$username,$surname);
     $_SESSION["user"]["username"]=$username;
+    $_SESSION["user"]["name"]=$name;
+    $_SESSION["user"]["surname"]=$surname;
 
     $response->redirect("location:index.php?r=profile");
     return $response;
