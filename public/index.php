@@ -12,6 +12,7 @@ include "../src/models/Db.php";                   // Clase de conexión a la bas
 include "../src/ProjectContainer.php";            // Contenedor específico del proyecto
 include "../src/middleware/adminauth.php";        // Middleware de autenticación de administrador
 include "../src/models/Events.php";
+include "../src/models/Images.php";
 
 // Instancia los objetos de solicitud, respuesta, contenedor de dependencias y modelo de usuario.
 $request = new \Emeset\Request();
@@ -20,6 +21,7 @@ $container = new ProjectContainer($config);
 $sql = new Db($config);
 $users = new UserPDO($sql->get());
 $events = new Events($sql->get());
+$images = new Images($sql->get());
 
 // Inicializa la variable de ruta de solicitud (`$r`), verificando si está definida en la solicitud.
 $r = '';
