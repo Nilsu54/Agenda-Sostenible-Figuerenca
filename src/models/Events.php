@@ -39,6 +39,15 @@ class Events
         return $events;
     }
 
+    public function listIndex(){
+        $query="select * from events order by starting_date;";
+        $events=[];
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $event){
+            $events[$event["id"]]=$event;
+        }
+        return $events;
+    }
+
     //function to delete event given the id
     public function delete($id){
     
