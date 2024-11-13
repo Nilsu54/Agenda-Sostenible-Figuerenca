@@ -15,7 +15,7 @@
     <!-- Navbar --> 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="/src/views/index.php">
                 <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -27,16 +27,16 @@
                         <a class="nav-link" href="index.php?r=tips">Consells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?r=news">Anuncis</a>
+                        <a class="nav-link" href="/src/views/anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
+                        <a class="nav-link" href="/src/views/esdeveniments.php">Esdeveniments</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="">Admin</a>
                     </li>
                 </ul>
-                <a href="index.php?r=profile" class="image-cropper">
+                <a href="/src/views/perfil.php" class="image-cropper">
                     <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                 </a>
             </div>
@@ -53,7 +53,7 @@
                         <h5 class="mt-2">Panel d'Administració</h5>
                     </div>
                     <nav class="nav flex-column">
-                        <a class="nav-link" href="index.php?r=dashboard">
+                        <a class="nav-link" href="adminpanel.php">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
                         <a class="nav-link" href="index.php?r=adminevents">

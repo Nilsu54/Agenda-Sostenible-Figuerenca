@@ -12,8 +12,16 @@ class ProjectContainer extends \Emeset\Container {
         $this->config = $config;
     }
 
-    // Method to return a new instance of the UserPDO class, which handles user-related database operations.
-    public function Users() {
+    public function Users(){
         return new UserPDO($this->sql->get());
     }
+    
+    public function Events(){
+        return new Events($this->sql->get());
+    }
+
+    public function Images(){
+        return new Images($this->sql->get());
+    }
+    
 };

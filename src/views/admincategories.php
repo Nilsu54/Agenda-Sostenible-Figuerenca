@@ -15,7 +15,7 @@
     <!-- Navbar --> 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="/src/views/index.php">
                 <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -27,7 +27,7 @@
                         <a class="nav-link" href="index.php?r=tips">Consells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?r=news">Anuncis</a>
+                        <a class="nav-link" href="/src/views/anuncis.php">Anuncis</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/src/views/esdeveniments.php">Esdeveniments</a>
@@ -36,7 +36,7 @@
                         <a class="nav-link active" href="">Admin</a>
                     </li>
                 </ul>
-                <a href="index.php?r=profile" class="image-cropper">
+                <a href="/src/views/perfil.php" class="image-cropper">
                     <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
                 </a>
             </div>
@@ -56,7 +56,7 @@
                         <a class="nav-link" href="index.php?r=dashboard">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
-                        <a class="nav-link" href="index.php?r=adminevents">
+                        <a class="nav-link" href="esdeveniments.php">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
                         <a class="nav-link" href="index.php?r=admincoments">
@@ -65,10 +65,10 @@
                         <a class="nav-link" href="index.php?r=adminusers">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
-                        <a class="nav-link" href="index.php?r=admintips">
+                        <a class="nav-link" href="index.php?r=tips">
                             <i class="bi bi-lightbulb me-2"></i>Consells
                         </a>
-                        <a class="nav-link" href="index.php?r=adminnews">
+                        <a class="nav-link" href="anuncis.php">
                             <i class="bi bi-megaphone me-2"></i>Anuncis
                         </a>
                         <a class="nav-link active" href="">

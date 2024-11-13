@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel d'Administració - ASF</title>
+    <title>Esdeveniments - Administració ASF</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?r=tips">Consells</a>
+                        <a class="nav-link" href="/src/views/consells.php">Consells</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=news">Anuncis</a>
@@ -36,10 +36,15 @@
                         <a class="nav-link active" href="">Admin</a>
                     </li>
                 </ul>
-                <a href="index.php?r=profile" class="image-cropper">
+<<<<<<<< HEAD:src/views/admin/adminEvents.php
+                <a href="/src/views/perfil.php" class="image-cropper">
                     <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
+========
+                <a href="index.php?r=profile" class="image-cropper">
+                    <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+>>>>>>>> d76709f3953634a555895b4590a49d12a1bcfc1f:src/views/adminesdeveniments.php
                 </a>
-             </div>
+            </div>
         </div>
     </nav>
 
@@ -53,25 +58,25 @@
                         <h5 class="mt-2">Panel d'Administració</h5>
                     </div>
                     <nav class="nav flex-column">
-                        <a class="nav-link active" href="">
+                        <a class="nav-link" href="index.php?r=dashboard">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
-                        <a class="nav-link" href="index.php?r=adminevents">
+                        <a class="nav-link active" href="index.php?r=events">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
-                        <a class="nav-link" href="index.php?r=admincoments">
+                        <a class="nav-link" href="comentaris.php">
                             <i class="bi bi-chat-dots me-2"></i>Comentaris
                         </a>
-                        <a class="nav-link" href="index.php?r=adminusers">
+                        <a class="nav-link" href="usuaris.php">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
-                        <a class="nav-link" href="index.php?r=admintips">
+                        <a class="nav-link" href="index.php?r=tips">
                             <i class="bi bi-lightbulb me-2"></i>Consells
                         </a>
                         <a class="nav-link" href="index.php?r=adminnews">
                             <i class="bi bi-megaphone me-2"></i>Anuncis
                         </a>
-                        <a class="nav-link" href="index.php?r=admincategory">
+                        <a class="nav-link" href="categories.php">
                             <i class="bi bi-folder me-2"></i>Categories
                         </a>
                     </nav>
@@ -80,60 +85,16 @@
 
             <!-- Main Content -->
             <div class="col-md-9 col-lg-10 px-md-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard</h1>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats Cards -->
-                <div class="row mb-4">
-                    <div class="col-md-3">
-                        <div class="card text-white bg-primary">
-                            <div class="card-body">
-                                <h5 class="card-title">Esdeveniments</h5>
-                                <p class="card-text display-6">150</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card text-white bg-success">
-                            <div class="card-body">
-                                <h5 class="card-title">Usuaris</h5>
-                                <p class="card-text display-6">1.2k</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card text-white bg-warning">
-                            <div class="card-body">
-                                <h5 class="card-title">Comentaris</h5>
-                                <p class="card-text display-6">324</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card text-white bg-info">
-                            <div class="card-body">
-                                <h5 class="card-title">Anuncis</h5>
-                                <p class="card-text display-6">89</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recent Events Table -->
-                <h3>Esdeveniments més vistos</h3>
-                <div class="table-responsive">
+                <h1 class="h2">Esdeveniments</h1>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nouEsdevenimentModal">Nou Esdeveniment</button>
+                <div class="table-responsive mt-3">
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Títol</th>
                                 <th>Data</th>
+                                <th>Categoria</th>
                                 <th>Visualitzacions</th>
                                 <th>Estat</th>
                                 <th>Accions</th>
@@ -144,6 +105,7 @@
                                 <td>1</td>
                                 <td>Taller de Compostatge</td>
                                 <td>15/03/2024</td>
+                                <td>Reciclatge</td>
                                 <td>1,234</td>
                                 <td><span class="badge bg-success">Actiu</span></td>
                                 <td>
@@ -151,26 +113,74 @@
                                     <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
-                            <!-- More rows... -->
+                            <!-- Más filas... -->
                         </tbody>
                     </table>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <!-- Recent Comments -->
-                <h3>Comentaris pendents de moderació</h3>
-                <div class="list-group mb-4">
-                    <div class="list-group-item">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Usuari123</h5>
-                            <small>Fa 3 dies</small>
+    <!-- Nou Esdeveniment Modal -->
+    <div class="modal fade" id="nouEsdevenimentModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nou Esdeveniment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Títol</label>
+                            <input type="text" id="eventTitle" name="eventTitle" class="form-control" required>
                         </div>
-                        <p class="mb-1">Gran esdeveniment! Molt recomanable per aprendre sobre sostenibilitat.</p>
-                        <div class="btn-group">
-                            <button class="btn btn-sm btn-success">Aprovar</button>
-                            <button class="btn btn-sm btn-warning">Editar</button>
-                            <button class="btn btn-sm btn-danger">Eliminar</button>
+
+                        <div class="mb-3">
+                            <label class="form-label">Data</label>
+                            <input type="date" id="eventDate" name="eventDate" class="form-control" required>
                         </div>
-                    </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Coordenades</label>
+                            <input type="text" id="eventLat" name="eventLat" class="form-control" required>
+                            <input type="text" id="eventLong" name="eventLong" class="form-control" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Duració</label>
+                            <input type="time" id="eventDuration" name="eventDuration" class="form-control" required>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label class="form-label">Hora</label>
+                            <input type="time" id="eventTime" name="eventTime" class="form-control" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Duració</label>
+                            <input type="time" id="eventDuration" name="eventDuration" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Descripció</label>
+                            <textarea class="form-control" id ="eventDesc" name="evenDesc" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Categoria</label>
+                            <select class="form-select" id="eventType" name="eventType" required>
+                                <option>Selecciona una categoria</option>
+                                <option value="recycle">Reciclatge</option>
+                                <option>Energia</option>
+                                <option>Aigua</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
                 </div>
             </div>
         </div>

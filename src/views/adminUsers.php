@@ -37,7 +37,7 @@
                     </li>
                 </ul>
                 <a href="index.php?r=profile" class="image-cropper">
-                    <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                    <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
                 </a>
             </div>
         </div>
