@@ -12,6 +12,7 @@ include "../src/models/Db.php";                   // Database connection class
 include "../src/ProjectContainer.php";            // Project-specific container
 include "../src/middleware/adminauth.php";        // Administrator authentication middleware
 
+
 // Instantiate request, response, dependency container, and user model objects.
 $request = new \Emeset\Request();
 $response = new \Emeset\Response();
