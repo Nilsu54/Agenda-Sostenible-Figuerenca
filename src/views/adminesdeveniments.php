@@ -156,8 +156,8 @@
                             <input type="time" id="eventHour" name="eventHour" class="form-control" requiered>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Duració de l'esdeventiment</label>
-                            <input type="time" id="eventDuration" name="eventDuration" class="form-control" requiered>
+                            <label class="form-label">Duració (en hores)</label>
+                            <input type="number" id="eventDuration" name="eventDuration" class="form-control" step="0.5" min="0.5" required placeholder="Exemple: 1.5 per 1 hora i 30 minuts">
                         </div>
 
                         <div class="mb-3">
@@ -218,8 +218,8 @@
                             <input type="time" id="eventHour" name="eventHour" class="form-control" requiered>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Duració de l'esdeventiment</label>
-                            <input type="time" id="eventDuration" name="eventDuration" class="form-control" requiered>
+                            <label class="form-label">Duració (en hores)</label>
+                            <input type="number" id="eventDuration" name="eventDuration" class="form-control" step="0.5" min="0.5" required placeholder="Exemple: 1.5 per 1 hora i 30 minuts">
                         </div>
 
                         <div class="mb-3">
