@@ -18,7 +18,11 @@
 function newEventController($request,$response,$container){
 
     $events = $container->Events();
-    print_r($_POST);
+    $images = $container -> Images();
+    $files= $request->get("FILES","eventImages");
+    // $images->add(5,$files);
+    // print_r($files["name"]);
+    // die();
     $title= $request->get(INPUT_POST,'eventTitle');
     $date= $request->get(INPUT_POST,'eventDate');
     $starting_hour= $request->get(INPUT_POST,'eventHour');
@@ -27,7 +31,8 @@ function newEventController($request,$response,$container){
     $description= $request->get(INPUT_POST,'eventDesc');
     $type = $request->get(INPUT_POST,'eventType');
     $duration=$request->get(INPUT_POST,'eventDuration');
-    $events->add($title,$lat);
+    $lastid= $events->add($title,$lat,$long,$description,$type,$date,$starting_hour,$duration);
+    $images->add($lastid,$files);
     $response->redirect("location:index.php?r=adminevents");
     return $response;
 }
