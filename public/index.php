@@ -126,6 +126,10 @@ else if($r=="contrasenya"){
     include "../src/controllers/contrasenyaController.php";
     $response=contrasenyaController($request,$response,$container);
 }
+else if($r=="addEvent"){
+    include "../src/controllers/newEventController.php";
+    $response=adminauth($request, $response, $container, "newEventController");
+}
 
 // Send the final response to the client.
 $response->response();
