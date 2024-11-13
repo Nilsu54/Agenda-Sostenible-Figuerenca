@@ -120,27 +120,49 @@ $(document).ready(function() {
 
     // });
 
-    $("#esborraEvent").click(function(e){
-
-        e.preventDefault();
+    $(document).on('click', '#esborraEvent', function(){
         console.log("+++");
-        let id=$(this).attr("esborraEvent").val();
-        console.log(id);
-        let confirmation= "De veritat que vols esborrar l'event"+ $("#eventName").val();
+        var eventId = $(this).data("id");
+        console.log(eventId);
+        const formData = {
+            id: eventId,
+        }
+        let confirmation= "De veritat que vols esborrar l'event";
+
         if(confirm(confirmation)){
 
-            // $.ajax({
-            //     url: 'index.php?r=deleteEvent',
-            //     type: 'POST',
-            //     data: formData,
-            //     success: function (response) {
-            //         if (response.success) {
-            //             console.log(data);
-            //             a$("#event ").remove();
-            //         }
-            
-        }
+            $.ajax({
+                url: 'index.php?r=deleteEvent',
+                type: 'POST',
+                data: formData,
+                success: function () {
+                        console.log(eventId);
+                        $("#event"+eventId).remove();
+              }
+        
+            });
+    }
     });
 
+    document.getElementById('nouEsdevenimentForm').addEventListener('submit', function(event) {
+        
+        var latitude = parseFloat(document.getElementById('latitude').value);
+        var longitude = parseFloat(document.getElementById('longitude').value);
+        
+       
+        if (isNaN(latitude) || latitude < -90 || latitude > 90) {
+          event.preventDefault();  
+          alert('Por favor, ingresa una latitud válida entre -90 y 90.');
+          return;  // Detener ejecución si la latitud no es válida
+        }
+        
+       
+        if (isNaN(longitude) || longitude < -180 || longitude > 180) {
+          event.preventDefault();  
+          alert('Por favor, ingresa una longitud válida entre -180 y 180.');
+          return; 
+        }
+      });
 
-}); 
+
+});

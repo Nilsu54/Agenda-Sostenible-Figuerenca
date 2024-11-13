@@ -127,5 +127,17 @@ else if($r=="contrasenya"){
     $response=contrasenyaController($request,$response,$container);
 }
 
+else if($r=="deleteEvent"){
+    include "../src/controllers/deleteEventController.php";
+    $response=deleteEventController($request,$response,$container);
+}
+else if($r=="addEvent"){
+    include "../src/controllers/newEventController.php";
+    $response=adminauth($request, $response, $container, "newEventController");
+}   
+else if($r=="editEvent"){
+    include "../src/controllers/editEventController.php";
+}
+
 // Send the final response to the client.
 $response->response();

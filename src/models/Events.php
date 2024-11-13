@@ -39,7 +39,9 @@ class Events
         return $events;
     }
 
+    //function to delete event given the id
     public function delete($id){
+    
         $query="delete from events where id={$id}";
         $stm = $this->sql->prepare($query);
         $stm->execute();

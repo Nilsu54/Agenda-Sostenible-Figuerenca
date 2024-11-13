@@ -113,7 +113,7 @@
                                         case "days": $type="Jornada";
                                     }
                                 ?>
-                            <tr id="event"<?=$event["id"]?>>
+                            <tr id="event<?=$event["id"]?>">
                                 <td id="eventIDAdmin"><?=$event["id"]?></td> 
                                 <td id="eventName"><?=$event["title"]?></td> 
                                 <td><?=$event["starting_date"]?></td> 
@@ -121,7 +121,7 @@
                                 <td><span class="badge bg-success">Actiu</span></td>
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#editarEsdeventimentModal" class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
-                                    <button class="btn btn-sm btn-danger" id="esborraEvent"><i class="bi bi-trash"></i></button>
+                                    <button class="btn btn-sm btn-danger" data-id="<?=$event["id"]?>" id="esborraEvent"><i class="bi bi-trash"></i></button>
                                 </td>
                             </tr>
                             <?php } ?>
@@ -199,11 +199,12 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Nou Esdeveniment</h5>
+                    <h5 class="modal-title">Editar Esdeveniment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="editarEsdevenimentForm" >
+                    <form id="editarEsdevenimentForm">
+                        <input type="hidden" name="r" value="editEvent">
                     <div class="mb-3">
                             <label class="form-label">Títol</label>
                             <input type="text" id="eventTitle" name="eventTitle" class="form-control" required>
@@ -223,33 +224,12 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Imatges</label>
-                            <input type="file" id="eventImages" name="eventImages" class="form-control" accept="image/*" multiple requiered>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Coordenades</label>
-                            <input type="number" id="eventLat" name="eventLat" class="form-control" requiered placeholder="Latitud"></br>
-                            <input type="number" id="eventLong" name="eventLong" class="form-control" requiered>
-                        </div>
-
-                        <div class="mb-3">
                             <label class="form-label">Descripció</label>
                             <textarea class="form-control" id ="eventDesc" name="evenDesc" rows="3" required></textarea>
                         </div>
-                        
-                        <div class="mb-3">
-                            <label class="form-label">Categoria</label>
-                            <select class="form-select" id="eventType" name="eventType" required>
-                                <option>Selecciona una categoria</option>
-                                <option value="interior">Interior</option>
-                                <option value="outside">Aire lliure</option>
-                                <option value="talk">Xerrada</option>
-                                <option value="days">Jornada</option>
-                            </select>
-                        </div>
                     </form>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
                     <input type="submit" id ="saveEvent"class="btn btn-primary" data-bs-dismiss="modal">
