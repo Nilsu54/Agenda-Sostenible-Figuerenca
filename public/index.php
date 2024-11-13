@@ -12,6 +12,8 @@ include "../src/models/Db.php";                   // Database connection class
 include "../src/ProjectContainer.php";            // Project-specific container
 include "../src/middleware/adminauth.php";        // Administrator authentication middleware
 
+include "../src/models/Events.php";
+include "../src/models/Images.php";
 
 // Instantiate request, response, dependency container, and user model objects.
 $request = new \Emeset\Request();
@@ -19,6 +21,8 @@ $response = new \Emeset\Response();
 $container = new ProjectContainer($config);
 $sql = new Db($config);
 $users = new UserPDO($sql->get());
+$events = new Events($sql->get());
+$images = new Images($sql->get());
 
 // Initialize the request route (`$r`) variable, checking if it is set in the request.
 $r = '';
