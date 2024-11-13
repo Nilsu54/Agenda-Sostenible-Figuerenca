@@ -130,6 +130,10 @@ else if($r=="addEvent"){
     include "../src/controllers/newEventController.php";
     $response=adminauth($request, $response, $container, "newEventController");
 }
+else if($r=="addUserAdmin"){
+    include "../src/controllers/adminUserAddController.php";
+    $response=adminauth($request, $response, $container, "adminUserAddController");
+}
 
 // Send the final response to the client.
 $response->response();

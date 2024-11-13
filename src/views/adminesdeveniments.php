@@ -56,7 +56,7 @@
                         <a class="nav-link" href="index.php?r=dashboard">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
-                        <a class="nav-link active" href="index.php?r=events">
+                        <a class="nav-link active" href="">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
                         <a class="nav-link" href="index.php?r=admincoments">

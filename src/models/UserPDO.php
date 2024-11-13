@@ -23,6 +23,16 @@ class UserPDO
         $stm = $this->sql->prepare($query);
         $stm->execute();
     }
+    public function addAdmin($username, $password, $email, $name, $surname, $role)
+    {
+        // SQL query to insert a new user into the 'users' table.
+        $query = "insert into users (username, password, email, role, img, name, surname) 
+                  values ('{$username}', '{$password}', '{$email}', '{$role}', '{$name}', '{$surname}')";
+        
+        // Prepare and execute the query.
+        $stm = $this->sql->prepare($query);
+        $stm->execute();
+    }
 
     // Method to delete a user from the database by their ID.
     public function delete($id)

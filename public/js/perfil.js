@@ -86,6 +86,7 @@ $(document).ready(function() {
     
 
 
+
     // $("#saveEvent").click(function(e){
     //     e.preventDefault();
     //     const formData = {
@@ -142,5 +143,35 @@ $(document).ready(function() {
         }
     });
 
-
+    $("#saveUser").click(function(e){
+        e.preventDefault();
+    
+        var formData = new FormData();
+        
+      
+        formData.append("adminname", $("#adminname").val());
+        formData.append("adminsurname", $("#adminsurname").val());
+        formData.append("adminusername", $("#adminusername").val());
+        formData.append("adminemail", $("#adminemail").val());
+        formData.append("adminpassword", $("#adminpassword").val());
+        
+    
+        $.ajax({
+            url: 'index.php?r=addUserAdmin',
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                if (response.success) {
+                    alert('user creat correctament!');
+                } else {
+                    //alert('Error: ' + response.message);
+                }
+            },
+            error: function() {
+                alert('Error al enviar los datos.');
+            }
+        });
+    });
 }); 
+
+
