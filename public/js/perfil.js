@@ -170,6 +170,27 @@ $(document).ready(function() {
             }
         });
     });
+
+    $(".deleteUser").click(function(e) {
+        e.preventDefault();
+        const userId = $(this).data("userid");
+        
+        if (confirm("Estàs segur que vols eliminar aquest usuari?")) {
+            $.ajax({
+                url: 'index.php?r=adminDeleteUser',
+                type: 'POST',
+                data: { id: userId },
+                success: function(response) {
+                    alert('Usuari eliminat correctament');
+                    location.reload();
+                },
+                error: function() {
+                    alert('Error al eliminar l\'usuari');
+                }
+            });
+        }
+    });
 }); 
+
 
 

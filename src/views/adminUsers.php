@@ -147,7 +147,7 @@
                                     <button class="btn btn-sm btn-warning">
                                         <i class="bi bi-lock"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-danger">
+                                    <button class="btn btn-sm btn-danger deleteUser" data-userid="<?=$user["id"]?>">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </td>

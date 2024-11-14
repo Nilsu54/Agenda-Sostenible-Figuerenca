@@ -134,6 +134,10 @@ else if($r=="addUserAdmin"){
     include "../src/controllers/adminUserAddController.php";
     $response=adminauth($request, $response, $container, "adminUserAddController");
 }
+else if($r=="adminDeleteUser"){
+    include "../src/controllers/adminDeleteUserController.php";
+    $response=adminauth($request, $response, $container, "adminDeleteUserController");
+}
 
 // Send the final response to the client.
 $response->response();
