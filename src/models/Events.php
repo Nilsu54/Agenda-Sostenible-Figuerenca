@@ -40,12 +40,18 @@ class Events
     }
 
     public function listIndex(){
-        $query="select * from events order by starting_date;";
+        $query="select * from events order by starting_date asc;";
         $events=[];
         foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $event){
             $events[$event["id"]]=$event;
         }
         return $events;
+    }
+
+    public function edit($id,$title,$starting_date,$starting_hour,$duration,$description){
+        $query= "update events set title='{$title}, starting_date='{$starting_date}',starting_hour='{$starting_hour}',duration='{$duration}',description='{$description} where id={$id}';";
+        $stm= $this ->sql->prepare($query);
+        $stm->execute();
     }
 
     //function to delete event given the id

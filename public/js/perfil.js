@@ -84,6 +84,35 @@ $(document).ready(function() {
         });
     });
     
+    $("#editEvent").click(function(e){
+        e.preventDefault();
+    
+        var formData = new FormData();
+        
+      
+        formData.append("EeventTitle", $("#EeventTitle").val());
+        formData.append("EeventDate", $("#EeventDate").val());
+        formData.append("EeventHour", $("#EeventHour").val());
+        formData.append("EeventDuration", $("#EeventDuration").val());
+        formData.append("EeventDesc", $("#EeventDesc").val());
+    
+    
+        $.ajax({
+            url: 'index.php?r=editEvent',
+            type: 'POST',
+            data: formData,
+            success: function(response) {
+                if (response.success) {
+                    alert('Esdeveniment creat correctament!');
+                } else {
+                    //alert('Error: ' + response.message);
+                }
+            },
+            error: function() {
+                alert('Error al enviar los datos.');
+            }
+        });
+    });
 
 
     // $("#saveEvent").click(function(e){
@@ -144,25 +173,27 @@ $(document).ready(function() {
     }
     });
 
-    document.getElementById('nouEsdevenimentForm').addEventListener('submit', function(event) {
+
+
+    // document.getElementById('nouEsdevenimentForm').addEventListener('submit', function(event) {
         
-        var latitude = parseFloat(document.getElementById('latitude').value);
-        var longitude = parseFloat(document.getElementById('longitude').value);
-        
-       
-        if (isNaN(latitude) || latitude < -90 || latitude > 90) {
-          event.preventDefault();  
-          alert('Por favor, ingresa una latitud válida entre -90 y 90.');
-          return;  // Detener ejecución si la latitud no es válida
-        }
+    //     var latitude = parseFloat(document.getElementById('latitude').value);
+    //     var longitude = parseFloat(document.getElementById('longitude').value);
         
        
-        if (isNaN(longitude) || longitude < -180 || longitude > 180) {
-          event.preventDefault();  
-          alert('Por favor, ingresa una longitud válida entre -180 y 180.');
-          return; 
-        }
-      });
+    //     if (isNaN(latitude) || latitude < -90 || latitude > 90) {
+    //       event.preventDefault();  
+    //       alert('Por favor, ingresa una latitud válida entre -90 y 90.');
+    //       return;  // Detener ejecución si la latitud no es válida
+    //     }
+        
+       
+    //     if (isNaN(longitude) || longitude < -180 || longitude > 180) {
+    //       event.preventDefault();  
+    //       alert('Por favor, ingresa una longitud válida entre -180 y 180.');
+    //       return; 
+    //     }
+    //   });
 
 
 });

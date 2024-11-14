@@ -113,17 +113,25 @@
                 <div class="bg-primary text-white shadow p-3 p-md-4 rounded">
                     <h2 class="mb-4 text-center">Próximos Eventos</h2>
                     <div class="list-group">
-                        <?php for($i = 1; $i <= 5; $i++): ?>
+                        <?php foreach($events as $event){
+                            // print_r($event);
+                            // die();
+                            $data=explode("-",$event["starting_date"]);
+                            $dt = DateTime::createFromFormat('!m', $data['1']);
+                            //  $dt->format('F');
+                            // print_r( $dt->format('F'));
+                          
+                            // die();} ?>
                         <div class="list-group-item border-0 mb-3 p-0 card hover-effect" onclick="window.location.href='esdeveniment.php?id=<?php echo $i; ?>'">
                             <div class="row g-0 align-items-center">
                                 <div class="col-md-2 text-center py-3">
-                                    <div class="display-4 text-primary fw-bold">15</div>
-                                    <div class="text-muted text-uppercase">Març</div>
+                                    <div class="display-4 text-primary fw-bold"><?=$data[2]?></div>
+                                    <div class="text-muted text-uppercase"><?=$dt->format('F')?></div>
                                 </div>
                                 <div class="col-md-10 p-4">
-                                    <h4 class="mb-3">Taller de Compostatge</h4>
-                                    <p class="mb-3 text-muted">Aprèn a fer el teu propi compost casolà i contribueix a reduir els residus orgànics. Taller pràctic amb experts en compostatge.</p>
-                                    <div class="d-flex gap-4">
+                                    <h4 class="mb-3"><?=$event["title"]?></h4>
+                                    <p class="mb-3 text-muted"><?=$event["event_description"]?></p>
+                                    <!-- <div class="d-flex gap-4">
                                         <div class="d-flex align-items-center">
                                             <i class="bi bi-star-fill text-warning me-2"></i>
                                             <span>4.0</span>
@@ -136,11 +144,11 @@
                                             <i class="bi bi-eye-fill text-secondary me-2"></i>
                                             <span>234</span>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
-                        <?php endfor; ?>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
