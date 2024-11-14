@@ -63,4 +63,16 @@ class Events
 
     }
 
+    public function getbyId($id){
+
+        $query="select * from events where id={$id}";
+        $stm = $this->sql->prepare($query);
+        $stm->execute();
+        
+        // Fetch the result as an associative array.
+        $result = $stm->fetch(PDO::FETCH_ASSOC);
+        
+        // Return the result.
+        return $result;
+    }
 }

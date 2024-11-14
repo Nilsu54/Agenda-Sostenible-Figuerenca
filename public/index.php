@@ -139,6 +139,10 @@ else if($r=="editEvent"){
     include "../src/controllers/editEventController.php";
     $response=adminauth($request,$response,$container,"editEventController");
 }
+else if($r=="showEvent"){
+    include "../src/controllers/showEventController.php";
+    $response=showEventController($request,$response,$container);
+}
 
 // Send the final response to the client.
 $response->response();

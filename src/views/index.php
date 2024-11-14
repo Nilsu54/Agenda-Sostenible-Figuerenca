@@ -122,7 +122,12 @@
                             // print_r( $dt->format('F'));
                           
                             // die();} ?>
-                        <div class="list-group-item border-0 mb-3 p-0 card hover-effect" onclick="window.location.href='esdeveniment.php?id=<?php echo $i; ?>'">
+                        <div class="list-group-item border-0 mb-3 p-0 card hover-effect" onclick="window.location.href='index.php?r=showEvent&&idEvent=<?=$event['id']?>'">
+                            
+                            <input type="hidden" name="idEvent" value= <?=$event["id"]?>>
+                           
+                            
+                        
                             <div class="row g-0 align-items-center">
                                 <div class="col-md-2 text-center py-3">
                                     <div class="display-4 text-primary fw-bold"><?=$data[2]?></div>

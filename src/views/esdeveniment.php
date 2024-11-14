@@ -1,3 +1,8 @@
+<?php
+    // print_r($event);
+    // die();
+?>
+
 <!DOCTYPE html>
 <html lang="ca">
 <head>
@@ -48,9 +53,9 @@
             <div class="bg-white rounded-4 shadow p-4">
                 <!-- Event Header -->
                 <div class="mb-4">
-                    <h1 class="text-primary mb-3">Taller de Compostatge</h1>
+                    <h1 class="text-primary mb-3"><?=$event["title"]?></h1>
                     <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-                        <span class="badge bg-primary"><i class="bi bi-tag-fill"></i> Aire Lliure</span>
+                        <span class="badge bg-primary"><i class="bi bi-tag-fill"></i> <?=$event["event_type"]?></span>
                         <span class="fs-5">15 Març 2024</span>
                         <div>
                             <i class="bi bi-clock-fill"></i>
