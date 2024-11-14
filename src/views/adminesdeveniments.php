@@ -207,32 +207,32 @@
                         <input type="hidden" name="r" value="editEvent">
                     <div class="mb-3">
                             <label class="form-label">Títol</label>
-                            <input type="text" id="eventTitle" name="eventTitle" class="form-control" required>
+                            <input type="text" id="EeventTitle" name="eventTitle" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Data</label>
-                            <input type="date" id="eventDate" name="eventDate" class="form-control" required>
+                            <input type="date" id="EeventDate" name="eventDate" class="form-control" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Hora</label>
-                            <input type="time" id="eventHour" name="eventHour" class="form-control" requiered>
+                            <input type="time" id="EeventHour" name="eventHour" class="form-control" requiered>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Duració de l'esdeventiment</label>
-                            <input type="time" id="eventDuration" name="eventDuration" class="form-control" requiered>
+                            <input type="time" id="EeventDuration" name="eventDuration" class="form-control" requiered>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Descripció</label>
-                            <textarea class="form-control" id ="eventDesc" name="evenDesc" rows="3" required></textarea>
+                            <textarea class="form-control" id ="EeventDesc" name="evenDesc" rows="3" required></textarea>
                         </div>
                     </form>
                 </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <input type="submit" id ="saveEvent"class="btn btn-primary" data-bs-dismiss="modal">
+                    <input type="submit" id ="editEvent"class="btn btn-primary" data-bs-dismiss="modal">
                 </div>
             </div>
         </div>
