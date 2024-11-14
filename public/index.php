@@ -153,5 +153,9 @@ else if($r=="addAnunci"){
     include "../src/controllers/addAnunciController.php";
     $response=auth($request, $response, $container, "addAnunciController");
 }
+else if($r=="showEvent"){
+    include "..src/controllers/showEventController.php";
+    $response=showEventController($request,$response,$container);
+}
 // Send the final response to the client.
 $response->response();
