@@ -56,7 +56,7 @@
                         <a class="nav-link" href="index.php?r=dashboard">
                             <i class="bi bi-speedometer2 me-2"></i>Dashboard
                         </a>
-                        <a class="nav-link active" href="index.php?r=events">
+                        <a class="nav-link active" href="">
                             <i class="bi bi-calendar-event me-2"></i>Esdeveniments
                         </a>
                         <a class="nav-link" href="index.php?r=admincoments">
@@ -90,6 +90,7 @@
                                 <th>Títol</th>
                                 <th>Data</th>
                                 <th>Categoria</th>
+                                <th>Visualitzacions</th>
                                 <th>Estat</th>
                                 <th>Accions</th>
                             </tr>
@@ -118,6 +119,7 @@
                                 <td id="eventName"><?=$event["title"]?></td> 
                                 <td><?=$event["starting_date"]?></td> 
                                 <td><?=$type?></td>
+                                <td><?=$event["num_visualization"]?></td>
                                 <td><span class="badge bg-success">Actiu</span></td>
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#editarEsdeventimentModal" class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
@@ -137,7 +139,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Nou Esdeveniment</h5>
+                    <h5 class="modal-title"></i>Nou Esdeveniment</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
@@ -156,8 +158,8 @@
                             <input type="time" id="eventHour" name="eventHour" class="form-control" requiered>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Duració de l'esdeventiment</label>
-                            <input type="time" id="eventDuration" name="eventDuration" class="form-control" requiered>
+                            <label class="form-label">Duració (en hores)</label>
+                            <input type="number" id="eventDuration" name="eventDuration" class="form-control" step="0.5" min="0.5" required placeholder="Exemple: 1.5 per 1 hora i 30 minuts">
                         </div>
 
                         <div class="mb-3">
@@ -219,8 +221,19 @@
                             <input type="time" id="EeventHour" name="eventHour" class="form-control" requiered>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Duració de l'esdeventiment</label>
-                            <input type="time" id="EeventDuration" name="eventDuration" class="form-control" requiered>
+                            <label class="form-label">Duració (en hores)</label>
+                            <input type="number" id="eventDuration" name="eventDuration" class="form-control" step="0.5" min="0.5" required placeholder="Exemple: 1.5 per 1 hora i 30 minuts">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Imatges</label>
+                            <input type="file" id="eventImages" name="eventImages" class="form-control" accept="image/*" multiple requiered>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Coordenades</label>
+                            <input type="number" id="eventLat" name="eventLat" class="form-control" requiered placeholder="Latitud"></br>
+                            <input type="number" id="eventLong" name="eventLong" class="form-control" requiered>
                         </div>
 
                         <div class="mb-3">

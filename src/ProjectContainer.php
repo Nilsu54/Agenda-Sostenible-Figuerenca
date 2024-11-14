@@ -24,4 +24,7 @@ class ProjectContainer extends \Emeset\Container {
         return new Images($this->sql->get());
     }
     
+    public function News(){
+        return new News($this->sql->get());
+    }
 };

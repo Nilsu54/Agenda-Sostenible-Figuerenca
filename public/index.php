@@ -14,6 +14,7 @@ include "../src/middleware/adminauth.php";        // Administrator authenticatio
 
 include "../src/models/Events.php";
 include "../src/models/Images.php";
+include "../src/models/News.php";
 
 // Instantiate request, response, dependency container, and user model objects.
 $request = new \Emeset\Request();
@@ -131,14 +132,26 @@ else if($r=="deleteEvent"){
     include "../src/controllers/deleteEventController.php";
     $response=adminauth($request,$response,$container,"deleteEventController");
 }
-else if($r=="addEvent"){
-    include "../src/controllers/newEventController.php";
-    $response=adminauth($request, $response, $container, "newEventController");
-}   
+ 
 else if($r=="editEvent"){
     include "../src/controllers/editEventController.php";
     $response=adminauth($request,$response,$container,"editEventController");
 }
-
+else if($r=="addEvent"){
+    include "../src/controllers/newEventController.php";
+    $response=adminauth($request, $response, $container, "newEventController");
+}
+else if($r=="addUserAdmin"){
+    include "../src/controllers/adminUserAddController.php";
+    $response=adminauth($request, $response, $container, "adminUserAddController");
+}
+else if($r=="adminDeleteUser"){
+    include "../src/controllers/adminDeleteUserController.php";
+    $response=adminauth($request, $response, $container, "adminDeleteUserController");
+}
+else if($r=="addAnunci"){
+    include "../src/controllers/addAnunciController.php";
+    $response=auth($request, $response, $container, "addAnunciController");
+}
 // Send the final response to the client.
 $response->response();

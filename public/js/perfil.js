@@ -115,6 +115,7 @@ $(document).ready(function() {
     });
 
 
+
     // $("#saveEvent").click(function(e){
     //     e.preventDefault();
     //     const formData = {
@@ -195,5 +196,54 @@ $(document).ready(function() {
     //     }
     //   });
 
+    $("#saveUser").click(function(e){
+        e.preventDefault();
+    
+        var formData = new FormData();
+        
+      
+        formData.append("adminname", $("#adminname").val());
+        formData.append("adminsurname", $("#adminsurname").val());
+        formData.append("adminusername", $("#adminusername").val());
+        formData.append("adminemail", $("#adminemail").val());
+        formData.append("adminpassword", $("#adminpassword").val());
+        formData.append("adminrol", $("#adminrol").val());  
+    
+        $.ajax({
+            url: 'index.php?r=addUserAdmin',
+            type: 'POST',
+            data: formData,
+            processData: false, // Evita que jQuery procese los datos
+        contentType: false, // Evita que jQuery establezca el tipo de contenidox
+            success: function(response) {
+                    alert('Usuari creat correctament!');        
+            },
+            error: function() {
+                alert('Error al enviar les dades.');
+            }
+        });
+    });
 
-});
+    $(".deleteUser").click(function(e) {
+        e.preventDefault();
+        const userId = $(this).data("userid");
+        
+        if (confirm("Estàs segur que vols eliminar aquest usuari?")) {
+            $.ajax({
+                url: 'index.php?r=adminDeleteUser',
+                type: 'POST',
+                data: { id: userId },
+                success: function(response) {
+                    alert('Usuari eliminat correctament');
+                    location.reload();
+                },
+                error: function() {
+                    alert('Error al eliminar l\'usuari');
+                }
+            });
+        }
+    });
+}); 
+
+
+

@@ -66,7 +66,7 @@
                         <a class="nav-link" href="index.php?r=admincoments">
                             <i class="bi bi-chat-dots me-2"></i>Comentaris
                         </a>
-                        <a class="nav-link active" href="index.php?r=adminUsers">
+                        <a class="nav-link active" href="">
                             <i class="bi bi-people me-2"></i>Usuaris
                         </a>
                         <a class="nav-link" href="index.php?r=admintips">
@@ -147,7 +147,7 @@
                                     <button class="btn btn-sm btn-warning">
                                         <i class="bi bi-lock"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-danger">
+                                    <button class="btn btn-sm btn-danger deleteUser" data-userid="<?=$user["id"]?>">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </td>
@@ -169,31 +169,40 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="newUserForm">
                         <div class="mb-3">
                             <label class="form-label">Nom</label>
-                            <input type="text" class="form-control" required>
+                            <input type="text" id="adminname" name="adminname" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Cognom</label>
+                            <input type="text" id="adminsurname" name="adminsurname" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nom d'usuari</label>
+                            <input type="text" id="adminusername" name="adminusername" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Email</label>
-                            <input type="email" class="form-control" required>
+                            <input type="email" id="adminemail" name="adminemail" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Contrasenya</label>
-                            <input type="password" class="form-control" required>
+                            <input type="password" id="adminpassword" name="adminpassword" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Rol</label>
-                            <select class="form-select" required>
+                            <select id="adminrol" name="adminrol" class="form-select" required>
                                 <option value="user">Usuari</option>
                                 <option value="admin">Administrador</option>
                             </select>
                         </div>
+                       
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="button" class="btn btn-primary">Crear Usuari</button>
+                    <button type="button" id="saveUser" name="saveUser" class="btn btn-primary" data-bs-dismiss="modal">Crear Usuari</button>
                 </div>
             </div>
         </div>
@@ -232,7 +241,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="button" class="btn btn-primary">Guardar Canvis</button>
+                    <button type="button"  class="btn btn-primary" >Guardar Canvis</button>
                 </div>
             </div>
         </div>
@@ -240,5 +249,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/perfil.js"></script>
+    
 </body>
 </html> 
