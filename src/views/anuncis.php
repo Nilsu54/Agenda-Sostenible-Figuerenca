@@ -113,12 +113,13 @@
     </div>
 
     <!-- Botón Crear Anunci -->
-    <div class="container-fluid px-3 px-lg-4 mt-4">
-        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearAnunciModal">
-            <i class="bi bi-plus-circle me-2"></i>Crear Anunci
-        </button>
-    </div>
-
+    <?php if(isset($_SESSION["user"])): ?>
+        <div class="container-fluid px-3 px-lg-4 mt-4">
+            <button id="crearAnunci" name="crearAnunci" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#crearAnunciModal">
+                <i class="bi bi-plus-circle me-2"></i>Crear Anunci
+            </button>
+        </div>
+    <?php endif; ?>
     <!-- Modal Crear Anunci -->
     <div class="modal fade" id="crearAnunciModal">
         <div class="modal-dialog modal-lg">
@@ -131,21 +132,17 @@
                     <form id="anunciForm">
                         <div class="mb-3">
                             <label for="titol" class="form-label">Títol</label>
-                            <input type="text" class="form-control" id="titol" required>
+                            <input type="text" class="form-control" id="titol" name="titol" required>
                         </div>
                         <div class="mb-3">
                             <label for="descripcio" class="form-label">Descripció</label>
-                            <textarea class="form-control" id="descripcio" rows="5" required></textarea>
+                            <textarea class="form-control" id="descripcio" rows="5" name="descripcio" required></textarea>
                             <small class="text-muted">Pots utilitzar markdown per formatar el text</small>
                         </div>
-                        <div class="mb-3">
-                            <label for="imatge" class="form-label">Imatge</label>
-                            <input type="file" class="form-control" id="imatge" accept="image/*">
-                            <small class="text-muted">Es generarà automàticament una miniatura de la imatge.</small>
-                        </div>
+                      
                         <div class="mb-3">
                             <label for="categoria" class="form-label">Categoria</label>
-                            <select class="form-select" id="categoria" required>
+                            <select class="form-select" id="categoria" name="categoria" required>
                                 <option value="">Selecciona una categoria</option>
                                 <option value="jardí">Jardí</option>
                                 <option value="llar">Llar</option>
@@ -158,7 +155,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="submit" form="anunciForm" class="btn btn-primary">Crear Anunci</button>
+                    <button type="submit" data-bs-dismiss="modal" id="saveAnunci" name="saveAnunci" form="anunciForm" class="btn btn-primary">Crear Anunci</button>
                 </div>
             </div>
         </div>
@@ -201,6 +198,7 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="/js/anuncis.js"></script>
     <?php include 'cookie_banner.php'; ?>
 </body>

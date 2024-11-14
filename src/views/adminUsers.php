@@ -202,7 +202,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="button" id="saveUser" class="btn btn-primary" data-bs-dismiss="modal">Crear Usuari</button>
+                    <button type="button" id="saveUser" name="saveUser" class="btn btn-primary" data-bs-dismiss="modal">Crear Usuari</button>
                 </div>
             </div>
         </div>
