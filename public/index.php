@@ -157,5 +157,9 @@ else if($r=="showEvent"){
     include "..src/controllers/showEventController.php";
     $response=showEventController($request,$response,$container);
 }
+else if($r=="favorits"){
+    include "../src/controllers/favoritsController.php";
+    $response=favoritsController($request,$response,$container);
+}
 // Send the final response to the client.
 $response->response();
