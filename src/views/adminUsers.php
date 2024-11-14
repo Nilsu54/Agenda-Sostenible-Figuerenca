@@ -169,7 +169,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="newUserForm" enctype="multipart/form-data">
+                    <form id="newUserForm">
                         <div class="mb-3">
                             <label class="form-label">Nom</label>
                             <input type="text" id="adminname" name="adminname" class="form-control" required>
@@ -202,7 +202,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="button" id="saveUser" class="btn btn-primary">Crear Usuari</button>
+                    <button type="button" id="saveUser" class="btn btn-primary" data-bs-dismiss="modal">Crear Usuari</button>
                 </div>
             </div>
         </div>
@@ -241,7 +241,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tancar</button>
-                    <button type="button" class="btn btn-primary">Guardar Canvis</button>
+                    <button type="button"  class="btn btn-primary" >Guardar Canvis</button>
                 </div>
             </div>
         </div>

@@ -26,7 +26,7 @@ class UserPDO
     public function addAdmin($username, $password, $email, $name, $surname, $role)
     {
         // SQL query to insert a new user into the 'users' table.
-        $query = "insert into users (username, password, email, role, img, name, surname) 
+        $query = "insert into users (username, password, email, role, name, surname) 
                   values ('{$username}', '{$password}', '{$email}', '{$role}', '{$name}', '{$surname}')";
         
         // Prepare and execute the query.

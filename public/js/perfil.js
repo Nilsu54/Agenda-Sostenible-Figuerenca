@@ -154,21 +154,19 @@ $(document).ready(function() {
         formData.append("adminusername", $("#adminusername").val());
         formData.append("adminemail", $("#adminemail").val());
         formData.append("adminpassword", $("#adminpassword").val());
-        
+        formData.append("adminrol", $("#adminrol").val());  
     
         $.ajax({
             url: 'index.php?r=addUserAdmin',
             type: 'POST',
             data: formData,
+            processData: false, // Evita que jQuery procese los datos
+        contentType: false, // Evita que jQuery establezca el tipo de contenidox
             success: function(response) {
-                if (response.success) {
-                    alert('user creat correctament!');
-                } else {
-                    //alert('Error: ' + response.message);
-                }
+                    alert('Usuari creat correctament!');        
             },
             error: function() {
-                alert('Error al enviar los datos.');
+                alert('Error al enviar les dades.');
             }
         });
     });
