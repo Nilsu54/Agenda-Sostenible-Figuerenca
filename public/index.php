@@ -99,7 +99,7 @@ else if($r=="events"){
 }
 else if($r=="adminevents"){
     // Route for admin event management.
-    include "../src/controllers/admineventsController.php";
+    include "../src/controllers/adminEventController.php";
     $response=admineventsController($request,$response,$container);
 }
 else if($r=="adminnews"){
