@@ -90,6 +90,7 @@
                                 <th>Títol</th>
                                 <th>Data</th>
                                 <th>Categoria</th>
+                                <th>Visualitzacions</th>
                                 <th>Estat</th>
                                 <th>Accions</th>
                             </tr>
@@ -118,6 +119,7 @@
                                 <td id="eventName"><?=$event["title"]?></td> 
                                 <td><?=$event["starting_date"]?></td> 
                                 <td><?=$type?></td>
+                                <td><?=$event["num_visualization"]?></td>
                                 <td><span class="badge bg-success">Actiu</span></td>
                                 <td>
                                     <button data-bs-toggle="modal" data-bs-target="#editarEsdeventimentModal" class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>

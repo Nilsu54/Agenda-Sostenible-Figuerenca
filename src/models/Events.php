@@ -15,7 +15,8 @@ class Events
         
     // }
     public function add($title,$latitude,$longitude,$description,$type,$starting_date,$starting_hour,$duration){
-        $query= "insert into events (title,latitude,longitude,event_description,event_type,starting_date,starting_hour,duration) values ('{$title}','{$latitude}','{$longitude}', '{$description}','{$type}','{$starting_date}','{$starting_hour}','{$duration}');";
+        $query= "insert into events (title,latitude,longitude,event_description,event_type,starting_date,starting_hour,duration,num_visualization) 
+        values ('{$title}','{$latitude}','{$longitude}', '{$description}','{$type}','{$starting_date}','{$starting_hour}','{$duration}',0);";
         $stm = $this->sql->prepare($query);
         $stm->execute();
         $lastInsertId = $this->sql->lastInsertId(); // para conseguir el id
