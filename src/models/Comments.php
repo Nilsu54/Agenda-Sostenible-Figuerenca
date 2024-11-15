@@ -39,7 +39,7 @@ class Comments
 
     public function listEvent($idEvent){
          // SQL query to fetch comments with basic information.
-         $query = "select* from comments where id_event={$idEvent} and state like 'accepted' ;";
+         $query = "select* from comments where id_event={$idEvent} and state like 'accepted';";
          $comments = [];
          
          // Execute the query and iterate through the results.
