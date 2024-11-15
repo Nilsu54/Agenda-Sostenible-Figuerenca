@@ -156,13 +156,10 @@ else if($r=="addAnunci"){
     $response=auth($request, $response, $container, "addAnunciController");
 }
 else if($r=="showEvent"){
-    include "..src/controllers/showEventController.php";
+   include "../src/controllers/showEventController.php";
     $response=showEventController($request,$response,$container);
 }
-else if($r=="showEvent"){
-    include "../src/controllers/showEventController.php";
-    $response=showEventController($request,$response,$container);
-}
+
 else if($r=="addComment"){
     include "../src/controllers/addCommentController.php";
     $response=auth($request,$response,$container,"addCommentController");
