@@ -46,7 +46,11 @@
                     <button class="btn btn-light" onclick="window.location.href='index.php?r=login'">Login</button>
                     <?php  }else if (isset($_SESSION["user"])){ ?>
                         <a href="index.php?r=profile" class="image-cropper">
-                        <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
+                            <?php if($_SESSION["user"]["img"]!=null){ ?>
+                            <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
+                            <?php } else {?>
+                            <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                            <?php }?>
                     </a>
                     <button class="btn btn-light" onclick="window.location.href='index.php?r=logout'">Logout</button>
                     <?php }?>
@@ -123,11 +127,7 @@
                           
                             // die();} ?>
                         <div class="list-group-item border-0 mb-3 p-0 card hover-effect" onclick="window.location.href='index.php?r=showEvent&&idEvent=<?=$event['id']?>'">
-                            
-                            <input type="hidden" name="idEvent" value= <?=$event["id"]?>>
-                           
-                            
-                        
+          
                             <div class="row g-0 align-items-center">
                                 <div class="col-md-2 text-center py-3">
                                     <div class="display-4 text-primary fw-bold"><?=$data[2]?></div>

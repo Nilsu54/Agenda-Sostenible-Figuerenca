@@ -14,12 +14,12 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
                 <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -33,14 +33,25 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
+                    <?php if (isset($_SESSION["user"]) && $_SESSION["user"]["role"]=="admin"){?>                    
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=dashboard">Admin</a>
                     </li>
+                    <?php } ?>
                 </ul>
                 <div class="d-flex align-items-center">
-                    <div class="image-cropper">
-                        <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
-                    </div>
+                    <?php if(!isset($_SESSION["user"])){?>
+                    <button class="btn btn-light" onclick="window.location.href='index.php?r=login'">Login</button>
+                    <?php  }else if (isset($_SESSION["user"])){ ?>
+                        <a href="index.php?r=profile" class="image-cropper">
+                            <?php if($_SESSION["user"]["img"]!=null){ ?>
+                            <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
+                            <?php } else {?>
+                            <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                            <?php }?>
+                    </a>
+                    <button class="btn btn-light" onclick="window.location.href='index.php?r=logout'">Logout</button>
+                    <?php }?>
                 </div>
             </div>
         </div>

@@ -196,4 +196,29 @@ $(document).ready(function() {
     //   });
 
 
+
+    $("#enviarComentari").click(function(e){
+        e.preventDefault();
+    
+        var formData = new FormData();
+        
+      
+        formData.append("comment", $("#comment").val());
+        formData.append("userIdC",$("#userIdC").val());
+        formData.append("eventIdC",$("#eventIdC").val());
+        
+        $.ajax({
+            url: 'index.php?r=addComment',
+            type: 'POST',
+            data: formData,
+
+            processData: false,
+            contentType: false, 
+            success: function () {
+               console.log("success");
+      }
+    })
+});
+
+
 });

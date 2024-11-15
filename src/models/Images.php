@@ -40,4 +40,17 @@ class Images
         }
     }
 
+    public function getbyId($id){
+        $query = "select id, url from images where id_event={$id};";
+        $images = [];
+        
+        // Execute the query and iterate through the results.
+        foreach ($this->sql->query($query, \PDO::FETCH_ASSOC) as $image) {
+            // Save users in an associative array where the key is the user's ID.
+            $images[$image["id"]] = $image;
+        }
+        // Return the list of users.
+        return $images;
+    }
+
 }

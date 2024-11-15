@@ -1,5 +1,5 @@
 <?php
-    // print_r($event);
+    // print_r($_SESSION["user"]["id"]);
     // die();
 ?>
 
@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taller de Compostatge - Agenda Sostenible Figuerenca</title>
+    <title><?=$event["title"]?></title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -20,12 +20,12 @@
     <link rel="icon" href="/img/logo.png" type="image/x-icon">
 </head>
 <body> <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="index.php">
                 <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -39,11 +39,26 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
+                    <?php if (isset($_SESSION["user"]) && $_SESSION["user"]["role"]=="admin"){?>                    
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=dashboard">Admin</a>
                     </li>
+                    <?php } ?>
                 </ul>
-                <button class="btn btn-light" onclick="window.location.href='login.php'">Login</button>
+                <div class="d-flex align-items-center">
+                    <?php if(!isset($_SESSION["user"])){?>
+                    <button class="btn btn-light" onclick="window.location.href='index.php?r=login'">Login</button>
+                    <?php  }else if (isset($_SESSION["user"])){ ?>
+                        <a href="index.php?r=profile" class="image-cropper">
+                            <?php if($_SESSION["user"]["img"]!=null){ ?>
+                            <img src="<?=$_SESSION["user"]["img"]?>" alt="foto de perfil" class="profile-pic">
+                            <?php } else {?>
+                            <img src="/img/Dan Franklin.jpg" alt="foto de perfil" class="profile-pic">
+                            <?php }?>
+                    </a>
+                    <button class="btn btn-light" onclick="window.location.href='index.php?r=logout'">Logout</button>
+                    <?php }?>
+                </div>
             </div>
         </div>
     </nav>
@@ -55,12 +70,28 @@
                 <div class="mb-4">
                     <h1 class="text-primary mb-3"><?=$event["title"]?></h1>
                     <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-                        <span class="badge bg-primary"><i class="bi bi-tag-fill"></i> <?=$event["event_type"]?></span>
-                        <span class="fs-5">15 Març 2024</span>
+                        <span class="badge bg-primary"><i class="bi bi-tag-fill"></i> <?=$type?></span>
+                        <?php 
+                        // print_r($event);
+                        // die();
+                         $data=explode("-",$event["starting_date"]);
+                         $dm = DateTime::createFromFormat('!m', $data['1']);
+                        //  $dy= DateTime::createFromFormat('!y',$data['1']);
+                       
+                        //  print_r($data);
+                        // print_r($event["starting_date"]);
+                        // die();
+                        //  $dm = DateTime::createFromFormat('!m', $data['1']);
+                        //  $dy= DateTime::createFromFormat('!y',$data['1']);
+                       
+                        //  print_r($dy->format("Y"));
+                        //  die();
+                        ?>
+                        <span class="fs-5"><?=$data[2]." ".$dm->format("F"). " " . $data[0]?></span>
                         <div>
                             <i class="bi bi-clock-fill"></i>
-                            10:00 - 13:00
-                            <small class="text-muted">(3 hores)</small>
+                            <?=$event["starting_hour"]?>
+                            <small class="text-muted">Duració: <?=$duration[0]?>h</small>
                         </div>
                     </div>
                 </div>
@@ -84,7 +115,7 @@
                 <!-- Event Description -->
                 <div class="mb-4">
                     <h2 class="h4 mb-3">Descripció</h2>
-                    <p class="lead">Aprèn a fer el teu propi compost casolà i contribueix a reduir els residus orgànics. Taller pràctic amb experts en compostatge. Durant aquesta sessió, aprendràs les tècniques bàsiques per crear i mantenir el teu propi compostador.</p>
+                    <p class="lead"><?=$event["event_description"]?></p>
                 </div>
 
                 <!-- Event Stats -->
@@ -104,10 +135,6 @@
                                     <span class="fs-4">4.0</span>
                                     <span class="text-muted">de 5</span>
                                 </div>
-                            </div>
-                            <div class="col-md-6 text-md-end mt-3 mt-md-0">
-                                <div class="mb-2"><i class="bi bi-eye-fill"></i> 234 visualitzacions</div>
-                                <div><i class="bi bi-chat-fill"></i> 12 comentaris</div>
                             </div>
                         </div>
                     </div>
@@ -147,13 +174,13 @@
         <h5 class="mb-3 text-danger"><i class="bi bi-geo-alt-fill"></i> Ubicación</h5>
         <div class="mb-3">
             <small class="text-danger">
-                Latitud: 42.2668° N | Longitud: 2.9580° E
+                Latitud: <?=$event["latitude"]?>° N | Longitud: <?=$event["longitude"]?>° E
             </small>
         </div>
         <div id="map" class="rounded-3" style="height: 400px;"></div>
     </div>
 </div>
-
+            <?php if (isset($_SESSION["user"])){ ?>                
                 <!-- Rating Widget -->
                 <div class="card">
                     <div class="card-body">
@@ -174,16 +201,20 @@
 
                         <div class="mb-3">
                             <label for="comment" class="form-label">El teu comentari (opcional)</label>
-                            <textarea class="form-control" id="comment" rows="4" 
+                            <textarea class="form-control" id="comment" name="comment" comment rows="4" 
                                 placeholder="Comparteix la teva experiència amb altres usuaris..."></textarea>
                         </div>
 
-                        <button class="btn btn-primary w-100">
+                        <button class="btn btn-primary w-100" id="enviarComentari">
+                            
+                            <input type="hidden" id="userIdC" name="userIdC" value=<?=$_SESSION["user"]["id"]?>>
+                            <input type="hidden" id="eventIdC" name="eventIdC" value=<?=$event["id"]?>>
                             <i class="bi bi-send-fill me-2"></i>
                             Enviar valoració
                         </button>
                     </div>
                 </div>
+                <?php }?>
             </div>
         </div>
     </div>
@@ -261,6 +292,10 @@
             document.getElementById('rating-text').textContent = `Has seleccionat ${rating} estrelles`;
         }
     </script>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/perfil.js"></script>
 <?php include 'cookie_banner.php'; ?>
 </body>
 </html>
