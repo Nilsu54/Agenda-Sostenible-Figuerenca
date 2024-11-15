@@ -15,7 +15,7 @@
     <!-- Navbar --> 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container-fluid px-4">
-            <a class="navbar-brand" href="/src/views/index.php">
+            <a class="navbar-brand" href="index.php">
                 <img src="/img/logoblanco.png" height="50" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -32,6 +32,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/src/views/esdeveniments.php">Esdeveniments</a>
                     </li>
+                    <?php if (isset($_SESSION["user"])){?>  
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?r=favorits">Favorits</a>
+                    </li>
+                    <?php } ?>
                     <li class="nav-item">
                         <a class="nav-link active" href="">Admin</a>
                     </li>

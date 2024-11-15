@@ -39,6 +39,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=events">Esdeveniments</a>
                     </li>
+                    <?php if (isset($_SESSION["user"])){?>  
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?r=favorits">Favorits</a>
+                    </li>
+                    <?php } ?>
+                    <li class="nav-item">  <!-- $_SESSION["user"]["role"]=="admin" -->
+                    <?php if (isset($_SESSION["user"]) && $_SESSION["user"]["role"]=="admin"){?>
                     <?php if (isset($_SESSION["user"]) && $_SESSION["user"]["role"]=="admin"){?>                    
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?r=dashboard">Admin</a>

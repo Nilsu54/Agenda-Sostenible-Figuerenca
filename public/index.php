@@ -168,5 +168,9 @@ else if($r=="addComment"){
     $response=auth($request,$response,$container,"addCommentController");
 }
 
+else if($r=="favorits"){
+    include "../src/controllers/favoritsController.php";
+    $response=favoritsController($request,$response,$container);
+}
 // Send the final response to the client.
 $response->response();
