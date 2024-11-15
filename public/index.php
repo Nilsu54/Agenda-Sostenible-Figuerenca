@@ -14,6 +14,7 @@ include "../src/middleware/adminauth.php";        // Administrator authenticatio
 
 include "../src/models/Events.php";
 include "../src/models/Images.php";
+include "../src/models/Comments.php";
 include "../src/models/News.php";
 
 // Instantiate request, response, dependency container, and user model objects.
@@ -24,6 +25,7 @@ $sql = new Db($config);
 $users = new UserPDO($sql->get());
 $events = new Events($sql->get());
 $images = new Images($sql->get());
+$comments = new Comments($sql->get());
 
 // Initialize the request route (`$r`) variable, checking if it is set in the request.
 $r = '';
@@ -157,5 +159,14 @@ else if($r=="showEvent"){
     include "..src/controllers/showEventController.php";
     $response=showEventController($request,$response,$container);
 }
+else if($r=="showEvent"){
+    include "../src/controllers/showEventController.php";
+    $response=showEventController($request,$response,$container);
+}
+else if($r=="addComment"){
+    include "../src/controllers/addCommentController.php";
+    $response=auth($request,$response,$container,"addCommentController");
+}
+
 // Send the final response to the client.
 $response->response();
